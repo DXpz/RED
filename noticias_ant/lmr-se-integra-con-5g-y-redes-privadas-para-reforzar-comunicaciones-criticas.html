@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../IMG/footer.png">
+    <title>LMR se integra con 5G y redes privadas para reforzar comunicaciones críticas - RED</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --brand-negro: #000000;
+            --brand-rojo: #cc1a1a;
+            --brand-rojo-oscuro: #8b0000;
+            --brand-gris: #999999;
+            --brand-dark: #000000;
+            --text-grey: #333333;
+            --light-grey: #f4f4f4;
+            --border-color: #e5e5e5;
+            --bg-color: #ffffff;
+            --serif-font: 'Playfair Display', Georgia, serif;
+            --sans-font: 'Roboto', Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--sans-font);
+            background-color: var(--bg-color);
+            color: var(--text-grey);
+            line-height: 1.5;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--brand-rojo);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* HEADER */
+        .header-main {
+            padding: 25px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .header-main::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to right, var(--brand-rojo) 0%, var(--brand-rojo-oscuro) 50%, var(--brand-gris) 100%);
+        }
+
+        /* LOGO SVG - Adaptado y ampliado */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 30px; margin-bottom: 50px;
+            
+            height: 45px;
+        }
+
+        .logo-img {
+            width: 120px;
+            height: auto;
+            object-fit: contain;
+            object-position: center center;
+            display: block;
+            
+        }
+
+        .logo-text {
+            font-size: 72px;
+            font-weight: 900;
+            letter-spacing: -2px;
+            line-height: 1;
+            font-family: var(--sans-font);
+        }
+
+        .logo-red {
+            color: var(--brand-rojo);
+        }
+
+        .logo-noticias {
+            color: var(--brand-negro);
+        }
+
+        .collaboration-line {
+            font-size: 12px;
+            color: #555;
+            text-align: center;
+            margin-top: 8px;
+            margin-bottom: 5px;
+            font-style: italic;
+        }
+
+        .date-line {
+            font-size: 13px;
+            color: #666;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid var(--border-color);
+            display: inline-block;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+
+        /* ARTÍCULO */
+        .article-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .full-article-header {
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+
+        .breadcrumbs {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: var(--brand-rojo);
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .full-headline {
+            font-family: var(--sans-font);
+            font-size: 46px;
+            line-height: 1.1;
+            color: var(--brand-dark);
+            margin-bottom: 20px;
+        }
+
+        .full-lead {
+            font-family: var(--sans-font);
+            font-size: 20px;
+            line-height: 1.5;
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        .full-meta {
+            font-size: 13px;
+            color: #666;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .full-image-container {
+            margin-bottom: 30px;
+        }
+
+        .full-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .full-image-caption {
+            font-size: 13px;
+            color: #777;
+            background: #f9f9f9;
+            padding: 8px 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .article-body {
+            font-family: var(--sans-font);
+            font-size: 19px;
+            line-height: 1.8;
+            color: #222;
+        }
+
+        .article-body p {
+            margin-bottom: 25px;
+        }
+        
+        .article-body h2 {
+            font-family: var(--sans-font);
+            font-size: 24px;
+            font-weight: 700;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: var(--brand-dark);
+        }
+
+        .article-body ul {
+            margin-left: 30px;
+            margin-bottom: 25px;
+        }
+
+        .article-body li {
+            margin-top: 30px; margin-bottom: 50px;
+        }
+
+        .article-quote {
+            border-left: 4px solid var(--brand-rojo);
+            padding-left: 25px;
+            font-style: italic;
+            font-size: 24px;
+            color: #444;
+            margin: 40px 0;
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            color: #666;
+            cursor: pointer;
+        }
+        .btn-back:hover {
+            color: var(--brand-rojo);
+            text-decoration: underline;
+        }
+
+        .sidebar-title {
+            font-size: 14px;
+            font-weight: 900;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--brand-dark);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+
+        .related-item {
+            margin-bottom: 20px;
+            border-bottom: 1px dotted #ccc;
+            padding-bottom: 15px;
+        }
+
+        .related-category {
+            font-size: 11px;
+            text-transform: uppercase;
+            color: var(--brand-rojo);
+            font-weight: bold;
+        }
+
+        .related-item h4 {
+            font-family: var(--sans-font);
+            font-size: 16px;
+            margin-top: 5px;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 20px 0;
+            margin-top: 50px;
+            text-align: center;
+            border-top: 1px solid var(--brand-rojo-oscuro);
+        }
+
+        .footer-logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            height: 40px;
+            margin-bottom: 15px;
+        }
+
+        .logo-img-footer {
+            height: 40px;
+            object-fit: contain;
+            object-position: center center;
+            display: block;
+            
+        }
+
+        @media (max-width: 1024px) {
+            .article-layout {
+                grid-template-columns: 1fr;
+            }
+            .article-sidebar {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .full-headline {
+                font-size: 32px;
+            }
+            .article-sidebar {
+                display: block;
+                margin-top: 40px;
+            }
+
+            /* Logo más pequeño en móvil */
+            .logo-container {
+                height: 40px;
+            }
+
+            .logo-img {
+                width: 90px;
+                transform: scale(1.0);
+            }
+
+            .footer-logo {
+                height: 30px;
+            }
+
+            .logo-img-footer {
+                height: 30px;
+                transform: scale(1.0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER LOGO -->
+    <header class="header-main">
+        <div class="container">
+            <a href="../index.html" class="logo-container">
+                <img src="../IMG/footer.png" alt="RED" class="logo-img">
+            </a>
+            <div class="collaboration-line">
+                En colaboración con <strong>Diario El Mundo</strong>
+            </div>
+            <div class="date-line">
+                martes, 24 de febrero de 2026
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENIDO ARTÍCULO -->
+    <main class="container">
+        <a href="../index.html" class="btn-back">&larr; VOLVER A PORTADA</a>
+        
+        <div class="article-layout">
+            <!-- CONTENIDO PRINCIPAL -->
+            <div class="article-content">
+                <header class="full-article-header">
+                    <span class="breadcrumbs">LMR</span>
+                    <h1 class="full-headline">LMR se integra con 5G y redes privadas para reforzar comunicaciones críticas</h1>
+                    <p class="full-lead">La modernización de sistemas LMR avanza con radios DMR ultradelgadas, 5G sidelink para modo directo y espectro 900 MHz para redes privadas de utilities. Estos movimientos apuntan a mayor interoperabilidad, resiliencia y capacidad de misión crítica para seguridad pública y sectores esenciales.</p>
+                    <div class="full-meta">
+                        <span>Por <strong>Redacción RED</strong> | San Salvador</span>
+                        <span>martes, 24 de febrero de 2026</span>
+                    </div>
+                </header>
+
+                <div class="full-image-container">
+                    <img src="https://i.ibb.co/mn8QLWT/png-skoid-38e27a3b-6174-4d3e-90ac-d7d9ad49543f-sktid-a48cca56-e6da-484e-a814-9c849652bcb3-skt-2026-0.png" alt="LMR se integra con 5G y redes privadas para reforzar comunicaciones críticas">
+                    <div class="full-image-caption">Ilustración IA</div>
+                </div>
+
+                <div class="article-body">
+                    <p><h2>LMR evoluciona hacia arquitecturas híbridas con 5G y banda ancha privada</h2></p>
+<p>La infraestructura de radio móvil terrestre (LMR) está entrando en una fase de integración con tecnologías de banda ancha y 5G para mantener su papel como columna vertebral de las comunicaciones de misión crítica. Fabricantes, reguladores y operadores de servicios públicos impulsan radios DMR de nueva generación, uso de 5G sidelink para comunicaciones directas entre dispositivos y redes privadas LTE en la banda de 900 MHz.</p>
+<p>Motorola Solutions posiciona sus terminales <strong>MOTOTRBO SL3500e y SL3500MAX</strong> como radios digitales DMR ultradelgadas, orientadas a entornos corporativos y de servicio donde el espacio y la estética importan, pero sin renunciar a capacidades de red avanzadas. Los equipos soportan <strong>Capacity Max</strong>, la solución de trunking DMR de la compañía, y permiten <strong>actualización por Wi‑Fi</strong>, lo que reduce tiempos de parada y simplifica la administración de flotas LMR distribuidas.</p>
+<p>En paralelo, <strong>Qualcomm</strong> pide a los reguladores espectro específico para <strong>5G sidelink</strong>, una función que habilita comunicaciones directas entre dispositivos incluso cuando no hay cobertura de red. El objetivo declarado es reforzar las comunicaciones de primeros respondedores y otros usuarios de misión crítica, complementando los sistemas LMR tradicionales con enlaces 5G de alta capacidad y baja latencia en modo directo.</p>
+<p><h2>Espectro 900 MHz y redes privadas para utilities</h2></p>
+<p>La compañía <strong>Anterix</strong> ha firmado un acuerdo con la utility CPS Energy de San Antonio para desplegar una red privada de banda ancha en <strong>900 MHz</strong>. Este tipo de redes LTE privadas se diseñan para operaciones de campo, automatización de redes eléctricas, telemetría y coordinación de equipos en tiempo real, y conviven con sistemas LMR ya implantados, aportando más capacidad de datos y cobertura específica donde las utilities la necesitan.</p>
+<p>En apoyo a estos despliegues, la <strong>FCC</strong> ha votado a favor de ampliar el uso potencial de la banda de <strong>900 MHz para servicios de banda ancha privada</strong>. Esta decisión abre la puerta a que más operadores de infraestructuras críticas migren de redes LMR puras a entornos híbridos LMR+LTE, manteniendo la fiabilidad y simplicidad del push-to-talk tradicional, pero sumando aplicaciones de datos, vídeo y control remoto con garantías de calidad de servicio.</p>
+<p>Las iniciativas analizadas no sustituyen de forma inmediata a LMR, sino que lo integran con nuevas capas tecnológicas. Radios DMR actualizables por Wi‑Fi, 5G sidelink para modo directo y redes LTE privadas en 900 MHz dibujan un ecosistema donde la interoperabilidad entre plataformas será clave para la continuidad operativa y la seguridad de personal en campo, tanto en seguridad pública como en utilities y grandes corporaciones.</p>
+
+                </div>
+            </div>
+
+            <!-- SIDEBAR -->
+            <aside class="article-sidebar">
+                <div class="sidebar-title">Noticias Relacionadas</div>
+                <div class="related-item">
+                    <div class="related-category">Contexto</div>
+                    <h4><a href="../index.html">Volver a la portada</a></h4>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">
+                <img src="../IMG/footer.png" alt="RED" class="logo-img-footer">
+            </div>
+        </div>
+    </footer>
+
+    </body>
+    </html>

@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../IMG/footer.png">
+    <title>MCX sobre 450 MHz y P25 interoperable amplían control de flotas críticas - RED</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --brand-negro: #000000;
+            --brand-rojo: #cc1a1a;
+            --brand-rojo-oscuro: #8b0000;
+            --brand-gris: #999999;
+            --brand-dark: #000000;
+            --text-grey: #333333;
+            --light-grey: #f4f4f4;
+            --border-color: #e5e5e5;
+            --bg-color: #ffffff;
+            --serif-font: 'Playfair Display', Georgia, serif;
+            --sans-font: 'Roboto', Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--sans-font);
+            background-color: var(--bg-color);
+            color: var(--text-grey);
+            line-height: 1.5;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--brand-rojo);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* HEADER */
+        .header-main {
+            padding: 25px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .header-main::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to right, var(--brand-rojo) 0%, var(--brand-rojo-oscuro) 50%, var(--brand-gris) 100%);
+        }
+
+        /* LOGO SVG - Adaptado y ampliado */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 30px; margin-bottom: 50px;
+            
+            height: 45px;
+        }
+
+        .logo-img {
+            width: 120px;
+            height: auto;
+            object-fit: contain;
+            object-position: center center;
+            display: block;
+            
+        }
+
+        .logo-text {
+            font-size: 72px;
+            font-weight: 900;
+            letter-spacing: -2px;
+            line-height: 1;
+            font-family: var(--sans-font);
+        }
+
+        .logo-red {
+            color: var(--brand-rojo);
+        }
+
+        .logo-noticias {
+            color: var(--brand-negro);
+        }
+
+        .collaboration-line {
+            font-size: 12px;
+            color: #555;
+            text-align: center;
+            margin-top: 8px;
+            margin-bottom: 5px;
+            font-style: italic;
+        }
+
+        .date-line {
+            font-size: 13px;
+            color: #666;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid var(--border-color);
+            display: inline-block;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+
+        /* ARTÍCULO */
+        .article-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .full-article-header {
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+
+        .breadcrumbs {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: var(--brand-rojo);
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .full-headline {
+            font-family: var(--sans-font);
+            font-size: 46px;
+            line-height: 1.1;
+            color: var(--brand-dark);
+            margin-bottom: 20px;
+        }
+
+        .full-lead {
+            font-family: var(--sans-font);
+            font-size: 20px;
+            line-height: 1.5;
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        .full-meta {
+            font-size: 13px;
+            color: #666;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .full-image-container {
+            margin-bottom: 30px;
+        }
+
+        .full-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .full-image-caption {
+            font-size: 13px;
+            color: #777;
+            background: #f9f9f9;
+            padding: 8px 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .article-body {
+            font-family: var(--sans-font);
+            font-size: 19px;
+            line-height: 1.8;
+            color: #222;
+        }
+
+        .article-body p {
+            margin-bottom: 25px;
+        }
+        
+        .article-body h2 {
+            font-family: var(--sans-font);
+            font-size: 24px;
+            font-weight: 700;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: var(--brand-dark);
+        }
+
+        .article-body ul {
+            margin-left: 30px;
+            margin-bottom: 25px;
+        }
+
+        .article-body li {
+            margin-top: 30px; margin-bottom: 50px;
+        }
+
+        .article-quote {
+            border-left: 4px solid var(--brand-rojo);
+            padding-left: 25px;
+            font-style: italic;
+            font-size: 24px;
+            color: #444;
+            margin: 40px 0;
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            color: #666;
+            cursor: pointer;
+        }
+        .btn-back:hover {
+            color: var(--brand-rojo);
+            text-decoration: underline;
+        }
+
+        .sidebar-title {
+            font-size: 14px;
+            font-weight: 900;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--brand-dark);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+
+        .related-item {
+            margin-bottom: 20px;
+            border-bottom: 1px dotted #ccc;
+            padding-bottom: 15px;
+        }
+
+        .related-category {
+            font-size: 11px;
+            text-transform: uppercase;
+            color: var(--brand-rojo);
+            font-weight: bold;
+        }
+
+        .related-item h4 {
+            font-family: var(--sans-font);
+            font-size: 16px;
+            margin-top: 5px;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 20px 0;
+            margin-top: 50px;
+            text-align: center;
+            border-top: 1px solid var(--brand-rojo-oscuro);
+        }
+
+        .footer-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 40px;
+        }
+
+        .footer-left {
+            flex: 1 1 260px;
+            max-width: 360px;
+            text-align: left;
+        }
+
+        .footer-logo {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 10px 0;
+            margin-bottom: 10px;
+        }
+
+        .logo-img-footer {
+            width: auto;
+            height: 56px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .footer-description {
+            font-size: 14px;
+            color: #b0b0b0;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .footer-copy {
+            font-size: 12px;
+            color: #777777;
+        }
+
+        .footer-col {
+            flex: 1 1 220px;
+            text-align: left;
+        }
+
+        .footer-heading {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--brand-rojo);
+            margin-bottom: 10px;
+        }
+
+        .footer-item {
+            font-size: 13px;
+            color: #d0d0d0;
+            margin-bottom: 6px;
+        }
+
+        @media (max-width: 1024px) {
+            .article-layout {
+                grid-template-columns: 1fr;
+            }
+            .article-sidebar {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .full-headline {
+                font-size: 32px;
+            }
+            .article-sidebar {
+                display: block;
+                margin-top: 40px;
+            }
+
+            /* Logo más pequeño en móvil */
+            .logo-container {
+                height: 40px;
+            }
+
+            .logo-img {
+                width: 90px;
+                transform: scale(1.0);
+            }
+
+            .footer-logo {
+                padding: 8px 0;
+            }
+
+            .logo-img-footer {
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER LOGO -->
+    <header class="header-main">
+        <div class="container">
+            <a href="../index.html" class="logo-container">
+                <img src="../IMG/footer.png" alt="RED" class="logo-img">
+            </a>
+            <div class="collaboration-line">
+                En colaboración con <strong>Diario El Mundo</strong>
+            </div>
+            <div class="date-line">
+                miércoles, 11 de marzo de 2026
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENIDO ARTÍCULO -->
+    <main class="container">
+        <a href="../index.html" class="btn-back">&larr; VOLVER A PORTADA</a>
+        
+        <div class="article-layout">
+            <!-- CONTENIDO PRINCIPAL -->
+            <div class="article-content">
+                <header class="full-article-header">
+                    <span class="breadcrumbs">Gestión de Flotas</span>
+                    <h1 class="full-headline">MCX sobre 450 MHz y P25 interoperable amplían control de flotas críticas</h1>
+                    <p class="full-lead">La certificación de terminales MCX en 450 MHz y la integración MCPTT–P25 consolidan arquitecturas híbridas LMR–banda ancha para flotas en energía, transporte y seguridad pública. Estas soluciones mejoran despacho, cobertura y continuidad operativa en infraestructuras críticas.</p>
+                    <div class="full-meta">
+                        <span>Por <strong>Redacción RED</strong> | San Salvador</span>
+                        <span>miércoles, 11 de marzo de 2026</span>
+                    </div>
+                </header>
+
+                <div class="full-image-container">
+                    <img src="https://res.cloudinary.com/dnleji9rj/image/upload/v1773244313/IMAGENES/rhleukfklz17ric43olv.png" alt="">
+                    <div class="full-image-caption">Ilustración IA</div>
+                </div>
+
+                <div class="article-body">
+                    <p><h2>Implementación Técnica / Arquitectura del Sistema</h2></p>
+<p><p>Los últimos despliegues en comunicaciones críticas para gestión de flotas confluyen en dos ejes técnicos: por un lado, la homologación de terminales de misión crítica (MCX) en bandas de 450 MHz sobre infraestructuras de banda ancha privada; por otro, la integración estrecha entre redes de radio móvil terrestre (LMR, especialmente P25) y servicios MCPTT sobre banda ancha pública o dedicada. En el primer caso, la inclusión de dispositivos MCX en listas blancas de operadores 450 MHz en Europa implica que estos equipos superan pruebas de coexistencia radioeléctrica, seguridad de señalización, calidad de servicio y cumplimiento de parámetros de potencia, modulación y agregación de portadoras para operar en celdas de banda estrecha adaptadas a entornos de energía, transporte y servicios públicos.</p></p>
+<p><p>Estos terminales MCX combinan capacidades de voz de misión crítica (MCPTT), vídeo en tiempo casi real (MCVideo) y datos enriquecidos (MCData) sobre núcleos LTE/5G privados que operan en bandas sub-GHz, aprovechando la mejor propagación de 450 MHz para coberturas extensivas en entornos rurales, corredores ferroviarios, redes de transmisión eléctrica y grandes parques industriales o fotovoltaicos. La arquitectura típica integra un núcleo EPC/5GC privado, estaciones base optimizadas para 450 MHz y pasarelas hacia plataformas de despacho que consolidan voz, vídeo y telemetría de flotas.</p></p>
+<p><p>En paralelo, la integración MCPTT–P25 en redes de seguridad pública se articula mediante pasarelas IP que interconectan la infraestructura LMR (con controladores P25, sitios repetidores y enlaces de microondas o fibra) con servidores de aplicación MCPTT alojados en infraestructura cloud distribuida o datacenters de la propia red crítica. Esta pasarela traduce grupos de conversación, IDs de unidades, estados de presencia y prioridades de llamada entre el dominio P25 y el dominio IP de banda ancha, preservando funcionalidades como llamadas de grupo, emergencia, prioridad y preempción. De esta forma, usuarios de smartphones robustecidos o terminales MCX acceden a los mismos grupos de conversación que las radios P25, permitiendo que el despacho gestione flotas mixtas desde una única consola.</p></p>
+<p><p>El concepto de "Unified Push-to-Talk" estandariza precisamente este modelo: un servicio de voz de grupo de baja latencia sobre redes 3G/4G/5G o Wi-Fi que se integra con LMR (P25, DMR o TETRA) mediante interfaces IP normalizadas. Estas soluciones se complementan con plataformas de gestión de flotas que recogen posiciones GNSS, eventos de sensores vehiculares (CAN bus, acelerómetros, telemetría de combustible) y estados operativos, combinando datos originados en terminales LMR y en aplicaciones sobre banda ancha.</p></p>
+<p><p>La expansión de parques fotovoltaicos a escala gigavatio introduce además una capa de infraestructura energética crítica que soporta estas comunicaciones. La operación de grandes plantas solares requiere redes de comunicaciones internas (fibra óptica, enlaces inalámbricos punto a punto y redes de campo para SCADA) que, cuando se integran con núcleos LTE privados o redes LMR, habilitan canales robustos para la gestión de flotas de mantenimiento, vigilancia perimetral y logística de componentes. De forma similar, la digitalización de hospitales mediante IoT, sensores y paneles táctiles ilustra la consolidación de arquitecturas de red convergentes: Wi-Fi 6/6E, segmentación de red, monitorización continua y pasarelas hacia plataformas de gestión de activos, un modelo extrapolable a almacenes, centros de distribución y hubs de transporte.</p></p>
+<p><h2>Impacto en Operaciones / Optimización de Procesos</h2></p>
+<p><p>La disponibilidad de terminales MCX en 450 MHz permite a operadores de redes privadas desplegar servicios convergentes de voz, vídeo y datos en una sola infraestructura radio, con mejor penetración en interiores y mayor alcance que bandas más altas. Para la gestión de flotas en energía, petróleo y gas, ferrocarril o utilities, esto se traduce en comunicaciones de campo más estables, menor necesidad de sitios radio adicionales y cobertura homogénea en áreas remotas donde la logística de mantenimiento y la inspección de activos son críticas. La capacidad MCVideo integrada en el mismo dispositivo optimiza la respuesta ante incidentes al permitir que equipos de campo compartan imágenes de averías, activos críticos o bloqueos de ruta en tiempo real con el centro de control.</p></p>
+<p><p>La integración MCPTT–P25 en agencias de seguridad pública demuestra, a escala metropolitana, cómo la convergencia LMR–banda ancha mejora la utilización de recursos y la coordinación interagencias. El personal que opera exclusivamente con terminales de banda ancha puede unirse a los mismos grupos P25 utilizados por patrullas y unidades especializadas, sin necesidad de portar múltiples radios. Esto reduce complejidad operativa, agiliza la asignación de tareas y facilita el despacho unificado de flotas de vehículos, unidades a pie y recursos aéreos. El despacho puede visualizar en una misma interfaz la ubicación GNSS de vehículos, el estado de cada unidad, el tráfico de voz y, en algunos casos, flujos de vídeo procedentes de cámaras embarcadas o corporales.</p></p>
+<p><p>En el contexto de logística y transporte, las soluciones de Unified Push-to-Talk vinculadas a plataformas de gestión de flotas permiten consolidar comunicaciones y datos de rastreo en un único sistema. Los vehículos equipados con radios digitales o aplicaciones PTT sobre smartphones envían su posición en tiempo casi real, junto con eventos operativos (aperturas de puerta, llegada a muelle, salida de patio), lo que facilita la optimización de rutas, la reducción de tiempos de espera y el cumplimiento de ventanas de entrega. La interoperabilidad con redes LMR asegura continuidad de comunicaciones en zonas con cobertura limitada de redes públicas, garantizando la disponibilidad de PTT y mensajería crítica incluso durante fallos de la infraestructura comercial.</p></p>
+<p><p>La robustez de la infraestructura eléctrica, ejemplificada por grandes parques fotovoltaicos, es un habilitador clave para estas arquitecturas híbridas. Una generación distribuida más cercana a centros de consumo industrial y logístico reduce el riesgo de interrupciones prolongadas, estabiliza la alimentación de nodos de comunicaciones (sitios radio, centros de datos de borde, routers industriales) y facilita la adopción de modelos de respaldo y microrredes para centros de distribución y hubs de transporte. En estos entornos, las flotas de vehículos, grúas y equipos autónomos dependen de la sincronización precisa entre sistemas de gestión de almacenes, plataformas de seguimiento y comunicaciones de misión crítica.</p></p>
+<p><p>Por otro lado, la digitalización de infraestructuras hospitalarias con sensores IoT, sistemas de localización en tiempo real y paneles táctiles proporciona un marco de referencia para la trazabilidad y gestión de activos móviles en logística 4.0. Tecnologías similares se aplican en almacenes y terminales intermodales para localizar carretillas, contenedores, pallets y equipos de manutención, permitiendo a los gestores de flota una visión granular de la ocupación de muelles, la rotación de vehículos y el rendimiento por ruta. Cuando estos sistemas se integran con comunicaciones MCX y LMR, el resultado es un ecosistema donde las decisiones de despacho se basan en datos en tiempo real, con comunicaciones de baja latencia y alta disponibilidad incluso bajo condiciones adversas.</p></p>
+<p><p>En conjunto, la convergencia de MCX en 450 MHz, la interoperabilidad MCPTT–P25, la unificación PTT sobre redes de banda ancha y la consolidación de infraestructuras energéticas e IoT en entornos críticos está redefiniendo la gestión de flotas. Se avanza hacia arquitecturas en las que voz, vídeo, telemetría y energía se integran de forma coordinada, priorizando resiliencia, interoperabilidad y continuidad operativa por encima de soluciones aisladas y dependientes de un único proveedor.</p></p>
+
+                </div>
+            </div>
+
+            <!-- SIDEBAR -->
+            <aside class="article-sidebar">
+                <div class="sidebar-title">Noticias Relacionadas</div>
+                <div class="related-item">
+                    <div class="related-category">Contexto</div>
+                    <h4><a href="../index.html">Volver a la portada</a></h4>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-left">
+                    <div class="footer-logo">
+                        <img src="../IMG/footer.png" alt="RED" class="logo-img-footer">
+                    </div>
+                    <p class="footer-description">
+                        Conectando negocios con inteligencia operativa. Más de 20 años liderando la comunicación crítica en Centroamérica.
+                    </p>
+                    <p class="footer-copy">
+                        © 2026 RED INTELFON.
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">EL SALVADOR</h4>
+                    <p class="footer-item">
+                        Urbanización Industrial Santa Elena, Calle Siemens #67 Antiguo Cuscatlán.
+                    </p>
+                    <p class="footer-item">
+                        Tel: +503 2515 0000
+                    </p>
+                    <p class="footer-item">
+                        Email: negocios@red.com.sv
+                    </p>
+                    <p class="footer-item">
+                        WhatsApp: +503 7984-0006
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">GUATEMALA</h4>
+                    <p class="footer-item">
+                        TEC III, Campus Tecnológico TEC III, nivel 7, Oficina 702, Vía 3 1-01, Ciudad de Guatemala.
+                    </p>
+                    <p class="footer-item">
+                        Tel: +502 2375 1414
+                    </p>
+                    <p class="footer-item">
+                        Email: negocios@red.com.gt
+                    </p>
+                    <p class="footer-item">
+                        WhatsApp: +502 3603-1010
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    </body>
+    </html>

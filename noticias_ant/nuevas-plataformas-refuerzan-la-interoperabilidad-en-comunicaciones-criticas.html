@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../IMG/footer.png">
+    <title>Nuevas plataformas refuerzan la interoperabilidad en comunicaciones críticas - RED</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --brand-negro: #000000;
+            --brand-rojo: #cc1a1a;
+            --brand-rojo-oscuro: #8b0000;
+            --brand-gris: #999999;
+            --brand-dark: #000000;
+            --text-grey: #333333;
+            --light-grey: #f4f4f4;
+            --border-color: #e5e5e5;
+            --bg-color: #ffffff;
+            --serif-font: 'Playfair Display', Georgia, serif;
+            --sans-font: 'Roboto', Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--sans-font);
+            background-color: var(--bg-color);
+            color: var(--text-grey);
+            line-height: 1.5;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--brand-rojo);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* HEADER */
+        .header-main {
+            padding: 25px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .header-main::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to right, var(--brand-rojo) 0%, var(--brand-rojo-oscuro) 50%, var(--brand-gris) 100%);
+        }
+
+        /* LOGO SVG - Adaptado y ampliado */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 30px; margin-bottom: 50px;
+            
+            height: 45px;
+        }
+
+        .logo-img {
+            width: 120px;
+            height: auto;
+            object-fit: contain;
+            object-position: center center;
+            display: block;
+            
+        }
+
+        .logo-text {
+            font-size: 72px;
+            font-weight: 900;
+            letter-spacing: -2px;
+            line-height: 1;
+            font-family: var(--sans-font);
+        }
+
+        .logo-red {
+            color: var(--brand-rojo);
+        }
+
+        .logo-noticias {
+            color: var(--brand-negro);
+        }
+
+        .collaboration-line {
+            font-size: 12px;
+            color: #555;
+            text-align: center;
+            margin-top: 8px;
+            margin-bottom: 5px;
+            font-style: italic;
+        }
+
+        .date-line {
+            font-size: 13px;
+            color: #666;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid var(--border-color);
+            display: inline-block;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+
+        /* ARTÍCULO */
+        .article-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .full-article-header {
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+
+        .breadcrumbs {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: var(--brand-rojo);
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .full-headline {
+            font-family: var(--sans-font);
+            font-size: 46px;
+            line-height: 1.1;
+            color: var(--brand-dark);
+            margin-bottom: 20px;
+        }
+
+        .full-lead {
+            font-family: var(--sans-font);
+            font-size: 20px;
+            line-height: 1.5;
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        .full-meta {
+            font-size: 13px;
+            color: #666;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .full-image-container {
+            margin-bottom: 30px;
+        }
+
+        .full-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .full-image-caption {
+            font-size: 13px;
+            color: #777;
+            background: #f9f9f9;
+            padding: 8px 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .article-body {
+            font-family: var(--sans-font);
+            font-size: 19px;
+            line-height: 1.8;
+            color: #222;
+        }
+
+        .article-body p {
+            margin-bottom: 25px;
+        }
+        
+        .article-body h2 {
+            font-family: var(--sans-font);
+            font-size: 24px;
+            font-weight: 700;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: var(--brand-dark);
+        }
+
+        .article-body ul {
+            margin-left: 30px;
+            margin-bottom: 25px;
+        }
+
+        .article-body li {
+            margin-top: 30px; margin-bottom: 50px;
+        }
+
+        .article-quote {
+            border-left: 4px solid var(--brand-rojo);
+            padding-left: 25px;
+            font-style: italic;
+            font-size: 24px;
+            color: #444;
+            margin: 40px 0;
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            color: #666;
+            cursor: pointer;
+        }
+        .btn-back:hover {
+            color: var(--brand-rojo);
+            text-decoration: underline;
+        }
+
+        .sidebar-title {
+            font-size: 14px;
+            font-weight: 900;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--brand-dark);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+
+        .related-item {
+            margin-bottom: 20px;
+            border-bottom: 1px dotted #ccc;
+            padding-bottom: 15px;
+        }
+
+        .related-category {
+            font-size: 11px;
+            text-transform: uppercase;
+            color: var(--brand-rojo);
+            font-weight: bold;
+        }
+
+        .related-item h4 {
+            font-family: var(--sans-font);
+            font-size: 16px;
+            margin-top: 5px;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 20px 0;
+            margin-top: 50px;
+            text-align: center;
+            border-top: 1px solid var(--brand-rojo-oscuro);
+        }
+
+        .footer-logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            height: 40px;
+            margin-bottom: 15px;
+        }
+
+        .logo-img-footer {
+            height: 40px;
+            object-fit: contain;
+            object-position: center center;
+            display: block;
+            
+        }
+
+        @media (max-width: 1024px) {
+            .article-layout {
+                grid-template-columns: 1fr;
+            }
+            .article-sidebar {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .full-headline {
+                font-size: 32px;
+            }
+            .article-sidebar {
+                display: block;
+                margin-top: 40px;
+            }
+
+            /* Logo más pequeño en móvil */
+            .logo-container {
+                height: 40px;
+            }
+
+            .logo-img {
+                width: 90px;
+                transform: scale(1.0);
+            }
+
+            .footer-logo {
+                height: 30px;
+            }
+
+            .logo-img-footer {
+                height: 30px;
+                transform: scale(1.0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER LOGO -->
+    <header class="header-main">
+        <div class="container">
+            <a href="../index.html" class="logo-container">
+                <img src="../IMG/footer.png" alt="RED" class="logo-img">
+            </a>
+            <div class="collaboration-line">
+                En colaboración con <strong>Diario El Mundo</strong>
+            </div>
+            <div class="date-line">
+                Lunes, 23 de Febrero de 2026
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENIDO ARTÍCULO -->
+    <main class="container">
+        <a href="../index.html" class="btn-back">&larr; VOLVER A PORTADA</a>
+        
+        <div class="article-layout">
+            <!-- CONTENIDO PRINCIPAL -->
+            <div class="article-content">
+                <header class="full-article-header">
+                    <span class="breadcrumbs">Interoperabilidad</span>
+                    <h1 class="full-headline">Nuevas plataformas refuerzan la interoperabilidad en comunicaciones críticas</h1>
+                    <p class="full-lead">Fabricantes y reguladores despliegan servidores locales, pasarelas y redes en la nube para conectar radios legadas, banda ancha y sistemas logísticos. El objetivo: eliminar zonas muertas, romper silos y asegurar continuidad operativa en seguridad pública y puertos.</p>
+                    <div class="full-meta">
+                        <span>Por <strong>Redacción RED</strong> | San Salvador</span>
+                        <span>Lunes, 23 de Febrero de 2026</span>
+                    </div>
+                </header>
+
+                <div class="full-image-container">
+                    <img src="https://i.ibb.co/Dfh9DVJL/fypijg-A.png" alt="Nuevas plataformas refuerzan la interoperabilidad en comunicaciones críticas">
+                    <div class="full-image-caption">Ilustración IA</div>
+                </div>
+
+                <div class="article-body">
+                    <p><h2>Infraestructuras que conectan radios, banda ancha y redes privadas</h2></p>
+<p>La interoperabilidad en comunicaciones críticas avanza en tres frentes: hardware local para sitios pequeños, pasarelas entre sistemas de radio legados y plataformas en la nube que unifican redes LMR y banda ancha. Estas soluciones buscan asegurar continuidad operativa en seguridad pública, logística portuaria y servicios esenciales, reduciendo dependencias de una sola tecnología o proveedor.</p>
+<p>POCSTARS presentó su <strong>MiniServer 2.0</strong>, un servidor compacto para despliegues push-to-talk (PoC) en hoteles, campus o instalaciones industriales. El equipo permite que una organización gestione su propia infraestructura de voz y datos, conecte distintos dispositivos y mantenga control local de la operación, incluso cuando la red pública es inestable.</p>
+<p>En Estados Unidos, Indiana amplió la red SAFE-T con tecnología de <strong>Motorola Solutions</strong>, incorporando simulcast TDMA para eliminar zonas muertas en el condado de Vigo. La mejora permite que policías, bomberos y servicios médicos compartan canales y recursos con mayor fiabilidad, reforzando la interoperabilidad entre agencias sin necesidad de reemplazar toda la base instalada.</p>
+<p><h2>Pasarelas para migrar de sistemas legados a arquitecturas mixtas</h2></p>
+<p>L3Harris impulsa la convergencia entre sistemas de radio móvil terrestre (LMR) antiguos y el estándar <strong>P25</strong> mediante su solución <strong>Encompass Gateway</strong>. La plataforma actúa como traductor entre tecnologías heterogéneas, incluyendo compatibilidad con redes 4G/LTE a través de BeOn, lo que facilita migraciones graduales y operaciones conjuntas entre equipos de diferentes fabricantes.</p>
+<p>En paralelo, <strong>Critical Connect</strong> de Motorola Solutions ofrece una pasarela de interoperabilidad basada en interfaces ISSI que enlaza redes LMR y servicios de push-to-talk sobre banda ancha. La solución, desplegada como servicio en la nube, habilita voz, mensajería, ubicación y presencia entre múltiples agencias y jurisdicciones, reduciendo costos de integración punto a punto y acelerando el despliegue de salas de mando compartidas.</p>
+<p><h2>Espectro y logística: conectividad crítica más allá de la radio</h2></p>
+<p>La Comisión Federal de Comunicaciones (FCC) de Estados Unidos aprobó la expansión del uso de la banda de <strong>900 MHz</strong> para servicios de banda ancha privada. Este movimiento abre espacio a utilities, operadores de infraestructuras críticas y gestores de emergencias para desplegar redes propias de alta disponibilidad que interoperen con sistemas LMR, plataformas NG911 y aplicaciones de gestión de flotas, reforzando la resiliencia de servicios esenciales.</p>
+<p>Fuera del ámbito estrictamente radioeléctrico, la interoperabilidad también se impulsa en la logística portuaria. La Fundación Valenciaport liderará la formación para el <strong>Port Community System de Puerto San Antonio</strong>, una plataforma que alinea a navieras, terminales, agentes y autoridades mediante estándares de datos comunes. El sistema integra documentación, trazabilidad de cargas y procesos aduaneros, reduciendo tiempos y errores al conectar sistemas dispares en un entorno digital unificado.</p>
+
+                </div>
+            </div>
+
+            <!-- SIDEBAR -->
+            <aside class="article-sidebar">
+                <div class="sidebar-title">Noticias Relacionadas</div>
+                <div class="related-item">
+                    <div class="related-category">Contexto</div>
+                    <h4><a href="../index.html">Volver a la portada</a></h4>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">
+                <img src="../IMG/footer.png" alt="RED" class="logo-img-footer">
+            </div>
+        </div>
+    </footer>
+
+    </body>
+    </html>

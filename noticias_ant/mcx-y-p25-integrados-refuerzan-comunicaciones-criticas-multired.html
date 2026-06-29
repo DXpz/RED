@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../IMG/footer.png">
+    <title>MCX y P25 integrados refuerzan comunicaciones críticas multired - RED</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --brand-negro: #000000;
+            --brand-rojo: #cc1a1a;
+            --brand-rojo-oscuro: #8b0000;
+            --brand-gris: #999999;
+            --brand-dark: #000000;
+            --text-grey: #333333;
+            --light-grey: #f4f4f4;
+            --border-color: #e5e5e5;
+            --bg-color: #ffffff;
+            --serif-font: 'Playfair Display', Georgia, serif;
+            --sans-font: 'Roboto', Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--sans-font);
+            background-color: var(--bg-color);
+            color: var(--text-grey);
+            line-height: 1.5;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--brand-rojo);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* HEADER */
+        .header-main {
+            padding: 25px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .header-main::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to right, var(--brand-rojo) 0%, var(--brand-rojo-oscuro) 50%, var(--brand-gris) 100%);
+        }
+
+        /* LOGO SVG - Adaptado y ampliado */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 30px; margin-bottom: 50px;
+            
+            height: 45px;
+        }
+
+        .logo-img {
+            width: 120px;
+            height: auto;
+            object-fit: contain;
+            object-position: center center;
+            display: block;
+            
+        }
+
+        .logo-text {
+            font-size: 72px;
+            font-weight: 900;
+            letter-spacing: -2px;
+            line-height: 1;
+            font-family: var(--sans-font);
+        }
+
+        .logo-red {
+            color: var(--brand-rojo);
+        }
+
+        .logo-noticias {
+            color: var(--brand-negro);
+        }
+
+        .collaboration-line {
+            font-size: 12px;
+            color: #555;
+            text-align: center;
+            margin-top: 8px;
+            margin-bottom: 5px;
+            font-style: italic;
+        }
+
+        .date-line {
+            font-size: 13px;
+            color: #666;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid var(--border-color);
+            display: inline-block;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+
+        /* ARTÍCULO */
+        .article-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .full-article-header {
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+
+        .breadcrumbs {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: var(--brand-rojo);
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .full-headline {
+            font-family: var(--sans-font);
+            font-size: 46px;
+            line-height: 1.1;
+            color: var(--brand-dark);
+            margin-bottom: 20px;
+        }
+
+        .full-lead {
+            font-family: var(--sans-font);
+            font-size: 20px;
+            line-height: 1.5;
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        .full-meta {
+            font-size: 13px;
+            color: #666;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .full-image-container {
+            margin-bottom: 30px;
+        }
+
+        .full-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .full-image-caption {
+            font-size: 13px;
+            color: #777;
+            background: #f9f9f9;
+            padding: 8px 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .article-body {
+            font-family: var(--sans-font);
+            font-size: 19px;
+            line-height: 1.8;
+            color: #222;
+        }
+
+        .article-body p {
+            margin-bottom: 25px;
+        }
+        
+        .article-body h2 {
+            font-family: var(--sans-font);
+            font-size: 24px;
+            font-weight: 700;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: var(--brand-dark);
+        }
+
+        .article-body ul {
+            margin-left: 30px;
+            margin-bottom: 25px;
+        }
+
+        .article-body li {
+            margin-top: 30px; margin-bottom: 50px;
+        }
+
+        .article-quote {
+            border-left: 4px solid var(--brand-rojo);
+            padding-left: 25px;
+            font-style: italic;
+            font-size: 24px;
+            color: #444;
+            margin: 40px 0;
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            color: #666;
+            cursor: pointer;
+        }
+        .btn-back:hover {
+            color: var(--brand-rojo);
+            text-decoration: underline;
+        }
+
+        .sidebar-title {
+            font-size: 14px;
+            font-weight: 900;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--brand-dark);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+
+        .related-item {
+            margin-bottom: 20px;
+            border-bottom: 1px dotted #ccc;
+            padding-bottom: 15px;
+        }
+
+        .related-category {
+            font-size: 11px;
+            text-transform: uppercase;
+            color: var(--brand-rojo);
+            font-weight: bold;
+        }
+
+        .related-item h4 {
+            font-family: var(--sans-font);
+            font-size: 16px;
+            margin-top: 5px;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 20px 0;
+            margin-top: 50px;
+            text-align: center;
+            border-top: 1px solid var(--brand-rojo-oscuro);
+        }
+
+        .footer-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 40px;
+        }
+
+        .footer-left {
+            flex: 1 1 260px;
+            max-width: 360px;
+            text-align: left;
+        }
+
+        .footer-logo {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 10px 0;
+            margin-bottom: 10px;
+        }
+
+        .logo-img-footer {
+            width: auto;
+            height: 56px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .footer-description {
+            font-size: 14px;
+            color: #b0b0b0;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .footer-copy {
+            font-size: 12px;
+            color: #777777;
+        }
+
+        .footer-col {
+            flex: 1 1 220px;
+            text-align: left;
+        }
+
+        .footer-heading {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--brand-rojo);
+            margin-bottom: 10px;
+        }
+
+        .footer-item {
+            font-size: 13px;
+            color: #d0d0d0;
+            margin-bottom: 6px;
+        }
+
+        @media (max-width: 1024px) {
+            .article-layout {
+                grid-template-columns: 1fr;
+            }
+            .article-sidebar {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .full-headline {
+                font-size: 32px;
+            }
+            .article-sidebar {
+                display: block;
+                margin-top: 40px;
+            }
+
+            /* Logo más pequeño en móvil */
+            .logo-container {
+                height: 40px;
+            }
+
+            .logo-img {
+                width: 90px;
+                transform: scale(1.0);
+            }
+
+            .footer-logo {
+                padding: 8px 0;
+            }
+
+            .logo-img-footer {
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER LOGO -->
+    <header class="header-main">
+        <div class="container">
+            <a href="../index.html" class="logo-container">
+                <img src="../IMG/footer.png" alt="RED" class="logo-img">
+            </a>
+            <div class="collaboration-line">
+                En colaboración con <strong>Diario El Mundo</strong>
+            </div>
+            <div class="date-line">
+                Lunes, 09 de marzo de 2026
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENIDO ARTÍCULO -->
+    <main class="container">
+        <a href="../index.html" class="btn-back">&larr; VOLVER A PORTADA</a>
+        
+        <div class="article-layout">
+            <!-- CONTENIDO PRINCIPAL -->
+            <div class="article-content">
+                <header class="full-article-header">
+                    <span class="breadcrumbs">LMR</span>
+                    <h1 class="full-headline">MCX y P25 integrados refuerzan comunicaciones críticas multired</h1>
+                    <p class="full-lead">La convergencia entre P25 LMR, MCX 3GPP, redes privadas en 450 MHz y enlaces satelitales LEO redefine la arquitectura de misión crítica. Crece la interoperabilidad extremo a extremo mediante ISSI, MCPTT y terminales híbridos con backhaul resiliente.</p>
+                    <div class="full-meta">
+                        <span>Por <strong>Redacción RED</strong> | San Salvador</span>
+                        <span>Lunes, 09 de marzo de 2026</span>
+                    </div>
+                </header>
+
+                <div class="full-image-container">
+                    <img src="https://res.cloudinary.com/dnleji9rj/image/upload/v1773070268/IMAGENES/exvk86k8s8uuhgzuq5ft.png" alt="MCX y P25 integrados refuerzan comunicaciones críticas multired">
+                    <div class="full-image-caption">Ilustración IA</div>
+                </div>
+
+                <div class="article-body">
+                    <p><h2>Implementación Técnica / Arquitectura del Sistema</h2></p>
+<p>Los desarrollos recientes en comunicaciones críticas consolidan un modelo híbrido donde redes de radio móvil terrestre (LMR) bajo estándar P25, servicios MCX basados en 3GPP y backhaul satelital de órbita baja comienzan a operar como un sistema integrado en múltiples dominios: seguridad pública, utilities, transporte y servicios de infraestructura crítica.</p>
+<p>En el ámbito de seguridad pública, se avanza en la integración directa entre infraestructuras P25 Fase II y servicios MCPTT/MCVideo mediante interfaces ISSI (Inter-RF Subsystem Interface) y soluciones de gestión de claves OTAR (Over-The-Air Rekeying). Esta arquitectura permite que grupos de conversación P25 se extiendan de forma transparente hacia usuarios MCX sobre redes móviles de banda ancha, preservando características de misión crítica como llamadas de grupo prioritarias, llamadas de emergencia y pre-empción de recursos de red.</p>
+<p>En paralelo, se consolidan terminales híbridos en bandas sub-GHz, particularmente en el rango de 450 MHz para redes privadas de misión crítica. Estos dispositivos combinan capacidades MCX/MCPTT/MCVideo con soporte para bandas licenciadas de uso industrial y de servicios públicos, con certificaciones específicas de compatibilidad con infraestructuras de núcleo EPC/5GC privadas. Técnicamente, la homologación se centra en la correcta gestión de calidad de servicio (QoS), slicing lógico cuando existe 5G, y soporte de mecanismos de priorización y pre-empción definidos por 3GPP para servicios de misión crítica.</p>
+<p>En el plano de infraestructura pasiva y RF, se observa una expansión de soluciones de antenas optimizadas para entornos nórdicos y climas adversos, orientadas a redes TETRA, P25, LTE privado y MCX. Los diseños se enfocan en patrones de radiación controlados, alta ganancia direccional en bandas de seguridad pública y robustez mecánica para instalaciones en emplazamientos costeros y de alta carga de hielo. Esto mejora la cobertura en áreas rurales extensas, infraestructuras eléctricas lineales y corredores de transporte.</p>
+<p>Adicionalmente, el ecosistema se complementa con propuestas de conectividad satelital de órbita baja, diseñadas para enlaces directos a dispositivos o como backhaul alternativo para estaciones base LMR y nodos MCX. La segunda generación de constelaciones LEO enfatiza mayor capacidad de enlace descendente y ascendente, menor latencia de extremo a extremo y modos de integración con operadores móviles existentes, facilitando escenarios en los que celdas LTE/5G o gateways P25 remotos puedan mantener sincronización y señalización incluso ante fallos de la red troncal terrestre.</p>
+<p>Desde la perspectiva de evolución de plataformas LMR, se generaliza la incorporación de módems LTE/5G embebidos en terminales portátiles y móviles P25/TETRA. Estas unidades combinan canales de voz crítica sobre portadoras LMR con servicios de datos de alta velocidad sobre banda ancha, habilitando aplicaciones como distribución de mapas tácticos, video puntual y telemetría de dispositivos. La infraestructura de red LMR se moderniza con controladores y estaciones base capaces de usar backhaul IP sobre fibra, microondas y, progresivamente, enlaces satelitales LEO, reduciendo la dependencia de rutas únicas de transporte.</p>
+<p><h2>Impacto en Operaciones / Optimización de Procesos</h2></p>
+<p>Operativamente, la integración P25–MCX vía ISSI y MCPTT permite que agencias de seguridad pública gestionen incidentes multijurisdiccionales sin obligar a todos los usuarios a portar radios LMR dedicados. Personal externo, refuerzos temporales o unidades de apoyo logístico pueden sumarse a los mismos grupos de conversación desde terminales MCX sobre redes móviles comerciales o privadas, lo que incrementa la flexibilidad táctica y reduce costes de equipamiento especializado.</p>
+<p>La adopción de redes privadas en 450 MHz, combinada con terminales certificados MCX/MCVideo, resulta especialmente relevante para operadores de energía, transporte ferroviario y servicios de agua. Estas redes ofrecen una propagación favorable y mejor penetración en interiores e infraestructuras subterráneas, lo que se traduce en menor densidad de sitios radio y mayor fiabilidad para operaciones de campo. Los dispositivos híbridos pueden simultáneamente soportar voz crítica, video de inspección y aplicaciones de mantenimiento asistido, optimizando desplazamientos de cuadrillas y tiempos de reparación.</p>
+<p>La expansión de antenas diseñadas específicamente para climas severos aumenta la disponibilidad de los sitios de comunicaciones de misión crítica, reduciendo fallos por carga mecánica y mejorando la robustez frente a fuertes vientos, hielo o niebla salina. Esto repercute directamente en la continuidad operativa de redes de seguridad pública y de infraestructuras lineales, minimizando zonas de sombra y caídas de cobertura en momentos de alta criticidad, como tormentas o eventos meteorológicos extremos.</p>
+<p>La integración de backhaul satelital LEO en arquitecturas de comunicaciones críticas proporciona un nivel adicional de resiliencia. En caso de interrupción de enlaces terrestres (fibra cortada, fallo de microondas o saturación de red), las estaciones base LMR y nodos MCX pueden conmutar a rutas satelitales manteniendo la señalización de control y el tráfico de voz de máxima prioridad. Para operaciones en zonas remotas —minería, offshore, corredores marítimos o regiones rurales extensas— esta capacidad reduce el aislamiento operativo y permite una gestión centralizada de incidentes.</p>
+<p>La modernización de terminales LMR con conectividad LTE/5G integrada también impacta en los flujos de trabajo: el personal de campo dispone de un único dispositivo para voz crítica y aplicaciones de datos, disminuyendo la carga logística de múltiples equipos y cargadores. La integración con sistemas de gestión de incidentes y plataformas de ubicación en tiempo real mejora la asignación dinámica de recursos, la seguridad del personal y la capacidad de análisis post-incidente mediante registros completos de voz, datos y posición.</p>
+<p>En conjunto, estas tendencias apuntan a un modelo operativo de comunicaciones críticas multicapa: LMR para voz de alta confiabilidad, MCX sobre LTE/5G para servicios multimedia y escalabilidad, redes privadas sub-GHz para cobertura profunda en entornos industriales, y backhaul LEO como capa de continuidad. La clave ya no es la supremacía de una tecnología, sino la interoperabilidad estandarizada (P25, MCX 3GPP, interfaces ISSI, mecanismos de QoS y priorización) que permite a operadores de seguridad pública y de infraestructuras críticas diseñar arquitecturas resilientes, con rutas alternativas de servicio y herramientas más ricas para la gestión de activos y de incidentes.</p>
+
+                </div>
+            </div>
+
+            <!-- SIDEBAR -->
+            <aside class="article-sidebar">
+                <div class="sidebar-title">Noticias Relacionadas</div>
+                <div class="related-item">
+                    <div class="related-category">Contexto</div>
+                    <h4><a href="../index.html">Volver a la portada</a></h4>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-left">
+                    <div class="footer-logo">
+                        <img src="../IMG/footer.png" alt="RED" class="logo-img-footer">
+                    </div>
+                    <p class="footer-description">
+                        Conectando negocios con inteligencia operativa. Más de 20 años liderando la comunicación crítica en Centroamérica.
+                    </p>
+                    <p class="footer-copy">
+                        © 2026 RED INTELFON.
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">EL SALVADOR</h4>
+                    <p class="footer-item">
+                        Urbanización Industrial Santa Elena, Calle Siemens #67 Antiguo Cuscatlán.
+                    </p>
+                    <p class="footer-item">
+                        Tel: +503 2515 0000
+                    </p>
+                    <p class="footer-item">
+                        Email: negocios@red.com.sv
+                    </p>
+                    <p class="footer-item">
+                        WhatsApp: +503 7984-0006
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">GUATEMALA</h4>
+                    <p class="footer-item">
+                        TEC III, Campus Tecnológico TEC III, nivel 7, Oficina 702, Vía 3 1-01, Ciudad de Guatemala.
+                    </p>
+                    <p class="footer-item">
+                        Tel: +502 2375 1414
+                    </p>
+                    <p class="footer-item">
+                        Email: negocios@red.com.gt
+                    </p>
+                    <p class="footer-item">
+                        WhatsApp: +502 3603-1010
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    </body>
+    </html>

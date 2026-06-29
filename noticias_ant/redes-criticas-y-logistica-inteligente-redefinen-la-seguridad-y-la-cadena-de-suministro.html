@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../IMG/footer.png">
+    <title>Redes críticas y logística inteligente redefinen la seguridad y la cadena de suministro - RED</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --brand-negro: #000000;
+            --brand-rojo: #cc1a1a;
+            --brand-rojo-oscuro: #8b0000;
+            --brand-gris: #999999;
+            --brand-dark: #000000;
+            --text-grey: #333333;
+            --light-grey: #f4f4f4;
+            --border-color: #e5e5e5;
+            --bg-color: #ffffff;
+            --serif-font: 'Playfair Display', Georgia, serif;
+            --sans-font: 'Roboto', Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--sans-font);
+            background-color: var(--bg-color);
+            color: var(--text-grey);
+            line-height: 1.5;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--brand-rojo);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* HEADER */
+        .header-main {
+            padding: 25px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .header-main::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to right, var(--brand-rojo) 0%, var(--brand-rojo-oscuro) 50%, var(--brand-gris) 100%);
+        }
+
+        /* LOGO SVG - Adaptado y ampliado */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 30px; margin-bottom: 50px;
+            
+            height: 45px;
+        }
+
+        .logo-img {
+            width: 120px;
+            height: auto;
+            object-fit: contain;
+            object-position: center center;
+            display: block;
+            
+        }
+
+        .logo-text {
+            font-size: 72px;
+            font-weight: 900;
+            letter-spacing: -2px;
+            line-height: 1;
+            font-family: var(--sans-font);
+        }
+
+        .logo-red {
+            color: var(--brand-rojo);
+        }
+
+        .logo-noticias {
+            color: var(--brand-negro);
+        }
+
+        .collaboration-line {
+            font-size: 12px;
+            color: #555;
+            text-align: center;
+            margin-top: 8px;
+            margin-bottom: 5px;
+            font-style: italic;
+        }
+
+        .date-line {
+            font-size: 13px;
+            color: #666;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid var(--border-color);
+            display: inline-block;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+
+        /* ARTÍCULO */
+        .article-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .full-article-header {
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+
+        .breadcrumbs {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: var(--brand-rojo);
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .full-headline {
+            font-family: var(--sans-font);
+            font-size: 46px;
+            line-height: 1.1;
+            color: var(--brand-dark);
+            margin-bottom: 20px;
+        }
+
+        .full-lead {
+            font-family: var(--sans-font);
+            font-size: 20px;
+            line-height: 1.5;
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        .full-meta {
+            font-size: 13px;
+            color: #666;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .full-image-container {
+            margin-bottom: 30px;
+        }
+
+        .full-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .full-image-caption {
+            font-size: 13px;
+            color: #777;
+            background: #f9f9f9;
+            padding: 8px 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .article-body {
+            font-family: var(--sans-font);
+            font-size: 19px;
+            line-height: 1.8;
+            color: #222;
+        }
+
+        .article-body p {
+            margin-bottom: 25px;
+        }
+        
+        .article-body h2 {
+            font-family: var(--sans-font);
+            font-size: 24px;
+            font-weight: 700;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: var(--brand-dark);
+        }
+
+        .article-body ul {
+            margin-left: 30px;
+            margin-bottom: 25px;
+        }
+
+        .article-body li {
+            margin-top: 30px; margin-bottom: 50px;
+        }
+
+        .article-quote {
+            border-left: 4px solid var(--brand-rojo);
+            padding-left: 25px;
+            font-style: italic;
+            font-size: 24px;
+            color: #444;
+            margin: 40px 0;
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            color: #666;
+            cursor: pointer;
+        }
+        .btn-back:hover {
+            color: var(--brand-rojo);
+            text-decoration: underline;
+        }
+
+        .sidebar-title {
+            font-size: 14px;
+            font-weight: 900;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--brand-dark);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+
+        .related-item {
+            margin-bottom: 20px;
+            border-bottom: 1px dotted #ccc;
+            padding-bottom: 15px;
+        }
+
+        .related-category {
+            font-size: 11px;
+            text-transform: uppercase;
+            color: var(--brand-rojo);
+            font-weight: bold;
+        }
+
+        .related-item h4 {
+            font-family: var(--sans-font);
+            font-size: 16px;
+            margin-top: 5px;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 20px 0;
+            margin-top: 50px;
+            text-align: center;
+            border-top: 1px solid var(--brand-rojo-oscuro);
+        }
+
+        .footer-logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            height: 40px;
+            margin-bottom: 15px;
+        }
+
+        .logo-img-footer {
+            height: 40px;
+            object-fit: contain;
+            object-position: center center;
+            display: block;
+            
+        }
+
+        @media (max-width: 1024px) {
+            .article-layout {
+                grid-template-columns: 1fr;
+            }
+            .article-sidebar {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .full-headline {
+                font-size: 32px;
+            }
+            .article-sidebar {
+                display: block;
+                margin-top: 40px;
+            }
+
+            /* Logo más pequeño en móvil */
+            .logo-container {
+                height: 40px;
+            }
+
+            .logo-img {
+                width: 90px;
+                transform: scale(1.0);
+            }
+
+            .footer-logo {
+                height: 30px;
+            }
+
+            .logo-img-footer {
+                height: 30px;
+                transform: scale(1.0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER LOGO -->
+    <header class="header-main">
+        <div class="container">
+            <a href="../index.html" class="logo-container">
+                <img src="../IMG/footer.png" alt="RED" class="logo-img">
+            </a>
+            <div class="collaboration-line">
+                En colaboración con <strong>Diario El Mundo</strong>
+            </div>
+            <div class="date-line">
+                martes, 24 de febrero de 2026
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENIDO ARTÍCULO -->
+    <main class="container">
+        <a href="../index.html" class="btn-back">&larr; VOLVER A PORTADA</a>
+        
+        <div class="article-layout">
+            <!-- CONTENIDO PRINCIPAL -->
+            <div class="article-content">
+                <header class="full-article-header">
+                    <span class="breadcrumbs"></span>
+                    <h1 class="full-headline">Redes críticas y logística inteligente redefinen la seguridad y la cadena de suministro</h1>
+                    <p class="full-lead">Europa, EE. UU. y América Latina aceleran redes de misión crítica, regulación de espectro y uso de IA en logística. Los avances combinan resiliencia operativa, trazabilidad en tiempo real y gobernanza tecnológica para infraestructuras y retail.</p>
+                    <div class="full-meta">
+                        <span>Por <strong>Redacción RED</strong> | San Salvador</span>
+                        <span>martes, 24 de febrero de 2026</span>
+                    </div>
+                </header>
+
+                <div class="full-image-container">
+                    <img src="https://i.ibb.co/vCcdTWzh/png-skoid-b2c0e1c0-cf97-4e19-8986-8073905d5723-sktid-a48cca56-e6da-484e-a814-9c849652bcb3-skt-2026-0.png" alt="Redes críticas y logística inteligente redefinen la seguridad y la cadena de suministro">
+                    <div class="full-image-caption">Ilustración IA</div>
+                </div>
+
+                <div class="article-body">
+                    <p><h2>Infraestructura crítica: drones, 5G y redes de emergencia</h2></p>
+<p>La Comisión Europea presentó un <strong>plan integral de seguridad para drones y sistemas antidrones</strong> que articula detección, mando y control y respuesta coordinada entre Estados miembros. El esquema prioriza el uso de <strong>redes 4G/5G, centros de mando interoperables y plataformas de gestión de incidentes</strong> para proteger infraestructuras críticas, espacios públicos y operaciones de seguridad.</p>
+<p>En Francia, la red de comunicaciones "del futuro" para seguridad pública fue validada en una operación real de rescate tras una <strong>avalancha en el Mont Blanc</strong>. La infraestructura combinó comunicaciones de voz de misión crítica, <strong>datos en tiempo real, geolocalización precisa y envío de imágenes</strong> desde un entorno de alta montaña, mejorando la coordinación entre equipos y la seguridad de los rescatistas.</p>
+<p>En paralelo, en EE. UU. Qualcomm impulsa el uso de <strong>5G sidelink</strong> –comunicación directa entre dispositivos– para primeros respondedores, solicitando reglas específicas de espectro. La FCC, por su parte, votó ampliar los usos de la <strong>banda de 900 MHz</strong> para servicios de banda ancha en infraestructuras críticas, mientras Anterix cerró un acuerdo con la utility CPS Energy para desplegar <strong>redes privadas de misión crítica e IoT industrial</strong> en el sector energético.</p>
+<p>La gobernanza de estos sistemas también avanza: un subcomité de la Cámara de Representantes aprobó la <strong>reauthorización de FirstNet</strong>, la red nacional para seguridad pública en EE. UU., y un senador solicitó audiencias para revisar la <strong>seguridad de las redes de AT&amp;T y Verizon</strong>, reforzando el escrutinio sobre los grandes operadores en el ámbito crítico.</p>
+<p><h2>Logística y retail: IA operativa y posición estratégica de Chile</h2></p>
+<p>En logística y retail, la chilena Revista Logistec recoge cómo las cadenas de distribución ya operan con <strong>IA aplicada a la última milla, inventarios y planificación de demanda</strong>. Los modelos analizan datos de ventas, tráfico y flotas para optimizar rutas, reducir tiempos de entrega y ajustar inventario en tiempo casi real, apoyándose en <strong>telemetría masiva y redes corporativas</strong> para conectar almacenes, tiendas y centros de distribución.</p>
+<p>Otro análisis sitúa a <strong>Chile como punto logístico clave en Latinoamérica</strong>, por su red portuaria, tratados comerciales y posición geográfica. Para sostener ese rol, el país depende de <strong>infraestructuras de comunicaciones robustas</strong> en puertos, carreteras y pasos fronterizos, incluyendo conectividad segura para sistemas de gestión portuaria, tracking de contenedores e interoperabilidad entre actores públicos y privados.</p>
+<p><h2>Fábricas 2040 y ecosistema de dispositivos de misión crítica</h2></p>
+<p>Un estudio de Accenture describe las fábricas hacia 2040 como <strong>entornos altamente automatizados, hiperconectados y data-driven</strong>. Se prevé una integración profunda de <strong>sensores IoT industriales, redes privadas 5G/6G, analítica avanzada y robótica colaborativa</strong>, con comunicaciones críticas garantizando baja latencia y alta disponibilidad para líneas de producción, logística interna y mantenimiento predictivo.</p>
+<p>En el terreno de dispositivos, Motorola Solutions impulsa radios MOTOTRBO <strong>SL3500e y SL3500MAX</strong>, diseñadas para gestión de flotas y redes privadas. Ofrecen <strong>interoperabilidad mediante Capacity Plus y Aggregate Max</strong>, actualizaciones por Wi‑Fi y administración centralizada, lo que reduce tiempos de indisponibilidad y simplifica el ciclo de vida tecnológico en operaciones logísticas, industriales y de seguridad corporativa.</p>
+<p>La compañía también anunció etiquetas de transparencia para sus soluciones de <strong>IA en seguridad y comunicaciones</strong>, una especie de "nutrición" técnica que detalla capacidades, limitaciones y marcos de uso responsable. Estas etiquetas buscan facilitar la integración de analítica de video, reconocimiento de patrones y automatización de alertas en <strong>entornos de misión crítica</strong> bajo criterios claros de cumplimiento y gobernanza.</p>
+<p><h2>Finanzas y coordinación tecnológica</h2></p>
+<p>Motorola Solutions refuerza su perfil en el ecosistema de telecomunicaciones críticas con la participación de su presidente y CEO, Greg Brown, en la conferencia de inversores de Raymond James, y de su CFO, Jason Winkler, en el foro de tecnología, medios y telecomunicaciones de Morgan Stanley. Estas instancias alinean <strong>estrategia financiera, desarrollo tecnológico y necesidades de seguridad pública e infraestructuras críticas</strong>, en un momento en que redes privadas, IA aplicada y regulación de espectro se están convirtiendo en piezas centrales de la logística avanzada y las comunicaciones de emergencia.</p>
+
+                </div>
+            </div>
+
+            <!-- SIDEBAR -->
+            <aside class="article-sidebar">
+                <div class="sidebar-title">Noticias Relacionadas</div>
+                <div class="related-item">
+                    <div class="related-category">Contexto</div>
+                    <h4><a href="../index.html">Volver a la portada</a></h4>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">
+                <img src="../IMG/footer.png" alt="RED" class="logo-img-footer">
+            </div>
+        </div>
+    </footer>
+
+    </body>
+    </html>

@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../IMG/footer.png">
+    <title>Intercomunicadores vehiculares integran audio crítico en patrullas policiales - RED</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --brand-negro: #000000;
+            --brand-rojo: #cc1a1a;
+            --brand-rojo-oscuro: #8b0000;
+            --brand-gris: #999999;
+            --brand-dark: #000000;
+            --text-grey: #333333;
+            --light-grey: #f4f4f4;
+            --border-color: #e5e5e5;
+            --bg-color: #ffffff;
+            --serif-font: 'Playfair Display', Georgia, serif;
+            --sans-font: 'Roboto', Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--sans-font);
+            background-color: var(--bg-color);
+            color: var(--text-grey);
+            line-height: 1.5;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--brand-rojo);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* HEADER */
+        .header-main {
+            padding: 25px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .header-main::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to right, var(--brand-rojo) 0%, var(--brand-rojo-oscuro) 50%, var(--brand-gris) 100%);
+        }
+
+        /* LOGO SVG - Adaptado y ampliado */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 30px; margin-bottom: 50px;
+            
+            height: 45px;
+        }
+
+        .logo-img {
+            width: 120px;
+            height: auto;
+            object-fit: contain;
+            object-position: center center;
+            display: block;
+            
+        }
+
+        .logo-text {
+            font-size: 72px;
+            font-weight: 900;
+            letter-spacing: -2px;
+            line-height: 1;
+            font-family: var(--sans-font);
+        }
+
+        .logo-red {
+            color: var(--brand-rojo);
+        }
+
+        .logo-noticias {
+            color: var(--brand-negro);
+        }
+
+        .collaboration-line {
+            font-size: 12px;
+            color: #555;
+            text-align: center;
+            margin-top: 8px;
+            margin-bottom: 5px;
+            font-style: italic;
+        }
+
+        .date-line {
+            font-size: 13px;
+            color: #666;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid var(--border-color);
+            display: inline-block;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+
+        /* ARTÍCULO */
+        .article-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .full-article-header {
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+
+        .breadcrumbs {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: var(--brand-rojo);
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .full-headline {
+            font-family: var(--sans-font);
+            font-size: 46px;
+            line-height: 1.1;
+            color: var(--brand-dark);
+            margin-bottom: 20px;
+        }
+
+        .full-lead {
+            font-family: var(--sans-font);
+            font-size: 20px;
+            line-height: 1.5;
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        .full-meta {
+            font-size: 13px;
+            color: #666;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .full-image-container {
+            margin-bottom: 30px;
+        }
+
+        .full-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .full-image-caption {
+            font-size: 13px;
+            color: #777;
+            background: #f9f9f9;
+            padding: 8px 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .article-body {
+            font-family: var(--sans-font);
+            font-size: 19px;
+            line-height: 1.8;
+            color: #222;
+        }
+
+        .article-body p {
+            margin-bottom: 25px;
+        }
+        
+        .article-body h2 {
+            font-family: var(--sans-font);
+            font-size: 24px;
+            font-weight: 700;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: var(--brand-dark);
+        }
+
+        .article-body ul {
+            margin-left: 30px;
+            margin-bottom: 25px;
+        }
+
+        .article-body li {
+            margin-top: 30px; margin-bottom: 50px;
+        }
+
+        .article-quote {
+            border-left: 4px solid var(--brand-rojo);
+            padding-left: 25px;
+            font-style: italic;
+            font-size: 24px;
+            color: #444;
+            margin: 40px 0;
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            color: #666;
+            cursor: pointer;
+        }
+        .btn-back:hover {
+            color: var(--brand-rojo);
+            text-decoration: underline;
+        }
+
+        .sidebar-title {
+            font-size: 14px;
+            font-weight: 900;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--brand-dark);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+
+        .related-item {
+            margin-bottom: 20px;
+            border-bottom: 1px dotted #ccc;
+            padding-bottom: 15px;
+        }
+
+        .related-category {
+            font-size: 11px;
+            text-transform: uppercase;
+            color: var(--brand-rojo);
+            font-weight: bold;
+        }
+
+        .related-item h4 {
+            font-family: var(--sans-font);
+            font-size: 16px;
+            margin-top: 5px;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 20px 0;
+            margin-top: 50px;
+            text-align: center;
+            border-top: 1px solid var(--brand-rojo-oscuro);
+        }
+
+        .footer-logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            height: 40px;
+            margin-bottom: 15px;
+        }
+
+        .logo-img-footer {
+            width: auto;
+            height: 40px;
+            object-fit: contain;
+            display: block;
+            
+        }
+
+        @media (max-width: 1024px) {
+            .article-layout {
+                grid-template-columns: 1fr;
+            }
+            .article-sidebar {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .full-headline {
+                font-size: 32px;
+            }
+            .article-sidebar {
+                display: block;
+                margin-top: 40px;
+            }
+
+            /* Logo más pequeño en móvil */
+            .logo-container {
+                height: 40px;
+            }
+
+            .logo-img {
+                width: 90px;
+                transform: scale(1.0);
+            }
+
+            .footer-logo {
+                height: 30px;
+            }
+
+            .logo-img-footer {
+                height: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER LOGO -->
+    <header class="header-main">
+        <div class="container">
+            <a href="../index.html" class="logo-container">
+                <img src="../IMG/footer.png" alt="RED" class="logo-img">
+            </a>
+            <div class="collaboration-line">
+                En colaboración con <strong>Diario El Mundo</strong>
+            </div>
+            <div class="date-line">
+                miércoles, 04 de marzo de 2026
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENIDO ARTÍCULO -->
+    <main class="container">
+        <a href="../index.html" class="btn-back">&larr; VOLVER A PORTADA</a>
+        
+        <div class="article-layout">
+            <!-- CONTENIDO PRINCIPAL -->
+            <div class="article-content">
+                <header class="full-article-header">
+                    <span class="breadcrumbs">Telemetría</span>
+                    <h1 class="full-headline">Intercomunicadores vehiculares integran audio crítico en patrullas policiales</h1>
+                    <p class="full-lead">Sistemas de intercomunicación vehicular enlazan radios PMR/DMR/TETRA con cascos, altavoces y consolas, mejorando la inteligibilidad de voz en cabina y exteriores. La arquitectura modular facilita la integración con soluciones de despacho y gestión de misión crítica en flotas policiales.</p>
+                    <div class="full-meta">
+                        <span>Por <strong>Redacción RED</strong> | San Salvador</span>
+                        <span>miércoles, 04 de marzo de 2026</span>
+                    </div>
+                </header>
+
+                <div class="full-image-container">
+                    <img src="https://i.ibb.co/FbW78F2V/output1.png" alt="">
+                    <div class="full-image-caption">Ilustración IA</div>
+                </div>
+
+                <div class="article-body">
+                    <p><h2>Implementación Técnica / Arquitectura del Sistema</h2></p>
+<p><p>La solución desplegada en vehículos policiales incorpora un sistema de intercomunicación vehicular diseñado para entornos de misión crítica, que actúa como nodo central de audio entre la radio terrestre profesional (PMR/DMR o TETRA), los terminales de operador y los equipos de protección individual. La arquitectura se basa en una unidad maestra de intercom (ICU) instalada en el habitáculo, conectada mediante cableado blindado a un bus de audio de baja latencia que enlaza micrófonos de mano, cascos con reducción activa de ruido, altavoces de alta potencia internos y externos, así como pedales o pulsadores de PTT distribuidos en la cabina.</p></p>
+<p><p>El sistema soporta múltiples fuentes y destinos de audio mediante mezcla selectiva y conmutación configurable, permitiendo aislar canales (ej. radio de red troncalizada, intercom interno de cabina, megafonía exterior) y priorizar comunicaciones de emergencia. La ICU se integra con la radio principal a través de interfaces normalizadas (p. ej., entradas/salidas de audio balanceadas, GPIO y puertos serie para control), lo que permite activar funciones como cambio de canal, volumen y modos de operación directamente desde el panel de control del vehículo.</p></p>
+<p><p>Para mejorar la inteligibilidad en entornos ruidosos, el sistema incorpora procesamiento digital de señal (DSP) con cancelación de eco, filtrado de banda y control automático de ganancia. La compatibilidad con tensiones típicas de automoción (12/24 V) y la protección frente a inversiones de polaridad, picos de corriente y EMC garantizan el funcionamiento estable en plataformas policiales con elevada carga electrónica (luces de emergencia, sistemas ANPR, cámaras a bordo, routers LTE privado, etc.). Adicionalmente, la topología modular permite añadir o retirar puntos de audio (p. ej., puestos traseros para detenidos, posiciones de mando móvil) sin rediseñar la infraestructura principal.</p></p>
+<p><p>Desde el punto de vista de integración con sistemas de mando y control, la intercomunicación vehicular puede vincularse a consolas de despacho y soluciones de gestión de incidentes mediante gateways de voz sobre IP compatibles con protocolos estándar (RTP/VoIP), abriendo la puerta a futuros escenarios de convergencia con servicios MCPTT (Push-To-Talk de misión crítica) sobre redes de banda ancha. Esta lógica favorece una interoperabilidad gradual entre la radio digital terrestre y aplicaciones IP, manteniendo una operación coherente de audio en el vehículo incluso durante ventanas de mantenimiento o migración de la infraestructura de red.</p></p>
+<p><h2>Impacto en Operaciones / Optimización de Procesos</h2></p>
+<p><p>En la operación diaria de flotas policiales, el intercom vehicular resuelve un problema recurrente: la coexistencia de múltiples fuentes de audio y la degradación de la inteligibilidad en maniobras de alta velocidad, persecuciones o despliegues en áreas urbanas ruidosas. Al centralizar la gestión de audio y habilitar perfiles específicos de misión (patrulla urbana, control de tráfico, dispositivo especial), el sistema reduce la carga cognitiva del personal, disminuye el tiempo de respuesta a mensajes críticos y mejora la coordinación entre tripulantes.</p></p>
+<p><p>La integración estrecha con la radio de misión crítica permite que las comunicaciones externas y el diálogo interno en cabina se administren de forma coherente. Por ejemplo, el conductor puede priorizar la recepción de avisos del centro de despacho, mientras que el acompañante mantiene comunicación continua con unidades a pie vía cascos conectados al intercom. Esto se traduce en menos errores de interpretación, menor necesidad de repetición de mensajes y una reducción de congestión en los canales de radio al evitar retransmisiones innecesarias.</p></p>
+<p><p>Desde la perspectiva de mantenimiento de flota, la estandarización de la interfaz de audio y control simplifica las tareas de reequipamiento y actualización de vehículos policiales a lo largo de su ciclo de vida. Talleres especializados pueden reutilizar el mismo conjunto de intercomunicación al renovar la plataforma vehicular, limitando los costes asociados a cableado y recertificación de integración eléctrica. La modularidad también permite escalabilidad: los vehículos que asumen roles de mando avanzado pueden equiparse con posiciones adicionales de escucha y grabación, mientras que los patrulleros de primera línea mantienen configuraciones más sencillas pero robustas.</p></p>
+<p><p>En términos de resiliencia operativa, disponer de una capa de intercom independiente, pero integrada con la radio, ofrece redundancia en situaciones de fallo parcial de terminales portátiles o alta saturación del entorno radioeléctrico. La comunicación cara a cara dentro y alrededor del vehículo sigue asegurada incluso en escenarios de cobertura limitada. A medio plazo, la interoperabilidad de estos sistemas de intercomunicación con redes IP y plataformas de telemetría de flota permitirá correlacionar eventos de audio con datos de posición GNSS, estado del vehículo y registros de incidente, mejorando los análisis post-operación y la planificación de recursos.</p></p>
+
+                </div>
+            </div>
+
+            <!-- SIDEBAR -->
+            <aside class="article-sidebar">
+                <div class="sidebar-title">Noticias Relacionadas</div>
+                <div class="related-item">
+                    <div class="related-category">Contexto</div>
+                    <h4><a href="../index.html">Volver a la portada</a></h4>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">
+                <img src="../IMG/footer.png" alt="RED" class="logo-img-footer">
+            </div>
+        </div>
+    </footer>
+
+    </body>
+    </html>

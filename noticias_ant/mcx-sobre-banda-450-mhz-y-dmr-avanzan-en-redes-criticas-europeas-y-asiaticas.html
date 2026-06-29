@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../IMG/footer.png">
+    <title>MCX sobre banda 450 MHz y DMR avanzan en redes críticas europeas y asiáticas - RED</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --brand-negro: #000000;
+            --brand-rojo: #cc1a1a;
+            --brand-rojo-oscuro: #8b0000;
+            --brand-gris: #999999;
+            --brand-dark: #000000;
+            --text-grey: #333333;
+            --light-grey: #f4f4f4;
+            --border-color: #e5e5e5;
+            --bg-color: #ffffff;
+            --serif-font: 'Playfair Display', Georgia, serif;
+            --sans-font: 'Roboto', Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--sans-font);
+            background-color: var(--bg-color);
+            color: var(--text-grey);
+            line-height: 1.5;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--brand-rojo);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* HEADER */
+        .header-main {
+            padding: 25px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .header-main::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to right, var(--brand-rojo) 0%, var(--brand-rojo-oscuro) 50%, var(--brand-gris) 100%);
+        }
+
+        /* LOGO SVG - Adaptado y ampliado */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 30px; margin-bottom: 50px;
+            
+            height: 45px;
+        }
+
+        .logo-img {
+            width: 120px;
+            height: auto;
+            object-fit: contain;
+            object-position: center center;
+            display: block;
+            
+        }
+
+        .logo-text {
+            font-size: 72px;
+            font-weight: 900;
+            letter-spacing: -2px;
+            line-height: 1;
+            font-family: var(--sans-font);
+        }
+
+        .logo-red {
+            color: var(--brand-rojo);
+        }
+
+        .logo-noticias {
+            color: var(--brand-negro);
+        }
+
+        .collaboration-line {
+            font-size: 12px;
+            color: #555;
+            text-align: center;
+            margin-top: 8px;
+            margin-bottom: 5px;
+            font-style: italic;
+        }
+
+        .date-line {
+            font-size: 13px;
+            color: #666;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid var(--border-color);
+            display: inline-block;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+
+        /* ARTÍCULO */
+        .article-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .full-article-header {
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+
+        .breadcrumbs {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: var(--brand-rojo);
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .full-headline {
+            font-family: var(--sans-font);
+            font-size: 46px;
+            line-height: 1.1;
+            color: var(--brand-dark);
+            margin-bottom: 20px;
+        }
+
+        .full-lead {
+            font-family: var(--sans-font);
+            font-size: 20px;
+            line-height: 1.5;
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        .full-meta {
+            font-size: 13px;
+            color: #666;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .full-image-container {
+            margin-bottom: 30px;
+        }
+
+        .full-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .full-image-caption {
+            font-size: 13px;
+            color: #777;
+            background: #f9f9f9;
+            padding: 8px 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .article-body {
+            font-family: var(--sans-font);
+            font-size: 19px;
+            line-height: 1.8;
+            color: #222;
+        }
+
+        .article-body p {
+            margin-bottom: 25px;
+        }
+        
+        .article-body h2 {
+            font-family: var(--sans-font);
+            font-size: 24px;
+            font-weight: 700;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: var(--brand-dark);
+        }
+
+        .article-body ul {
+            margin-left: 30px;
+            margin-bottom: 25px;
+        }
+
+        .article-body li {
+            margin-top: 30px; margin-bottom: 50px;
+        }
+
+        .article-quote {
+            border-left: 4px solid var(--brand-rojo);
+            padding-left: 25px;
+            font-style: italic;
+            font-size: 24px;
+            color: #444;
+            margin: 40px 0;
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            color: #666;
+            cursor: pointer;
+        }
+        .btn-back:hover {
+            color: var(--brand-rojo);
+            text-decoration: underline;
+        }
+
+        .sidebar-title {
+            font-size: 14px;
+            font-weight: 900;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--brand-dark);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+
+        .related-item {
+            margin-bottom: 20px;
+            border-bottom: 1px dotted #ccc;
+            padding-bottom: 15px;
+        }
+
+        .related-category {
+            font-size: 11px;
+            text-transform: uppercase;
+            color: var(--brand-rojo);
+            font-weight: bold;
+        }
+
+        .related-item h4 {
+            font-family: var(--sans-font);
+            font-size: 16px;
+            margin-top: 5px;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 20px 0;
+            margin-top: 50px;
+            text-align: center;
+            border-top: 1px solid var(--brand-rojo-oscuro);
+        }
+
+        .footer-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 40px;
+        }
+
+        .footer-left {
+            flex: 1 1 260px;
+            max-width: 360px;
+            text-align: left;
+        }
+
+        .footer-logo {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 10px 0;
+            margin-bottom: 10px;
+        }
+
+        .logo-img-footer {
+            width: auto;
+            height: 56px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .footer-description {
+            font-size: 14px;
+            color: #b0b0b0;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .footer-copy {
+            font-size: 12px;
+            color: #777777;
+        }
+
+        .footer-col {
+            flex: 1 1 220px;
+            text-align: left;
+        }
+
+        .footer-heading {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--brand-rojo);
+            margin-bottom: 10px;
+        }
+
+        .footer-item {
+            font-size: 13px;
+            color: #d0d0d0;
+            margin-bottom: 6px;
+        }
+
+        @media (max-width: 1024px) {
+            .article-layout {
+                grid-template-columns: 1fr;
+            }
+            .article-sidebar {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .full-headline {
+                font-size: 32px;
+            }
+            .article-sidebar {
+                display: block;
+                margin-top: 40px;
+            }
+
+            /* Logo más pequeño en móvil */
+            .logo-container {
+                height: 40px;
+            }
+
+            .logo-img {
+                width: 90px;
+                transform: scale(1.0);
+            }
+
+            .footer-logo {
+                padding: 8px 0;
+            }
+
+            .logo-img-footer {
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER LOGO -->
+    <header class="header-main">
+        <div class="container">
+            <a href="../index.html" class="logo-container">
+                <img src="../IMG/footer.png" alt="RED" class="logo-img">
+            </a>
+            <div class="collaboration-line">
+                En colaboración con <strong>Diario El Mundo</strong>
+            </div>
+            <div class="date-line">
+                miércoles, 11 de marzo de 2026
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENIDO ARTÍCULO -->
+    <main class="container">
+        <a href="../index.html" class="btn-back">&larr; VOLVER A PORTADA</a>
+        
+        <div class="article-layout">
+            <!-- CONTENIDO PRINCIPAL -->
+            <div class="article-content">
+                <header class="full-article-header">
+                    <span class="breadcrumbs">Radiocomunicación Digital</span>
+                    <h1 class="full-headline">MCX sobre banda 450 MHz y DMR avanzan en redes críticas europeas y asiáticas</h1>
+                    <p class="full-lead">Certificaciones en 450 MHz, despliegues de trunking digital en metro y expansión de antenas de misión crítica refuerzan la cobertura y resiliencia de redes críticas. La convergencia MCX–LMR y la interoperabilidad civil‑militar consolidan nuevos modelos de operación en transporte, energía y seguridad.</p>
+                    <div class="full-meta">
+                        <span>Por <strong>Redacción RED</strong> | San Salvador</span>
+                        <span>miércoles, 11 de marzo de 2026</span>
+                    </div>
+                </header>
+
+                <div class="full-image-container">
+                    <img src="https://res.cloudinary.com/dnleji9rj/image/upload/v1773244480/IMAGENES/rdo0id1e7m9yqqgoxzmb.png" alt="">
+                    <div class="full-image-caption">Ilustración IA</div>
+                </div>
+
+                <div class="article-body">
+                    <p><h2>Implementación Técnica / Arquitectura del Sistema</h2></p>
+<p><p>Diversos anuncios recientes en el ámbito de radiocomunicación digital muestran una aceleración en la convergencia entre banda ancha de misión crítica (MCX según 3GPP) y redes LMR legadas (DMR, P25, TETRA), especialmente sobre espectro dedicado en banda 450&nbsp;MHz y en entornos de transporte masivo.</p></p>
+<p><p>En el dominio de banda ancha privada, la certificación de nuevos terminales de misión crítica para operar en redes LTE/5G privadas sobre 450&nbsp;MHz confirma la madurez de esta banda para utilities, transporte y redes de seguridad. Estos dispositivos combinan soporte MCPTT, MCData y MCVideo con capacidad de operación en infraestructuras cloud distribuidas y núcleos de red virtualizados, integrándose con plataformas de gestión de flotas y sistemas de despacho por IP. La homologación en ecosistemas 450&nbsp;MHz implica compatibilidad con perfiles de seguridad reforzados, priorización de tráfico, QoS estricto y mecanismos de aislamiento lógico que facilitan su uso en infraestructuras críticas energéticas y de transporte.</p></p>
+<p><p>En paralelo, la evolución del ecosistema DMR Tier&nbsp;II/III se refleja en la aparición de terminales portátiles ultracompactos compatibles con arquitecturas de trunking digital de alta capacidad. Estos equipos se integran con sistemas de gestión centralizada (Capacity-like) que permiten balanceo de carga entre sitios, roaming transparente, encriptación avanzada y actualización de firmware y configuración mediante Wi‑Fi corporativo, reduciendo ventanas de mantenimiento y visitas de campo. La compatibilidad con redes IP de backhaul y con interfaces estandarizadas (p.&nbsp;ej., SIP o APIs REST para integración con sistemas de control de flotas) facilita su incorporación en entornos corporativos y de seguridad privada.</p></p>
+<p><p>En el segmento de infraestructura RF, la expansión de proveedores de antenas de misión crítica en el norte de Europa subraya el énfasis en sistemas radiantes optimizados para entornos exigentes. Se priorizan antenas de banda única y multibanda con diagramas de radiación controlados, alta ganancia y robustez mecánica para climas extremos, así como soluciones específicas para transporte, redes de seguridad pública y LTE privado. Este tipo de infraestructura es clave para homogeneizar niveles de señal en zonas rurales, túneles, áreas portuarias y polígonos industriales.</p></p>
+<p><p>En redes de transporte masivo, se documenta el despliegue de sistemas de comunicación crítica basados en trunking digital para una nueva línea de metro en Asia. La arquitectura integra estaciones base redundadas, controladores de conmutación IP, enlaces de backhaul protegidos y una red de terminales portátiles y móviles para conductores, personal de operaciones y seguridad. El sistema se coordina con subsistemas de señalización ferroviaria, control de trenes y videovigilancia, asegurando prioridad para llamadas de emergencia, grupos de conversación específicos por línea, tren o función, y grabación centralizada para análisis post‑incidente.</p></p>
+<p><p>A nivel de coordinación nacional, el caso de una red de comunicaciones de emergencia en el norte de Europa muestra la ampliación de su rol en la interoperabilidad civil‑militar durante ejercicios de respuesta a incidentes de gran escala. Esta red, basada en un estándar de misión crítica de banda estrecha, se integra con sistemas de mando y control mediante pasarelas IP y enlaces intersistema (ISSI o equivalentes) hacia redes P25/LMR y, progresivamente, hacia dominios MCX. El resultado es una arquitectura híbrida donde los servicios de emergencia, fuerzas armadas y entidades civiles comparten un marco común de comunicaciones con segmentación lógica, priorización por rol y capacidad de operación resiliente en condiciones climáticas adversas.</p></p>
+<p><h2>Impacto en Operaciones / Optimización de Procesos</h2></p>
+<p><p>Desde la perspectiva operativa, la certificación de terminales MCX en banda 450&nbsp;MHz aporta a los operadores de infraestructuras críticas un canal de banda ancha con latencias contenidas y cobertura profunda en interiores e interiores industriales. Esto habilita flujos de trabajo que combinan voz crítica, video en tiempo casi real y datos operativos (inspecciones, SCADA móvil, telemetría avanzada) en un único dispositivo robusto. La integración con redes IP industriales y plataformas de gestión de activos permite asignar recursos en campo según prioridad, geolocalizar equipos y automatizar avisos de mantenimiento preventivo.</p></p>
+<p><p>En redes metropolitanas de transporte, la adopción de sistemas de trunking digital dedicados permite mejorar la puntualidad y la seguridad operacional mediante comunicaciones de grupo estructuradas por tren, sección de vía o equipo de intervención. La capacidad de establecer llamadas de emergencia con preempción, así como la integración con sistemas de megafonía, señalización y videovigilancia, reduce tiempos de respuesta ante incidencias y facilita la reconfiguración dinámica de rutas. A nivel de mantenimiento, la telemetría de terminales, estaciones base y enlaces de backhaul proporciona indicadores de calidad de servicio (RSSI, BER, disponibilidad de portadoras) que permiten modelizar riesgos de interrupción y actuar antes de que se degraden los niveles de servicio.</p></p>
+<p><p>La llegada de antenas diseñadas específicamente para misión crítica incrementa la robustez de la capa física. Mejores márgenes de enlace, patrones de radiación optimizados y soluciones resistentes a hielo, viento y corrosión reducen incidencias en zonas expuestas y mejoran la continuidad de servicio en despliegues rurales y costeros. Para operadores de transporte y utilities, esto se traduce en menos brechas de cobertura en las rutas de mantenimiento, mejor recepción en túneles y valles, y mayor previsibilidad en escenarios de emergencia climática.</p></p>
+<p><p>La convergencia MCX–LMR, reflejada en los análisis de adopción y en el uso de interfaces estandarizadas como ISSI o equivalentes, está redefiniendo los modelos de operación. Las organizaciones pueden mantener la fiabilidad de sus redes LMR heredadas para comunicaciones de voz críticas de baja latencia, mientras que progresivamente introducen servicios de banda ancha para video, mapas de situación, mensajes enriquecidos y aplicaciones de mando y control. Este enfoque híbrido reduce el riesgo de migraciones bruscas, permitiendo una transición gradual con pruebas por zonas, interoperabilidad transfronteriza y continuidad de los planes de respuesta.</p></p>
+<p><p>Por último, el fortalecimiento de redes nacionales de emergencia como plataforma de coordinación civil‑militar mejora la preparación ante incidentes de alta complejidad, desde desastres climáticos hasta crisis de infraestructura. La utilización de una red crítica única, con interoperabilidad hacia sistemas propios de cada organismo, minimiza retrasos por incompatibilidad de equipos, reduce la congestión en redes públicas y asegura trazabilidad de comunicaciones. La combinación de estandarización, segmentación de tráfico y priorización basada en roles funcionales constituye un paso adicional hacia una gestión de emergencias más estructurada y resistente a fallos.</p></p>
+
+                </div>
+            </div>
+
+            <!-- SIDEBAR -->
+            <aside class="article-sidebar">
+                <div class="sidebar-title">Noticias Relacionadas</div>
+                <div class="related-item">
+                    <div class="related-category">Contexto</div>
+                    <h4><a href="../index.html">Volver a la portada</a></h4>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-left">
+                    <div class="footer-logo">
+                        <img src="../IMG/footer.png" alt="RED" class="logo-img-footer">
+                    </div>
+                    <p class="footer-description">
+                        Conectando negocios con inteligencia operativa. Más de 20 años liderando la comunicación crítica en Centroamérica.
+                    </p>
+                    <p class="footer-copy">
+                        © 2026 RED INTELFON.
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">EL SALVADOR</h4>
+                    <p class="footer-item">
+                        Urbanización Industrial Santa Elena, Calle Siemens #67 Antiguo Cuscatlán.
+                    </p>
+                    <p class="footer-item">
+                        Tel: +503 2515 0000
+                    </p>
+                    <p class="footer-item">
+                        Email: negocios@red.com.sv
+                    </p>
+                    <p class="footer-item">
+                        WhatsApp: +503 7984-0006
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">GUATEMALA</h4>
+                    <p class="footer-item">
+                        TEC III, Campus Tecnológico TEC III, nivel 7, Oficina 702, Vía 3 1-01, Ciudad de Guatemala.
+                    </p>
+                    <p class="footer-item">
+                        Tel: +502 2375 1414
+                    </p>
+                    <p class="footer-item">
+                        Email: negocios@red.com.gt
+                    </p>
+                    <p class="footer-item">
+                        WhatsApp: +502 3603-1010
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    </body>
+    </html>

@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../IMG/footer.png">
+    <title>IA y 5G privado aceleran la modernización de las comunicaciones de seguridad pública - RED</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --brand-negro: #000000;
+            --brand-rojo: #cc1a1a;
+            --brand-rojo-oscuro: #8b0000;
+            --brand-gris: #999999;
+            --brand-dark: #000000;
+            --text-grey: #333333;
+            --light-grey: #f4f4f4;
+            --border-color: #e5e5e5;
+            --bg-color: #ffffff;
+            --serif-font: 'Playfair Display', Georgia, serif;
+            --sans-font: 'Roboto', Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--sans-font);
+            background-color: var(--bg-color);
+            color: var(--text-grey);
+            line-height: 1.5;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--brand-rojo);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* HEADER */
+        .header-main {
+            padding: 25px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .header-main::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to right, var(--brand-rojo) 0%, var(--brand-rojo-oscuro) 50%, var(--brand-gris) 100%);
+        }
+
+        /* LOGO SVG - Adaptado y ampliado */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 30px; margin-bottom: 50px;
+            
+            height: 45px;
+        }
+
+        .logo-img {
+            width: 120px;
+            height: auto;
+            object-fit: contain;
+            object-position: center center;
+            display: block;
+            
+        }
+
+        .logo-text {
+            font-size: 72px;
+            font-weight: 900;
+            letter-spacing: -2px;
+            line-height: 1;
+            font-family: var(--sans-font);
+        }
+
+        .logo-red {
+            color: var(--brand-rojo);
+        }
+
+        .logo-noticias {
+            color: var(--brand-negro);
+        }
+
+        .collaboration-line {
+            font-size: 12px;
+            color: #555;
+            text-align: center;
+            margin-top: 8px;
+            margin-bottom: 5px;
+            font-style: italic;
+        }
+
+        .date-line {
+            font-size: 13px;
+            color: #666;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid var(--border-color);
+            display: inline-block;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+
+        /* ARTÍCULO */
+        .article-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .full-article-header {
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+
+        .breadcrumbs {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: var(--brand-rojo);
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .full-headline {
+            font-family: var(--sans-font);
+            font-size: 46px;
+            line-height: 1.1;
+            color: var(--brand-dark);
+            margin-bottom: 20px;
+        }
+
+        .full-lead {
+            font-family: var(--sans-font);
+            font-size: 20px;
+            line-height: 1.5;
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        .full-meta {
+            font-size: 13px;
+            color: #666;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .full-image-container {
+            margin-bottom: 30px;
+        }
+
+        .full-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .full-image-caption {
+            font-size: 13px;
+            color: #777;
+            background: #f9f9f9;
+            padding: 8px 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .article-body {
+            font-family: var(--sans-font);
+            font-size: 19px;
+            line-height: 1.8;
+            color: #222;
+        }
+
+        .article-body p {
+            margin-bottom: 25px;
+        }
+        
+        .article-body h2 {
+            font-family: var(--sans-font);
+            font-size: 24px;
+            font-weight: 700;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: var(--brand-dark);
+        }
+
+        .article-body ul {
+            margin-left: 30px;
+            margin-bottom: 25px;
+        }
+
+        .article-body li {
+            margin-top: 30px; margin-bottom: 50px;
+        }
+
+        .article-quote {
+            border-left: 4px solid var(--brand-rojo);
+            padding-left: 25px;
+            font-style: italic;
+            font-size: 24px;
+            color: #444;
+            margin: 40px 0;
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            color: #666;
+            cursor: pointer;
+        }
+        .btn-back:hover {
+            color: var(--brand-rojo);
+            text-decoration: underline;
+        }
+
+        .sidebar-title {
+            font-size: 14px;
+            font-weight: 900;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--brand-dark);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+
+        .related-item {
+            margin-bottom: 20px;
+            border-bottom: 1px dotted #ccc;
+            padding-bottom: 15px;
+        }
+
+        .related-category {
+            font-size: 11px;
+            text-transform: uppercase;
+            color: var(--brand-rojo);
+            font-weight: bold;
+        }
+
+        .related-item h4 {
+            font-family: var(--sans-font);
+            font-size: 16px;
+            margin-top: 5px;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 20px 0;
+            margin-top: 50px;
+            text-align: center;
+            border-top: 1px solid var(--brand-rojo-oscuro);
+        }
+
+        .footer-logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            height: 40px;
+            margin-bottom: 15px;
+        }
+
+        .logo-img-footer {
+            height: 40px;
+            object-fit: contain;
+            object-position: center center;
+            display: block;
+            
+        }
+
+        @media (max-width: 1024px) {
+            .article-layout {
+                grid-template-columns: 1fr;
+            }
+            .article-sidebar {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .full-headline {
+                font-size: 32px;
+            }
+            .article-sidebar {
+                display: block;
+                margin-top: 40px;
+            }
+
+            /* Logo más pequeño en móvil */
+            .logo-container {
+                height: 40px;
+            }
+
+            .logo-img {
+                width: 90px;
+                transform: scale(1.0);
+            }
+
+            .footer-logo {
+                height: 30px;
+            }
+
+            .logo-img-footer {
+                height: 30px;
+                transform: scale(1.0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER LOGO -->
+    <header class="header-main">
+        <div class="container">
+            <a href="../index.html" class="logo-container">
+                <img src="../IMG/footer.png" alt="RED" class="logo-img">
+            </a>
+            <div class="collaboration-line">
+                En colaboración con <strong>Diario El Mundo</strong>
+            </div>
+            <div class="date-line">
+                Lunes, 23 de Febrero de 2026
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENIDO ARTÍCULO -->
+    <main class="container">
+        <a href="../index.html" class="btn-back">&larr; VOLVER A PORTADA</a>
+        
+        <div class="article-layout">
+            <!-- CONTENIDO PRINCIPAL -->
+            <div class="article-content">
+                <header class="full-article-header">
+                    <span class="breadcrumbs">Seguridad Pública</span>
+                    <h1 class="full-headline">IA y 5G privado aceleran la modernización de las comunicaciones de seguridad pública</h1>
+                    <p class="full-lead">Nuevas plataformas de IA, redes críticas ampliadas y servidores PoC locales están redefiniendo cómo policías, bomberos y operadores de infraestructuras coordinan incidentes. El foco se desplaza hacia interoperabilidad, resiliencia cibernética y operaciones en tiempo real en puertos, escuelas y redes nacionales.</p>
+                    <div class="full-meta">
+                        <span>Por <strong>Redacción RED</strong> | San Salvador</span>
+                        <span>Lunes, 23 de Febrero de 2026</span>
+                    </div>
+                </header>
+
+                <div class="full-image-container">
+                    <img src="https://i.ibb.co/JVyq22J/0g8sg-P6n-YL9z-CQi-Kpj2-Yk.png" alt="IA y 5G privado aceleran la modernización de las comunicaciones de seguridad pública">
+                    <div class="full-image-caption">Ilustración IA</div>
+                </div>
+
+                <div class="article-body">
+                    <p><h2>Redes críticas se refuerzan con 5G privado y PoC on-premise</h2></p>
+<p>Los despliegues de comunicaciones de misión crítica están incorporando soluciones más densas y distribuidas. <strong>POCSTARS lanzó MiniServer 2.0</strong>, un servidor de Push-to-Talk over Cellular (PoC) on-premise orientado a sitios pequeños, pensado para habilitar comunicaciones inmediatas tipo radio en ubicaciones con recursos limitados o conectividad restringida, reduciendo la dependencia exclusiva de la nube para operaciones de emergencia locales.</p>
+<p>En Estados Unidos, <strong>Indiana amplía la red SAFE-T con Motorola Solutions</strong> para eliminar "zonas muertas" de cobertura en el condado de Vigo, lo que mejora la disponibilidad de comunicaciones para primeros respondedores en incidentes rurales y periurbanos. En paralelo, conferencias como <strong>PSCE 2026 en Milán</strong>, el calendario global 2026 de la <strong>TCCA</strong> y el 50º aniversario de <strong>IWCE 2026</strong> alinean estándares y casos de uso de 5G privado, LTE críticas e IoT para seguridad pública, con especial atención a interoperabilidad transfronteriza y despliegues en edificios.</p>
+<p><h2>IA aplicada a seguridad: transparencia, productividad y coordinación</h2></p>
+<p>En el plano funcional, la voz vuelve a ser interfaz central. La plataforma móvil comandada por voz de <strong>Theatro</strong>, integrada en el ecosistema de Motorola, permite flujos de trabajo manos libres basados en audio y asistencia algorítmica para personal de campo, desde seguridad privada hasta operaciones en grandes recintos.</p>
+<p>Motorola Solutions presentó nuevas ofertas de <strong>IA para agencias de seguridad pública</strong> que integran fuentes como llamadas al 911, vídeos corporales y de patrulla, y transcripciones de radio. El objetivo es reducir tareas manuales, acelerar análisis de evidencias y mejorar decisiones en centros de despacho. La compañía complementa esto con <strong>"AI Nutrition Labels"</strong>, fichas técnicas que detallan componentes, datos y limitaciones de cada modelo de IA en soluciones de vídeo y análisis, con el fin de facilitar auditorías y uso responsable sin frenar la innovación operativa.</p>
+<p><h2>Ciberresiliencia y continuidad operativa en infraestructuras críticas</h2></p>
+<p>La dimensión regulatoria acompaña este giro tecnológico. Un senador estadounidense impulsó una audiencia para cuestionar a <strong>AT&amp;T y Verizon</strong> sobre la seguridad de sus redes, en un contexto donde las telecomunicaciones comerciales soportan parte del tráfico de seguridad pública. La <strong>CISA</strong> busca aportes del sector para definir reglas de notificación de ciberincidentes en infraestructuras críticas, mientras una subcomisión de la Cámara de Representantes avanzó en la <strong>reauthorización de la FirstNet Authority</strong>, clave para la gobernanza a largo plazo de la red nacional de banda ancha para emergencias.</p>
+<p>En educación, un <strong>white paper de la SBC</strong> propone un nuevo modo de operación para dispositivos en entornos escolares, orientado a mejorar gestión de conectividad y respuesta coordinada en emergencias dentro de edificios. Más allá del sector público estricto, el <strong>Puerto de San Antonio</strong> en Chile detalló medidas para asegurar continuidad operativa 24/7 y seguridad de trabajadores y carga en la exportación de más de 16.500 contenedores de cerezas a China, ilustrando cómo la lógica de comunicaciones críticas y planificación de riesgos se extiende a hubs logísticos globales. Artículos técnicos sobre <strong>slotting y layout</strong> en centros de distribución completan la foto: el diseño físico y la gestión de flujos impactan tanto en productividad como en seguridad del personal.</p>
+<p><h2>Horizonte 2026: agenda global para una seguridad pública más integrada</h2></p>
+<p>Los eventos de la TCCA, PSCE, IWCE y ferias como MWC Barcelona e Intersec Dubai están configurando una agenda 2026 centrada en tres ejes: <strong>integración de IA explicable en centros de mando</strong>, despliegue de <strong>redes privadas 5G y LTE críticas</strong> en ciudades, campus y puertos, y fortalecimiento de marcos normativos de ciberseguridad y reporte de incidentes. La combinación de estos elementos apunta a una seguridad pública más conectada, con tiempos de respuesta reducidos y una gestión de riesgos más basada en datos que en improvisación.</p>
+
+                </div>
+            </div>
+
+            <!-- SIDEBAR -->
+            <aside class="article-sidebar">
+                <div class="sidebar-title">Noticias Relacionadas</div>
+                <div class="related-item">
+                    <div class="related-category">Contexto</div>
+                    <h4><a href="../index.html">Volver a la portada</a></h4>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">
+                <img src="../IMG/footer.png" alt="RED" class="logo-img-footer">
+            </div>
+        </div>
+    </footer>
+
+    </body>
+    </html>

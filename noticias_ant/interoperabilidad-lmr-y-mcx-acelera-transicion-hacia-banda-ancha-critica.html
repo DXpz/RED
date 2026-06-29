@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../IMG/footer.png">
+    <title>Interoperabilidad LMR y MCX acelera transición hacia banda ancha crítica - RED</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --brand-negro: #000000;
+            --brand-rojo: #cc1a1a;
+            --brand-rojo-oscuro: #8b0000;
+            --brand-gris: #999999;
+            --brand-dark: #000000;
+            --text-grey: #333333;
+            --light-grey: #f4f4f4;
+            --border-color: #e5e5e5;
+            --bg-color: #ffffff;
+            --serif-font: 'Playfair Display', Georgia, serif;
+            --sans-font: 'Roboto', Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--sans-font);
+            background-color: var(--bg-color);
+            color: var(--text-grey);
+            line-height: 1.5;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--brand-rojo);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* HEADER */
+        .header-main {
+            padding: 25px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .header-main::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to right, var(--brand-rojo) 0%, var(--brand-rojo-oscuro) 50%, var(--brand-gris) 100%);
+        }
+
+        /* LOGO SVG - Adaptado y ampliado */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 30px; margin-bottom: 50px;
+            
+            height: 45px;
+        }
+
+        .logo-img {
+            width: 120px;
+            height: auto;
+            object-fit: contain;
+            object-position: center center;
+            display: block;
+            
+        }
+
+        .logo-text {
+            font-size: 72px;
+            font-weight: 900;
+            letter-spacing: -2px;
+            line-height: 1;
+            font-family: var(--sans-font);
+        }
+
+        .logo-red {
+            color: var(--brand-rojo);
+        }
+
+        .logo-noticias {
+            color: var(--brand-negro);
+        }
+
+        .collaboration-line {
+            font-size: 12px;
+            color: #555;
+            text-align: center;
+            margin-top: 8px;
+            margin-bottom: 5px;
+            font-style: italic;
+        }
+
+        .date-line {
+            font-size: 13px;
+            color: #666;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid var(--border-color);
+            display: inline-block;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+
+        /* ARTÍCULO */
+        .article-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .full-article-header {
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+
+        .breadcrumbs {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: var(--brand-rojo);
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .full-headline {
+            font-family: var(--sans-font);
+            font-size: 46px;
+            line-height: 1.1;
+            color: var(--brand-dark);
+            margin-bottom: 20px;
+        }
+
+        .full-lead {
+            font-family: var(--sans-font);
+            font-size: 20px;
+            line-height: 1.5;
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        .full-meta {
+            font-size: 13px;
+            color: #666;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .full-image-container {
+            margin-bottom: 30px;
+        }
+
+        .full-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .full-image-caption {
+            font-size: 13px;
+            color: #777;
+            background: #f9f9f9;
+            padding: 8px 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .article-body {
+            font-family: var(--sans-font);
+            font-size: 19px;
+            line-height: 1.8;
+            color: #222;
+        }
+
+        .article-body p {
+            margin-bottom: 25px;
+        }
+        
+        .article-body h2 {
+            font-family: var(--sans-font);
+            font-size: 24px;
+            font-weight: 700;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: var(--brand-dark);
+        }
+
+        .article-body ul {
+            margin-left: 30px;
+            margin-bottom: 25px;
+        }
+
+        .article-body li {
+            margin-top: 30px; margin-bottom: 50px;
+        }
+
+        .article-quote {
+            border-left: 4px solid var(--brand-rojo);
+            padding-left: 25px;
+            font-style: italic;
+            font-size: 24px;
+            color: #444;
+            margin: 40px 0;
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            color: #666;
+            cursor: pointer;
+        }
+        .btn-back:hover {
+            color: var(--brand-rojo);
+            text-decoration: underline;
+        }
+
+        .sidebar-title {
+            font-size: 14px;
+            font-weight: 900;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--brand-dark);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+
+        .related-item {
+            margin-bottom: 20px;
+            border-bottom: 1px dotted #ccc;
+            padding-bottom: 15px;
+        }
+
+        .related-category {
+            font-size: 11px;
+            text-transform: uppercase;
+            color: var(--brand-rojo);
+            font-weight: bold;
+        }
+
+        .related-item h4 {
+            font-family: var(--sans-font);
+            font-size: 16px;
+            margin-top: 5px;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 20px 0;
+            margin-top: 50px;
+            text-align: center;
+            border-top: 1px solid var(--brand-rojo-oscuro);
+        }
+
+        .footer-logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            height: 40px;
+            margin-bottom: 15px;
+        }
+
+        .logo-img-footer {
+            width: auto;
+            height: 40px;
+            object-fit: contain;
+            display: block;
+            
+        }
+
+        @media (max-width: 1024px) {
+            .article-layout {
+                grid-template-columns: 1fr;
+            }
+            .article-sidebar {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .full-headline {
+                font-size: 32px;
+            }
+            .article-sidebar {
+                display: block;
+                margin-top: 40px;
+            }
+
+            /* Logo más pequeño en móvil */
+            .logo-container {
+                height: 40px;
+            }
+
+            .logo-img {
+                width: 90px;
+                transform: scale(1.0);
+            }
+
+            .footer-logo {
+                height: 30px;
+            }
+
+            .logo-img-footer {
+                height: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER LOGO -->
+    <header class="header-main">
+        <div class="container">
+            <a href="../index.html" class="logo-container">
+                <img src="../IMG/footer.png" alt="RED" class="logo-img">
+            </a>
+            <div class="collaboration-line">
+                En colaboración con <strong>Diario El Mundo</strong>
+            </div>
+            <div class="date-line">
+                miércoles, 04 de marzo de 2026
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENIDO ARTÍCULO -->
+    <main class="container">
+        <a href="../index.html" class="btn-back">&larr; VOLVER A PORTADA</a>
+        
+        <div class="article-layout">
+            <!-- CONTENIDO PRINCIPAL -->
+            <div class="article-content">
+                <header class="full-article-header">
+                    <span class="breadcrumbs">LMR</span>
+                    <h1 class="full-headline">Interoperabilidad LMR y MCX acelera transición hacia banda ancha crítica</h1>
+                    <p class="full-lead">La evolución desde LMR y TETRA hacia servicios MCX sobre 4G/5G redefine la arquitectura de comunicaciones de misión crítica. La interoperabilidad IP basada en estándares (ISSI, 3GPP, MCX) emerge como el eje para sostener resiliencia, continuidad y migraciones graduales.</p>
+                    <div class="full-meta">
+                        <span>Por <strong>Redacción RED</strong> | San Salvador</span>
+                        <span>miércoles, 04 de marzo de 2026</span>
+                    </div>
+                </header>
+
+                <div class="full-image-container">
+                    <img src="https://i.ibb.co/vCbyQL55/output1.png" alt="">
+                    <div class="full-image-caption">Ilustración IA</div>
+                </div>
+
+                <div class="article-body">
+                    <p><h2>Implementación Técnica / Arquitectura del Sistema</h2></p>
+<p><p>La transición de redes de misión crítica desde infraestructuras LMR y sistemas de radio troncalizada (incluyendo plataformas como TETRA y soluciones ferroviarias GSM-R) hacia servicios de banda ancha crítica basados en 4G/5G se está estructurando sobre una capa de interoperabilidad estandarizada. En el núcleo de esta evolución se sitúa el uso de interfaces IP como ISSI (Inter RF Subsystem Interface) y CSSI (Console Subsystem Interface), que permiten interconectar sistemas LMR convencionales con aplicaciones de misión crítica sobre banda ancha (MCX: MCPTT, MCVideo, MCData) definidas por las especificaciones 3GPP.</p></p>
+<p><p>Las soluciones de interoperabilidad LMR–banda ancha descritas en los análisis sectoriales se apoyan en gateways IP que traducen señalización y audio entre redes de radio profesional (analógica, P25, TETRA u otras variantes digitales) y clientes de pulsar-para-hablar sobre LTE/5G, manteniendo grupos de conversación compartidos, gestión de prioridades y mecanismos de pre-empciones. Esto permite que usuarios conectados mediante terminales LMR y dispositivos de banda ancha (smartphones rugerizados, tablets o terminales híbridos) participen en los mismos grupos de trabajo, preservando características críticas como llamadas de emergencia, llamadas de grupo forzadas y registro unificado de eventos.</p></p>
+<p><p>Desde el punto de vista de estándares, la finalización de Release 19 del 3GPP y el arranque formal de trabajos hacia arquitecturas 6G introducen capacidades ampliadas para servicios de misión crítica, incluyendo optimizaciones en calidad de servicio extremo a extremo, soporte a comunicaciones de baja latencia ultraconfiables (URLLC) y mejor integración con redes no terrestres (NTN) y sistemas de computación en el borde (MEC). Estas nuevas funciones permiten diseñar arquitecturas híbridas donde la capa LMR mantiene un rol de redundancia y robustez RF local, mientras que la banda ancha crítica se encarga de altas velocidades de datos, video en tiempo real y análisis avanzado en la periferia de la red.</p></p>
+<p><p>En paralelo, la inversión en centros de I+D especializados en software para redes de radio de misión crítica refuerza el foco en virtualización de componentes de red (controladores y gestores de recursos en forma de funciones de red virtualizadas), orquestación de servicios críticos en nubes distribuidas y herramientas de supervisión que combinan telemetría LMR con analítica en tiempo real basada en eventos IP. Estas plataformas buscan garantizar alta disponibilidad, con arquitecturas de doble o triple redundancia, conmutación automática entre sitios, sincronización georredundante de bases de datos de suscriptores y mecanismos de fallback hacia modos directos (comunicación terminal-a-terminal) en caso de pérdida de la infraestructura central.</p></p>
+<p><h2>Impacto en Operaciones / Optimización de Procesos</h2></p>
+<p><p>En operaciones de seguridad pública, industria pesada, energía, transporte y logística, la interoperabilidad entre LMR y banda ancha crítica modifica de forma directa los flujos de trabajo. La posibilidad de compartir grupos de conversación entre radios dedicadas y aplicaciones MCX en dispositivos de banda ancha reduce los tiempos de coordinación en incidentes y facilita la integración de equipos externos, contratistas o unidades de apoyo que operan fuera de la cobertura de la red LMR principal pero dentro del alcance de redes LTE/5G comerciales, privadas o de uso compartido.</p></p>
+<p><p>Para la gestión de grandes incidentes o eventos planificados, los enlaces de interoperabilidad permiten activar de forma dinámica grupos temporales entre redes dispares, agregando recursos de distintas jurisdicciones sin necesidad de modificar la configuración de cada sistema LMR. Las puertas de enlace ISSI y soluciones de interconexión por IP permiten escalar la capacidad de grupos de conversación, soportar roaming lógico entre dominios de red y mantener grabación unificada de audio y datos, elementos esenciales para trazabilidad, investigación posterior y cumplimiento regulatorio.</p></p>
+<p><p>La consolidación de estándares 3GPP y los avances hacia 6G impactan también en la logística 4.0, al facilitar el uso combinado de sensores IoT industriales, video de alta definición y telemetría de flotas junto a canales de voz de misión crítica. Operadores de infraestructuras lineales (ferroviarias, oleoductos, redes eléctricas) y hubs logísticos (puertos, aeropuertos, centros de distribución) pueden integrar alarmas automatizadas con comunicaciones de voz prioritarias, de forma que una anomalía detectada por sensores se traduzca en la activación inmediata de grupos de respuesta con instrucciones coordinadas.</p></p>
+<p><p>Por otro lado, la dependencia financiera y operativa de infraestructuras pasivas (torres de telecomunicaciones y emplazamientos compartidos) introduce nuevos vectores de riesgo. Los análisis económicos de incumplimientos de arrendamiento de torres muestran que la estabilidad de acuerdos de infraestructura puede afectar la disponibilidad de celdas 4G/5G utilizadas como soporte de servicios de misión crítica o como respaldo de conectividad para enlaces de backhaul LMR. Esto obliga a gestores de redes críticas a diversificar topologías (microceldas, repetidores de alta potencia, backhaul por microondas y enlaces satelitales) y a implementar estrategias de resiliencia que contemplen redundancia multinivel: distintos arrendadores de sitios, rutas alternativas de energía, enlaces de transporte diversificados y políticas de reubicación rápida de equipos RF.</p></p>
+<p><p>En conjunto, la tendencia observada apunta a una coexistencia prolongada entre LMR y banda ancha crítica, donde las redes de radio profesional continúan ofreciendo un canal de alta confiabilidad y simplicidad operativa para voz, mientras que los servicios MCX sobre 4G/5G, definidos por sucesivas releases del 3GPP, incorporan mayores capacidades de datos, video y analítica. El elemento central de esta transición es la interoperabilidad estandarizada, que permite migraciones progresivas por capas (usuarios, servicios, geografía) sin comprometer la continuidad de las operaciones críticas ni la seguridad del personal desplegado sobre el terreno.</p></p>
+
+                </div>
+            </div>
+
+            <!-- SIDEBAR -->
+            <aside class="article-sidebar">
+                <div class="sidebar-title">Noticias Relacionadas</div>
+                <div class="related-item">
+                    <div class="related-category">Contexto</div>
+                    <h4><a href="../index.html">Volver a la portada</a></h4>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">
+                <img src="../IMG/footer.png" alt="RED" class="logo-img-footer">
+            </div>
+        </div>
+    </footer>
+
+    </body>
+    </html>

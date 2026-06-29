@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../IMG/footer.png">
+    <title>P25 y MCPTT unifican voz y datos en redes críticas híbridas - RED</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --brand-negro: #000000;
+            --brand-rojo: #cc1a1a;
+            --brand-rojo-oscuro: #8b0000;
+            --brand-gris: #999999;
+            --brand-dark: #000000;
+            --text-grey: #333333;
+            --light-grey: #f4f4f4;
+            --border-color: #e5e5e5;
+            --bg-color: #ffffff;
+            --serif-font: 'Playfair Display', Georgia, serif;
+            --sans-font: 'Roboto', Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--sans-font);
+            background-color: var(--bg-color);
+            color: var(--text-grey);
+            line-height: 1.5;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--brand-rojo);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* HEADER */
+        .header-main {
+            padding: 25px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .header-main::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to right, var(--brand-rojo) 0%, var(--brand-rojo-oscuro) 50%, var(--brand-gris) 100%);
+        }
+
+        /* LOGO SVG - Adaptado y ampliado */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 30px; margin-bottom: 50px;
+            
+            height: 45px;
+        }
+
+        .logo-img {
+            width: 120px;
+            height: auto;
+            object-fit: contain;
+            object-position: center center;
+            display: block;
+            
+        }
+
+        .logo-text {
+            font-size: 72px;
+            font-weight: 900;
+            letter-spacing: -2px;
+            line-height: 1;
+            font-family: var(--sans-font);
+        }
+
+        .logo-red {
+            color: var(--brand-rojo);
+        }
+
+        .logo-noticias {
+            color: var(--brand-negro);
+        }
+
+        .collaboration-line {
+            font-size: 12px;
+            color: #555;
+            text-align: center;
+            margin-top: 8px;
+            margin-bottom: 5px;
+            font-style: italic;
+        }
+
+        .date-line {
+            font-size: 13px;
+            color: #666;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid var(--border-color);
+            display: inline-block;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+
+        /* ARTÍCULO */
+        .article-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .full-article-header {
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+
+        .breadcrumbs {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: var(--brand-rojo);
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .full-headline {
+            font-family: var(--sans-font);
+            font-size: 46px;
+            line-height: 1.1;
+            color: var(--brand-dark);
+            margin-bottom: 20px;
+        }
+
+        .full-lead {
+            font-family: var(--sans-font);
+            font-size: 20px;
+            line-height: 1.5;
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        .full-meta {
+            font-size: 13px;
+            color: #666;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .full-image-container {
+            margin-bottom: 30px;
+        }
+
+        .full-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .full-image-caption {
+            font-size: 13px;
+            color: #777;
+            background: #f9f9f9;
+            padding: 8px 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .article-body {
+            font-family: var(--sans-font);
+            font-size: 19px;
+            line-height: 1.8;
+            color: #222;
+        }
+
+        .article-body p {
+            margin-bottom: 25px;
+        }
+        
+        .article-body h2 {
+            font-family: var(--sans-font);
+            font-size: 24px;
+            font-weight: 700;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: var(--brand-dark);
+        }
+
+        .article-body ul {
+            margin-left: 30px;
+            margin-bottom: 25px;
+        }
+
+        .article-body li {
+            margin-top: 30px; margin-bottom: 50px;
+        }
+
+        .article-quote {
+            border-left: 4px solid var(--brand-rojo);
+            padding-left: 25px;
+            font-style: italic;
+            font-size: 24px;
+            color: #444;
+            margin: 40px 0;
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            color: #666;
+            cursor: pointer;
+        }
+        .btn-back:hover {
+            color: var(--brand-rojo);
+            text-decoration: underline;
+        }
+
+        .sidebar-title {
+            font-size: 14px;
+            font-weight: 900;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--brand-dark);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+
+        .related-item {
+            margin-bottom: 20px;
+            border-bottom: 1px dotted #ccc;
+            padding-bottom: 15px;
+        }
+
+        .related-category {
+            font-size: 11px;
+            text-transform: uppercase;
+            color: var(--brand-rojo);
+            font-weight: bold;
+        }
+
+        .related-item h4 {
+            font-family: var(--sans-font);
+            font-size: 16px;
+            margin-top: 5px;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 20px 0;
+            margin-top: 50px;
+            text-align: center;
+            border-top: 1px solid var(--brand-rojo-oscuro);
+        }
+
+        .footer-logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            height: 40px;
+            margin-bottom: 15px;
+        }
+
+        .logo-img-footer {
+            width: auto;
+            height: 40px;
+            object-fit: contain;
+            display: block;
+            
+        }
+
+        @media (max-width: 1024px) {
+            .article-layout {
+                grid-template-columns: 1fr;
+            }
+            .article-sidebar {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .full-headline {
+                font-size: 32px;
+            }
+            .article-sidebar {
+                display: block;
+                margin-top: 40px;
+            }
+
+            /* Logo más pequeño en móvil */
+            .logo-container {
+                height: 40px;
+            }
+
+            .logo-img {
+                width: 90px;
+                transform: scale(1.0);
+            }
+
+            .footer-logo {
+                height: 30px;
+            }
+
+            .logo-img-footer {
+                height: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER LOGO -->
+    <header class="header-main">
+        <div class="container">
+            <a href="../index.html" class="logo-container">
+                <img src="../IMG/footer.png" alt="RED" class="logo-img">
+            </a>
+            <div class="collaboration-line">
+                En colaboración con <strong>Diario El Mundo</strong>
+            </div>
+            <div class="date-line">
+                miércoles, 04 de marzo de 2026
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENIDO ARTÍCULO -->
+    <main class="container">
+        <a href="../index.html" class="btn-back">&larr; VOLVER A PORTADA</a>
+        
+        <div class="article-layout">
+            <!-- CONTENIDO PRINCIPAL -->
+            <div class="article-content">
+                <header class="full-article-header">
+                    <span class="breadcrumbs">LMR</span>
+                    <h1 class="full-headline">P25 y MCPTT unifican voz y datos en redes críticas híbridas</h1>
+                    <p class="full-lead">Integraciones basadas en P25 ISSI, MCPTT y plataformas NG9-1-1 están consolidando arquitecturas híbridas LMR–banda ancha para seguridad pública y transporte masivo. La interoperabilidad on-demand reduce silos entre agencias y mejora continuidad operativa en entornos urbanos de alta criticidad.</p>
+                    <div class="full-meta">
+                        <span>Por <strong>Redacción RED</strong> | San Salvador</span>
+                        <span>miércoles, 04 de marzo de 2026</span>
+                    </div>
+                </header>
+
+                <div class="full-image-container">
+                    <img src="https://i.ibb.co/6R75c4V1/output1.png" alt="">
+                    <div class="full-image-caption">Ilustración IA</div>
+                </div>
+
+                <div class="article-body">
+                    <p><h2>Implementación Técnica / Arquitectura del Sistema</h2></p>
+<p><p>Los últimos despliegues en comunicaciones críticas muestran una convergencia acelerada entre redes de radio móvil terrestre (LMR) basadas en estándar P25, servicios de misión crítica sobre banda ancha (MCPTT/MCX) y plataformas de emergencia de nueva generación (NG9-1-1). En grandes áreas metropolitanas, se están habilitando pasarelas de interoperabilidad mediante interfaces de subsistema de interoperabilidad P25 (ISSI) y gestión de claves remota (OTAR), para vincular celdas de trunking P25 con aplicaciones de pulsar-para-hablar sobre redes IP y LTE/5G públicas o privadas.</p></p>
+<p><p>En estos esquemas, el núcleo de conmutación P25 se integra con servidores MCPTT que gestionan grupos de conversación mixtos LMR/banda ancha, presencia, mensajería y, en algunos casos, video en tiempo casi real. La señalización ISSI se encarga de transportar contexto de llamadas, identificadores de grupo y prioridades, mientras que los flujos de voz se encapsulan sobre IP, preservando las características de llamada de misión crítica (pre-empción, prioridad, llamadas de emergencia). Para la seguridad de extremo a extremo, la distribución de claves de cifrado se mantiene mediante OTAR y repositorios centralizados, garantizando que terminales LMR y clientes MCPTT mantengan alineados sus parámetros criptográficos.</p></p>
+<p><p>En paralelo, entornos ferroviarios urbanos están adoptando infraestructuras de radiocomunicación digital trunking y tecnologías de radio definida por software (SDR) para líneas de metro, combinando cobertura en túneles, estaciones y depósitos con centros de control integrados. Estos sistemas soportan comunicaciones de operación, seguridad del personal, coordinación de mantenimiento y, cuando procede, integración con sistemas de gestión de tráfico ferroviario y video vigilancia. El backhaul suele basarse en enlaces ópticos redundantes y, en algunos tramos, microondas protegidas, priorizando baja latencia y alta disponibilidad.</p></p>
+<p><p>En el plano de los terminales de usuario, equipos móviles robustos con protección contra polvo, agua y golpes están siendo certificados para ejecutar clientes MCX, integrando PTT de baja latencia, videollamadas, transmisión de video en vivo y mensajería segura sobre redes celulares. Estos dispositivos funcionan como nodos de borde que unifican la funcionalidad de radios de misión crítica, terminales de datos y cámaras de campo, optimizando el número de equipos que debe portar cada operario. Su integración con plataformas de despacho y sistemas CAD/AVL se realiza mediante APIs estándar y protocolos IP seguros.</p></p>
+<p><p>Finalmente, la modernización de centros de atención de emergencias hacia arquitecturas NG9-1-1 introduce una capa adicional de integración. Los centros de despacho migran de infraestructuras TDM a plataformas IP con routers de sesión (ESInet), permitiendo recibir llamadas de voz, mensajes de texto, datos telemáticos y, progresivamente, video ciudadano. Estas plataformas se vinculan con redes LMR/MCPTT y sistemas de despacho asistido por computadora para enrutar de forma más eficiente los incidentes, manteniendo visibilidad unificada de unidades en campo independientemente del medio de comunicación utilizado.</p></p>
+<p><h2>Impacto en Operaciones / Optimización de Procesos</h2></p>
+<p><p>La convergencia entre P25, MCPTT y NG9-1-1 está reduciendo las fronteras entre agencias y dominios tecnológicos, permitiendo interoperabilidad on-demand sin necesidad de despliegues físicos ad hoc. La interconexión basada en ISSI y pasarelas IP centralizadas hace posible sumar o retirar agencias, grupos de conversación y recursos de red con menor fricción operativa, adaptando capacidad ante incidentes de gran escala, eventos planificados o desplazamiento temporal de personal entre jurisdicciones.</p></p>
+<p><p>En operaciones de seguridad pública, la combinación de LMR para cobertura garantizada y banda ancha para servicios enriquecidos incrementa la resiliencia. Cuando la red celular experimenta congestión o degradación, la red LMR mantiene el canal de voz de misión crítica; en condiciones normales, el ecosistema MCPTT añade video, datos de localización, telemetría de vehículos y mensajería estructurada, mejorando la conciencia situacional sin obligar a abandonar la infraestructura legada. Esta arquitectura híbrida también facilita estrategias de migración gradual hacia futuros núcleos totalmente IP de misión crítica.</p></p>
+<p><p>Para entornos de transporte masivo, los sistemas digitales trunking y SDR en líneas de metro habilitan una gestión más granular de grupos de trabajo (conducción, control de estaciones, seguridad, mantenimiento e intervenciones de emergencia). La segmentación lógica por líneas, tramos y funciones reduce la saturación de canales y permite aplicar prioridades diferenciadas. Al integrarse con sistemas de supervisión centralizada, estos despliegues mejoran la capacidad de reacción ante incidencias en vía, evacuaciones o fallos de infraestructura, manteniendo comunicaciones fiables incluso en túneles y zonas de difícil cobertura para redes comerciales.</p></p>
+<p><p>La adopción de terminales móviles robustos con MCX integrado impacta directamente en la logística de campo: menos dispositivos por persona, menor carga de mantenimiento y una cadena de suministro simplificada para baterías, cargadores y accesorios. Además, al operar sobre redes celulares existentes, estas soluciones escalan más fácilmente en escenarios con un gran número de intervinientes temporales (por ejemplo, refuerzos durante emergencias mayores), sin necesidad de dimensionar desde el inicio la red LMR para el pico máximo de demanda.</p></p>
+<p><p>La transición hacia NG9-1-1 refuerza el flujo extremo a extremo desde el ciudadano hasta las unidades de respuesta. El acceso a datos adicionales en el centro de atención —como ubicación más precisa, contenido multimedia o información contextual enviada por terceros sistemas— permite una clasificación de incidentes más fina, reduciendo desplazamientos innecesarios y optimizando la asignación de recursos. Al vincular la plataforma NG9-1-1 con redes LMR y MCPTT, los operadores de despacho pueden seleccionar el medio de comunicación más adecuado para cada unidad, combinar grupos de trabajo heterogéneos y mantener trazabilidad de toda la sesión de incidente, lo que se traduce en ciclos de respuesta más cortos y mayor calidad de servicio.</p></p>
+<p><p>En conjunto, estas evoluciones configuran un ecosistema de comunicaciones críticas más modular, escalable y resiliente, en el que la interoperabilidad no se basa en soluciones puntuales, sino en arquitecturas de red y protocolos estándar diseñados para sostener operaciones complejas, distribuídas y multijurisdiccionales.</p></p>
+
+                </div>
+            </div>
+
+            <!-- SIDEBAR -->
+            <aside class="article-sidebar">
+                <div class="sidebar-title">Noticias Relacionadas</div>
+                <div class="related-item">
+                    <div class="related-category">Contexto</div>
+                    <h4><a href="../index.html">Volver a la portada</a></h4>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">
+                <img src="../IMG/footer.png" alt="RED" class="logo-img-footer">
+            </div>
+        </div>
+    </footer>
+
+    </body>
+    </html>

@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../IMG/footer.png">
+    <title>Plataformas telemáticas e IA vocal integran logística 4.0 en campo - RED</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --brand-negro: #000000;
+            --brand-rojo: #cc1a1a;
+            --brand-rojo-oscuro: #8b0000;
+            --brand-gris: #999999;
+            --brand-dark: #000000;
+            --text-grey: #333333;
+            --light-grey: #f4f4f4;
+            --border-color: #e5e5e5;
+            --bg-color: #ffffff;
+            --serif-font: 'Playfair Display', Georgia, serif;
+            --sans-font: 'Roboto', Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--sans-font);
+            background-color: var(--bg-color);
+            color: var(--text-grey);
+            line-height: 1.5;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--brand-rojo);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* HEADER */
+        .header-main {
+            padding: 25px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .header-main::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to right, var(--brand-rojo) 0%, var(--brand-rojo-oscuro) 50%, var(--brand-gris) 100%);
+        }
+
+        /* LOGO SVG - Adaptado y ampliado */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 30px; margin-bottom: 50px;
+            
+            height: 45px;
+        }
+
+        .logo-img {
+            width: 120px;
+            height: auto;
+            object-fit: contain;
+            object-position: center center;
+            display: block;
+            
+        }
+
+        .logo-text {
+            font-size: 72px;
+            font-weight: 900;
+            letter-spacing: -2px;
+            line-height: 1;
+            font-family: var(--sans-font);
+        }
+
+        .logo-red {
+            color: var(--brand-rojo);
+        }
+
+        .logo-noticias {
+            color: var(--brand-negro);
+        }
+
+        .collaboration-line {
+            font-size: 12px;
+            color: #555;
+            text-align: center;
+            margin-top: 8px;
+            margin-bottom: 5px;
+            font-style: italic;
+        }
+
+        .date-line {
+            font-size: 13px;
+            color: #666;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid var(--border-color);
+            display: inline-block;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+
+        /* ARTÍCULO */
+        .article-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .full-article-header {
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+
+        .breadcrumbs {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: var(--brand-rojo);
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .full-headline {
+            font-family: var(--sans-font);
+            font-size: 46px;
+            line-height: 1.1;
+            color: var(--brand-dark);
+            margin-bottom: 20px;
+        }
+
+        .full-lead {
+            font-family: var(--sans-font);
+            font-size: 20px;
+            line-height: 1.5;
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        .full-meta {
+            font-size: 13px;
+            color: #666;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .full-image-container {
+            margin-bottom: 30px;
+        }
+
+        .full-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .full-image-caption {
+            font-size: 13px;
+            color: #777;
+            background: #f9f9f9;
+            padding: 8px 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .article-body {
+            font-family: var(--sans-font);
+            font-size: 19px;
+            line-height: 1.8;
+            color: #222;
+        }
+
+        .article-body p {
+            margin-bottom: 25px;
+        }
+        
+        .article-body h2 {
+            font-family: var(--sans-font);
+            font-size: 24px;
+            font-weight: 700;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: var(--brand-dark);
+        }
+
+        .article-body ul {
+            margin-left: 30px;
+            margin-bottom: 25px;
+        }
+
+        .article-body li {
+            margin-top: 30px; margin-bottom: 50px;
+        }
+
+        .article-quote {
+            border-left: 4px solid var(--brand-rojo);
+            padding-left: 25px;
+            font-style: italic;
+            font-size: 24px;
+            color: #444;
+            margin: 40px 0;
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            color: #666;
+            cursor: pointer;
+        }
+        .btn-back:hover {
+            color: var(--brand-rojo);
+            text-decoration: underline;
+        }
+
+        .sidebar-title {
+            font-size: 14px;
+            font-weight: 900;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--brand-dark);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+
+        .related-item {
+            margin-bottom: 20px;
+            border-bottom: 1px dotted #ccc;
+            padding-bottom: 15px;
+        }
+
+        .related-category {
+            font-size: 11px;
+            text-transform: uppercase;
+            color: var(--brand-rojo);
+            font-weight: bold;
+        }
+
+        .related-item h4 {
+            font-family: var(--sans-font);
+            font-size: 16px;
+            margin-top: 5px;
+        }
+
+        .newsletter-cta {
+            display: inline-block;
+            margin-top: 16px;
+            font-weight: 900;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+            font-size: 12px;
+            color: var(--brand-rojo);
+            text-decoration: none;
+            border-bottom: 2px solid rgba(204, 26, 26, 0.35);
+            padding-bottom: 2px;
+            transition: all 0.2s ease;
+        }
+
+        .newsletter-cta:hover {
+            border-bottom-color: var(--brand-rojo);
+            filter: brightness(0.95);
+        }
+
+        .newsletter-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.55);
+            -webkit-backdrop-filter: blur(4px);
+            backdrop-filter: blur(4px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            z-index: 9999;
+        }
+
+        body.newsletter-open .newsletter-overlay {
+            display: flex;
+            animation: newsletterFadeIn 220ms ease-out;
+        }
+
+        .newsletter-modal {
+            width: 100%;
+            max-width: 520px;
+            background: #fff;
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 18px 55px rgba(0, 0, 0, 0.25);
+            transform: translateY(-8px);
+            opacity: 0;
+            position: relative;
+        }
+
+        .newsletter-icon {
+            width: 90px;
+            height: 90px;
+            border-radius: 999px;
+            background: #f3f3f3;
+            display: grid;
+            place-items: center;
+            margin: 18px auto 0 auto;
+        }
+
+        .newsletter-icon svg {
+            width: 34px;
+            height: 34px;
+            color: #111;
+        }
+
+        body.newsletter-open .newsletter-modal {
+            animation: newsletterSlideDown 260ms cubic-bezier(0.2, 0.9, 0.2, 1) forwards;
+        }
+
+        @keyframes newsletterFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes newsletterSlideDown {
+            from { transform: translateY(-14px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .newsletter-modal-header {
+            padding: 14px 18px 10px 18px;
+            border-bottom: 0;
+            text-align: center;
+            color: var(--text-grey);
+        }
+
+        .newsletter-modal-title {
+            font-family: var(--sans-font);
+            font-size: 26px;
+            font-weight: 900;
+            letter-spacing: -0.6px;
+            color: var(--brand-dark);
+        }
+
+        .newsletter-modal-subtitle {
+            margin-top: 4px;
+            font-size: 15px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .newsletter-close {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 34px;
+            height: 34px;
+            border: none;
+            background: transparent;
+            font-weight: 900;
+            color: #222;
+            cursor: pointer;
+        }
+
+        .newsletter-close:hover {
+            color: var(--brand-rojo);
+        }
+
+        .newsletter-modal-body {
+            padding: 6px 18px 18px 18px;
+            color: var(--text-grey);
+        }
+
+        .newsletter-field {
+            display: grid;
+            gap: 10px;
+            margin-top: 8px;
+            margin-bottom: 14px;
+        }
+
+        .newsletter-input {
+            width: 100%;
+            border: 2px solid #d8d8d8;
+            border-radius: 12px;
+            padding: 13px 14px;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .newsletter-input:focus {
+            border-color: var(--brand-rojo);
+            box-shadow: 0 0 0 4px rgba(204, 26, 26, 0.12);
+        }
+
+        .newsletter-submit {
+            width: 100%;
+            border: none;
+            border-radius: 12px;
+            padding: 13px 14px;
+            background: var(--brand-rojo);
+            color: #fff;
+            font-weight: 900;
+            letter-spacing: 0.2px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .newsletter-submit:hover {
+            filter: brightness(0.95);
+        }
+
+        .newsletter-submit:disabled {
+            opacity: 0.75;
+            cursor: not-allowed;
+        }
+
+        .newsletter-spinner {
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(255,255,255,0.4);
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: spin 0.7s linear infinite;
+            display: none;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .newsletter-note {
+            margin-top: 10px;
+            font-size: 12px;
+            color: #666;
+            line-height: 1.45;
+            text-align: center;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 20px 0;
+            margin-top: 50px;
+            text-align: center;
+            border-top: 1px solid var(--brand-rojo-oscuro);
+        }
+
+        .footer-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 40px;
+        }
+
+        .footer-left {
+            flex: 1 1 260px;
+            max-width: 360px;
+            text-align: left;
+        }
+
+        .footer-logo {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 10px 0;
+            margin-bottom: 10px;
+        }
+
+        .logo-img-footer {
+            width: auto;
+            height: 56px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .footer-description {
+            font-size: 14px;
+            color: #b0b0b0;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .footer-copy {
+            font-size: 12px;
+            color: #777777;
+        }
+
+        .footer-col {
+            flex: 1 1 220px;
+            text-align: left;
+        }
+
+        .footer-heading {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--brand-rojo);
+            margin-bottom: 10px;
+        }
+
+        .footer-item {
+            font-size: 13px;
+            color: #d0d0d0;
+            margin-bottom: 6px;
+        }
+
+        @media (max-width: 1024px) {
+            .article-layout {
+                grid-template-columns: 1fr;
+            }
+            .article-sidebar {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .full-headline {
+                font-size: 32px;
+            }
+            .article-sidebar {
+                display: block;
+                margin-top: 40px;
+            }
+
+            /* Logo más pequeño en móvil */
+            .logo-container {
+                height: 40px;
+            }
+
+            .logo-img {
+                width: 90px;
+                transform: scale(1.0);
+            }
+
+            .footer-logo {
+                padding: 8px 0;
+            }
+
+            .logo-img-footer {
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER LOGO -->
+    <header class="header-main">
+        <div class="container">
+            <a href="../index.html" class="logo-container">
+                <img src="../IMG/footer.png" alt="RED" class="logo-img">
+            </a>
+            <div class="collaboration-line">
+                En colaboración con <strong>Diario El Mundo</strong>
+            </div>
+            <div class="date-line">
+                Martes, 07 de abril de 2026
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENIDO ARTÍCULO -->
+    <main class="container">
+        <a href="../index.html" class="btn-back">&larr; VOLVER A PORTADA</a>
+        
+        <div class="article-layout">
+            <!-- CONTENIDO PRINCIPAL -->
+            <div class="article-content">
+                <header class="full-article-header">
+                    <span class="breadcrumbs">Logística 4.0</span>
+                    <h1 class="full-headline">Plataformas telemáticas e IA vocal integran logística 4.0 en campo</h1>
+                    <p class="full-lead">Ecosistema de gestión de flotas, comunicaciones DMR/LTE y asistentes de voz sobre IA converge para aumentar trazabilidad, continuidad operativa y seguridad en logística 4.0. La ciberseguridad y la cobertura crítica multiportadora, incluyendo satélite directo a dispositivo, se consolidan como capas estructurales.</p>
+                    <div class="full-meta">
+                        <span>Por <strong>Redacción RED</strong> | San Salvador</span>
+                        <span>Martes, 07 de abril de 2026</span>
+                    </div>
+                </header>
+
+                <div class="full-image-container">
+                    <img src="https://res.cloudinary.com/dnleji9rj/image/upload/v1775578269/IMAGENES/u8xekmhibvjmzhp7n7e9.png" alt="">
+                    <div class="full-image-caption">Ilustración IA</div>
+                </div>
+
+                <div class="article-body">
+                    <p><h2>Implementación Técnica / Arquitectura del Sistema</h2></p>
+<p><p>Los desarrollos recientes en gestión de flotas, comunicaciones críticas y analítica de IA configuran una arquitectura logística basada en cuatro pilares: telemática avanzada de vehículos, redes de misión crítica (LMR y banda ancha), interfaces de voz inteligentes para el personal de primera línea y una capa transversal de ciberseguridad y cumplimiento.</p></p>
+<p><p>En la capa telemática, las nuevas aplicaciones de gestión de flotas evolucionan desde simples localizadores GPS a verdaderas plataformas de telemetría vehicular multiprotocolo. Integran GNSS multiconstelación, comunicación celular (incluyendo LTE privado donde está disponible) y, en algunos casos, conectividad satelital como respaldo para rutas en áreas remotas. Estos sistemas ofrecen tracking en tiempo casi real, generación de informes parametrizables, análisis de patrones de conducción y gestión de mantenimiento predictivo mediante la lectura de buses de datos vehiculares (por ejemplo, CAN bus) y sensores IoT embarcados.</p></p>
+<p><p>En paralelo, la consolidación de radios portátiles profesionales basadas en DMR Tier II/III, con soporte a arquitecturas de alta capacidad tipo trunking IP y soluciones de tipo Capacity Max, incrementa la cobertura y reduce la latencia para voz y datos de baja tasa en entornos industriales. Estas terminales ultracompactas permiten la integración con sistemas de despacho, pasarelas SIP/RTP, y aplicaciones de mensajería de texto y telemetría básica, complementando o respaldando la infraestructura de banda ancha.</p></p>
+<p><p>En la capa de interacción humano-sistema, aparecen plataformas móviles impulsadas por IA centradas en el uso de la voz como interfaz primaria. Estos sistemas permiten ejecutar flujos de trabajo de frontline (recepción de tareas, actualizaciones de estado, checklists operativos, consultas a sistemas de gestión de almacenes y órdenes de transporte) mediante comandos de voz, integrándose con radios LMR, dispositivos móviles de banda ancha y consolas de control. La plataforma actúa como un orquestador sobre middleware de eventos (MQTT/AMQP/REST), conectando sistemas de gestión de transporte (TMS), gestión de almacenes (WMS) y planificación de recursos (ERP).</p></p>
+<p><p>En infraestructura de red, las inversiones en redes de servicios de emergencia basadas en banda ancha móvil de misión crítica y en programas nacionales de red única para seguridad pública consolidan un backbone compartido que puede soportar operaciones logísticas críticas, especialmente en puertos, corredores estratégicos y terminales intermodales. Estos despliegues suelen combinar núcleos de red EPC/5GC dedicados, políticas de priorización y preempción, redes de acceso radio compartidas con funciones de misión crítica (MCPTT/MCData/McVideo) y continuidad de servicio mediante acuerdos de itinerancia entre operadores.</p></p>
+<p><p>Complementariamente, la convergencia entre operadores móviles y constelaciones satelitales para servicios de banda ancha directo al dispositivo habilita un plano de cobertura redundante para flotas y activos en zonas sin infraestructura terrestre. La integración técnica se basa en terminales capaces de operar tanto en redes celulares convencionales como en enlaces satelitales en bandas L o S, con conmutación de portador administrada por la capa de aplicación o por el módem multimodo, manteniendo un canal de datos suficiente para telemetría, mensajería operacional y, en algunos casos, voz IP con codecs de baja tasa.</p></p>
+<p><p>Finalmente, en la capa de ciberseguridad, la adhesión de actores de comunicaciones críticas a alianzas de compartición de inteligencia de amenazas apunta a fortalecer la protección de redes privadas de misión crítica y sistemas de gestión operacional. Se prioriza el intercambio estructurado de indicadores de compromiso (IOC), técnicas de ataque a infraestructuras OT/IoT y vulnerabilidades en terminales de radio, consolas de despacho y plataformas cloud de analítica, apoyando estrategias Zero Trust, segmentación de redes (incluyendo microsegmentación en SDN) y autenticación fuerte entre dispositivos de campo y aplicaciones centrales.</p></p>
+<p><h2>Impacto en Operaciones / Optimización de Procesos</h2></p>
+<p><p>En la operación diaria, las plataformas de gestión de flotas con desarrollo propio permiten una adaptación más ágil a procesos específicos: reglas de negocio configurables para ventanas horarias de carga, geocercas dinámicas alrededor de hubs logísticos, alarmas de desvío de ruta y cumplimiento de SLA de entregas. El acceso directo al roadmap técnico facilita incorporar módulos para cálculo de rutas con restricciones (peso, dimensiones, restricciones urbanas) y combinar datos históricos con modelos de predicción de tiempos de llegada (ETA) basados en machine learning.</p></p>
+<p><p>La creación de unidades especializadas en operaciones de primera milla refleja una convergencia entre logística urbana y planificación de red de transporte. Desde el punto de vista técnico, esto se traduce en esquemas más densos de puntos de consolidación, sistemas de asignación dinámica de vehículos y algoritmos de ruteo que combinan datos de tráfico en tiempo real, capacidades de carga heterogéneas y ventanas de disponibilidad de clientes, reduciendo kilómetros recorridos en vacío y aumentando la ocupación efectiva de vehículos.</p></p>
+<p><p>Las radios profesionales DMR y las soluciones de voz sobre redes de misión crítica reducen los tiempos de coordinación en patios, centros de distribución y terminales intermodales. La interoperabilidad entre LMR y LTE privado a través de pasarelas de servicios de misión crítica permite que supervisores, personal de seguridad, operadores de grúas y conductores compartan un mismo esquema de grupos de conversación, con prioridad predefinida y grabación centralizada para análisis post-operación y cumplimiento normativo.</p></p>
+<p><p>Las plataformas de trabajo impulsadas por voz y IA impactan directamente en seguridad y productividad: liberan las manos de los operarios en almacenes de alta rotación, reducen el tiempo dedicado a interfaces manuales y minimizan errores de captura. En operaciones de comercio minorista, centros de fulfilment y hubs de cross-docking, estos asistentes permiten secuenciar tareas, validar ubicaciones y ejecutar inventarios cíclicos sin interrumpir el flujo físico de mercaderías.</p></p>
+<p><p>En continuidad operativa, los programas nacionales de redes de seguridad pública y las inversiones plurianuales asociadas introducen un nivel adicional de resiliencia para operaciones logísticas que dependen de comunicaciones ininterrumpidas. En escenarios de desastres o congestión extrema de redes comerciales, los servicios con prioridad y acceso preasignado permiten mantener activos críticos conectados, preservar la coordinación entre centros de control y flotas, y asegurar la trazabilidad de cargas sensibles.</p></p>
+<p><p>La evolución de los servicios satelitales directo al dispositivo amplía el alcance de la logística 4.0 hacia minas, rutas transfronterizas, operaciones forestales y corredores marítimos donde antes solo era factible usar terminales satelitales dedicados de mayor coste y complejidad. La capacidad de equipar vehículos con dispositivos híbridos simplifica el ecosistema y permite que sistemas de gestión de flotas sigan recibiendo telemetría y eventos de excepción incluso fuera de la huella celular.</p></p>
+<p><p>En el plano de gestión de riesgos, la integración a redes de intercambio de inteligencia de ciberamenazas permite a los operadores de infraestructuras logísticas anticipar ataques a plataformas TMS/WMS, redes Wi-Fi industriales, sistemas de control de acceso y consolas de despacho LMR/LTE. Al aprovechar indicadores compartidos, firmas de malware especializadas en OT y patrones de ataque a APIs de logística, los equipos de seguridad pueden reforzar reglas de correlación en SIEM, ajustar políticas de segmentación para equipos de campo y acelerar parches en dispositivos de red y terminales inteligentes.</p></p>
+<p><p>En conjunto, estos avances sitúan a la logística 4.0 en una fase de integración horizontal: flotas, almacenes, redes de misión crítica, enlaces satelitales y asistentes de voz forman parte de una misma arquitectura de datos y eventos. El criterio dominante no es la adopción de un proveedor específico, sino el alineamiento con estándares abiertos, la capacidad de interoperar entre tecnologías LMR, LTE/5G y satélite, y una gobernanza de ciberseguridad que permita sostener la expansión digital sin comprometer la resiliencia operativa.</p></p>
+
+                </div>
+            </div>
+
+            <!-- SIDEBAR -->
+            <aside class="article-sidebar">
+                <div class="sidebar-title">Noticias Relacionadas</div>
+                <div class="related-item">
+                    <div class="related-category">Contexto</div>
+                    <h4><a href="../index.html">Volver a la portada</a></h4>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-left">
+                    <div class="footer-logo">
+                        <img src="../IMG/footer.png" alt="RED" class="logo-img-footer">
+                    </div>
+                    <p class="footer-description">
+                        Conectando negocios con inteligencia operativa. Más de 20 años liderando la comunicación crítica en Centroamérica.
+                    </p>
+                    <p class="footer-copy">
+                        © 2026 RED INTELFON.
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">EL SALVADOR</h4>
+                    <p class="footer-item">
+                        Urbanización Industrial Santa Elena, Calle Siemens #67 Antiguo Cuscatlán.
+                    </p>
+                    <p class="footer-item">
+                        Tel: +503 2515 0000
+                    </p>
+                    <p class="footer-item">
+                        Email: negocios@red.com.sv
+                    </p>
+                    <p class="footer-item">
+                        WhatsApp: +503 7984-0006
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">GUATEMALA</h4>
+                    <p class="footer-item">
+                        TEC III, Campus Tecnológico TEC III, nivel 7, Oficina 702, Vía 3 1-01, Ciudad de Guatemala.
+                    </p>
+                    <p class="footer-item">
+                        Tel: +502 2375 1414
+                    </p>
+                    <p class="footer-item">
+                        Email: negocios@red.com.gt
+                    </p>
+                    <p class="footer-item">
+                        WhatsApp: +502 3603-1010
+                    </p>
+                </div>
+            </div>
+            <a class="newsletter-cta" href="#" data-newsletter-open="1">Suscribirse al newsletter</a>
+        </div>
+    </footer>
+
+    <div id="newsletter-modal" class="newsletter-overlay" aria-hidden="true">
+        <div class="newsletter-modal" role="dialog" aria-modal="true" aria-label="Suscripción al newsletter">
+            <div class="newsletter-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 7.5C4 6.67157 4.67157 6 5.5 6H18.5C19.3284 6 20 6.67157 20 7.5V16.5C20 17.3284 19.3284 18 18.5 18H5.5C4.67157 18 4 17.3284 4 16.5V7.5Z" stroke="currentColor" stroke-width="1.8"/>
+                    <path d="M6 8.5L12 12.5L18 8.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <div class="newsletter-modal-header">
+                <div>
+                    <div class="newsletter-modal-title">Mantente informado</div>
+                    <div class="newsletter-modal-subtitle">Recibe un resumen diario en tu correo.</div>
+                </div>
+                <button class="newsletter-close" type="button" aria-label="Cerrar">✕</button>
+            </div>
+            <div class="newsletter-modal-body">
+                <form id="newsletter-form">
+                    <div class="newsletter-field">
+                        <input class="newsletter-input" id="newsletter-correo" name="correo" type="email" placeholder="tu@correo.com" required>
+                    </div>
+                    <button class="newsletter-submit" type="submit">
+                        <span class="newsletter-spinner" id="newsletter-spinner"></span>
+                        <span id="newsletter-btn-text">Suscribirme →</span>
+                    </button>
+                    <div class="newsletter-note">
+                        Sin spam. Cancela cuando quieras.
+                    </div>
+                </form>
+                <div id="newsletter-ok" style="display:none; text-align:center; padding: 20px 0; font-size:15px; color:#333;">
+                    ¡Te has suscrito correctamente!
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            const body = document.body;
+            const overlay = document.getElementById('newsletter-modal');
+            const closeBtn = document.querySelector('.newsletter-close');
+            const input = document.getElementById('newsletter-correo');
+            const openLinks = document.querySelectorAll('[data-newsletter-open="1"]');
+
+            function openNewsletter() {
+                body.classList.add('newsletter-open');
+                if (overlay) overlay.setAttribute('aria-hidden', 'false');
+                if (input) setTimeout(() => input.focus(), 50);
+            }
+
+            function closeNewsletter() {
+                body.classList.remove('newsletter-open');
+                if (overlay) overlay.setAttribute('aria-hidden', 'true');
+            }
+
+            openLinks.forEach((a) => {
+                a.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    openNewsletter();
+                });
+            });
+
+            if (closeBtn) closeBtn.addEventListener('click', closeNewsletter);
+            if (overlay) {
+                overlay.addEventListener('click', (e) => {
+                    if (e.target === overlay) closeNewsletter();
+                });
+            }
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') closeNewsletter();
+            });
+
+            const form = document.getElementById('newsletter-form');
+            const okMsg = document.getElementById('newsletter-ok');
+            if (form) {
+                let enviando = false;
+                form.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    if (enviando) return;
+                    enviando = true;
+                    const btn = form.querySelector('.newsletter-submit');
+                    if (btn) {
+                        btn.disabled = true;
+                        const txt = document.getElementById('newsletter-btn-text');
+                        const spinner = document.getElementById('newsletter-spinner');
+                        if (txt) txt.textContent = 'Enviando...';
+                        if (spinner) spinner.style.display = 'inline-block';
+                    }
+                    const correo = document.getElementById('newsletter-correo').value.trim();
+                    if (!correo || !correo.includes('@')) {
+                        enviando = false;
+                        if (btn) btn.disabled = false;
+                        const txt = document.getElementById('newsletter-btn-text');
+                        const spinner = document.getElementById('newsletter-spinner');
+                        if (txt) txt.textContent = 'Suscribirme →';
+                        if (spinner) spinner.style.display = 'none';
+                        return;
+                    }
+                    let resp = null;
+                    try {
+                        resp = await fetch('https://hook.eu2.make.com/l7urtkvoaebrukf3jeimpaoulln2ds81', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                accion: 'suscripcion',
+                                correo: correo,
+                                email: correo,
+                                input: correo,
+                                origen: 'web'
+                            })
+                        });
+                        if (!resp.ok) throw new Error('Error enviando suscripción');
+                    } catch (_) {}
+                    if (resp && resp.ok) {
+                        form.style.display = 'none';
+                        if (okMsg) okMsg.style.display = 'block';
+                    } else {
+                        enviando = false;
+                        if (btn) btn.disabled = false;
+                        const txt = document.getElementById('newsletter-btn-text');
+                        const spinner = document.getElementById('newsletter-spinner');
+                        if (txt) txt.textContent = 'Suscribirme →';
+                        if (spinner) spinner.style.display = 'none';
+                        alert('No se pudo completar la suscripción. Intenta de nuevo.');
+                    }
+                });
+            }
+        })();
+    </script>
+
+    </body>
+    </html>

@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../IMG/footer.png">
+    <title>MCPTT y 6G impulsan soberanía digital y logística 4.0 segura - RED</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --brand-negro: #000000;
+            --brand-rojo: #cc1a1a;
+            --brand-rojo-oscuro: #8b0000;
+            --brand-gris: #999999;
+            --brand-dark: #000000;
+            --text-grey: #333333;
+            --light-grey: #f4f4f4;
+            --border-color: #e5e5e5;
+            --bg-color: #ffffff;
+            --serif-font: 'Playfair Display', Georgia, serif;
+            --sans-font: 'Roboto', Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--sans-font);
+            background-color: var(--bg-color);
+            color: var(--text-grey);
+            line-height: 1.5;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--brand-rojo);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* HEADER */
+        .header-main {
+            padding: 25px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .header-main::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to right, var(--brand-rojo) 0%, var(--brand-rojo-oscuro) 50%, var(--brand-gris) 100%);
+        }
+
+        /* LOGO SVG - Adaptado y ampliado */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 30px; margin-bottom: 50px;
+            
+            height: 45px;
+        }
+
+        .logo-img {
+            width: 120px;
+            height: auto;
+            object-fit: contain;
+            object-position: center center;
+            display: block;
+            
+        }
+
+        .logo-text {
+            font-size: 72px;
+            font-weight: 900;
+            letter-spacing: -2px;
+            line-height: 1;
+            font-family: var(--sans-font);
+        }
+
+        .logo-red {
+            color: var(--brand-rojo);
+        }
+
+        .logo-noticias {
+            color: var(--brand-negro);
+        }
+
+        .collaboration-line {
+            font-size: 12px;
+            color: #555;
+            text-align: center;
+            margin-top: 8px;
+            margin-bottom: 5px;
+            font-style: italic;
+        }
+
+        .date-line {
+            font-size: 13px;
+            color: #666;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid var(--border-color);
+            display: inline-block;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+
+        /* ARTÍCULO */
+        .article-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .full-article-header {
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+
+        .breadcrumbs {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: var(--brand-rojo);
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .full-headline {
+            font-family: var(--sans-font);
+            font-size: 46px;
+            line-height: 1.1;
+            color: var(--brand-dark);
+            margin-bottom: 20px;
+        }
+
+        .full-lead {
+            font-family: var(--sans-font);
+            font-size: 20px;
+            line-height: 1.5;
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        .full-meta {
+            font-size: 13px;
+            color: #666;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .full-image-container {
+            margin-bottom: 30px;
+        }
+
+        .full-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .full-image-caption {
+            font-size: 13px;
+            color: #777;
+            background: #f9f9f9;
+            padding: 8px 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .article-body {
+            font-family: var(--sans-font);
+            font-size: 19px;
+            line-height: 1.8;
+            color: #222;
+        }
+
+        .article-body p {
+            margin-bottom: 25px;
+        }
+        
+        .article-body h2 {
+            font-family: var(--sans-font);
+            font-size: 24px;
+            font-weight: 700;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: var(--brand-dark);
+        }
+
+        .article-body ul {
+            margin-left: 30px;
+            margin-bottom: 25px;
+        }
+
+        .article-body li {
+            margin-top: 30px; margin-bottom: 50px;
+        }
+
+        .article-quote {
+            border-left: 4px solid var(--brand-rojo);
+            padding-left: 25px;
+            font-style: italic;
+            font-size: 24px;
+            color: #444;
+            margin: 40px 0;
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            color: #666;
+            cursor: pointer;
+        }
+        .btn-back:hover {
+            color: var(--brand-rojo);
+            text-decoration: underline;
+        }
+
+        .sidebar-title {
+            font-size: 14px;
+            font-weight: 900;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--brand-dark);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+
+        .related-item {
+            margin-bottom: 20px;
+            border-bottom: 1px dotted #ccc;
+            padding-bottom: 15px;
+        }
+
+        .related-category {
+            font-size: 11px;
+            text-transform: uppercase;
+            color: var(--brand-rojo);
+            font-weight: bold;
+        }
+
+        .related-item h4 {
+            font-family: var(--sans-font);
+            font-size: 16px;
+            margin-top: 5px;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 20px 0;
+            margin-top: 50px;
+            text-align: center;
+            border-top: 1px solid var(--brand-rojo-oscuro);
+        }
+
+        .footer-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 40px;
+        }
+
+        .footer-left {
+            flex: 1 1 260px;
+            max-width: 360px;
+            text-align: left;
+        }
+
+        .footer-logo {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 10px 0;
+            margin-bottom: 10px;
+        }
+
+        .logo-img-footer {
+            width: auto;
+            height: 56px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .footer-description {
+            font-size: 14px;
+            color: #b0b0b0;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .footer-copy {
+            font-size: 12px;
+            color: #777777;
+        }
+
+        .footer-col {
+            flex: 1 1 220px;
+            text-align: left;
+        }
+
+        .footer-heading {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--brand-rojo);
+            margin-bottom: 10px;
+        }
+
+        .footer-item {
+            font-size: 13px;
+            color: #d0d0d0;
+            margin-bottom: 6px;
+        }
+
+        @media (max-width: 1024px) {
+            .article-layout {
+                grid-template-columns: 1fr;
+            }
+            .article-sidebar {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .full-headline {
+                font-size: 32px;
+            }
+            .article-sidebar {
+                display: block;
+                margin-top: 40px;
+            }
+
+            /* Logo más pequeño en móvil */
+            .logo-container {
+                height: 40px;
+            }
+
+            .logo-img {
+                width: 90px;
+                transform: scale(1.0);
+            }
+
+            .footer-logo {
+                padding: 8px 0;
+            }
+
+            .logo-img-footer {
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER LOGO -->
+    <header class="header-main">
+        <div class="container">
+            <a href="../index.html" class="logo-container">
+                <img src="../IMG/footer.png" alt="RED" class="logo-img">
+            </a>
+            <div class="collaboration-line">
+                En colaboración con <strong>Diario El Mundo</strong>
+            </div>
+            <div class="date-line">
+                Lunes, 16 de marzo de 2026
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENIDO ARTÍCULO -->
+    <main class="container">
+        <a href="../index.html" class="btn-back">&larr; VOLVER A PORTADA</a>
+        
+        <div class="article-layout">
+            <!-- CONTENIDO PRINCIPAL -->
+            <div class="article-content">
+                <header class="full-article-header">
+                    <span class="breadcrumbs">Logística 4.0</span>
+                    <h1 class="full-headline">MCPTT y 6G impulsan soberanía digital y logística 4.0 segura</h1>
+                    <p class="full-lead">Nuevas certificaciones de seguridad, acuerdos 6G y proyectos de infraestructura soberana consolidan redes de misión crítica convergentes entre banda estrecha, banda ancha y edge cloud. La logística 4.0 se apoya en MCX, geolocalización avanzada, telemetría y automatización para reducir latencias operativas y elevar la resiliencia.</p>
+                    <div class="full-meta">
+                        <span>Por <strong>Redacción RED</strong> | San Salvador</span>
+                        <span>Lunes, 16 de marzo de 2026</span>
+                    </div>
+                </header>
+
+                <div class="full-image-container">
+                    <img src="https://res.cloudinary.com/dnleji9rj/image/upload/v1773662796/IMAGENES/up4nybfwiecewurjm1cb.png" alt="MCPTT y 6G impulsan soberanía digital y logística 4.0 segura">
+                    <div class="full-image-caption">Ilustración IA</div>
+                </div>
+
+                <div class="article-body">
+                    <p><h2>Implementación Técnica / Arquitectura del Sistema</h2></p>
+<p>Las últimas iniciativas en comunicaciones críticas y logística 4.0 muestran una convergencia clara entre plataformas MCPTT/MCX seguras, redes móviles de banda ancha (incluyendo LTE privado y 5G), sistemas LMR heredados (P25, TETRA, DMR) y arquitecturas cloud-edge con requisitos de soberanía digital. La obtención de certificaciones de ciberseguridad específicas para entornos gubernamentales por parte de plataformas MCPTT orientadas a administración pública refuerza el uso de comunicaciones de misión crítica sobre banda ancha para operaciones logísticas de alto riesgo, centros de control y coordinación interagencia.</p>
+<p>En paralelo, memorandos de entendimiento entre asociaciones de comunicaciones de seguridad pública europeas y organismos que impulsan la investigación 6G buscan definir, desde el diseño, la interoperabilidad entre futuras redes 6G, infraestructuras de misión crítica y sistemas existentes LMR/MCX. Esto implica trabajar en capas de control basadas en IP, priorización de tráfico de emergencia, soporte nativo a servicios de voz, datos y vídeo de baja latencia, y mecanismos de slicing de red adecuados para aplicaciones de logística crítica, como corredores de transporte inteligentes o hubs portuarios automatizados.</p>
+<p>Un consorcio europeo centrado en comunicaciones críticas y soberanía digital impulsa el desarrollo de una infraestructura combinada de edge computing, nube distribuida e inteligencia artificial, orientada a sectores como el ferroviario, la energía y la logística pesada. La arquitectura promueve nodos edge próximos al campo (estaciones, terminales de carga, depósitos) que procesan en tiempo real datos de telemetría, vídeo y sensores IoT industriales mediante protocolos como MQTT, OPC UA y flujos IP estandarizados, reduciendo dependencia de infraestructuras externas y reforzando la continuidad de servicio.</p>
+<p>En el plano del dispositivo, continúan apareciendo terminales de radio profesionales ultracompactos basados en DMR Tier II/III con capacidades de trunking avanzado, actualización remota de firmware y gestión centralizada de frecuencias, pensados para entornos industriales y logísticos densos. Estos equipos se integran con plataformas de despacho IP capaces de interoperar con redes móviles de banda ancha, permitiendo despachos convergentes entre LMR y MCX sobre LTE/5G, así como la extensión de servicios de voz de misión crítica mediante integraciones estándar (por ejemplo, pasarelas SIP/RTP y API MCPTT/MCData).</p>
+<p>Otra línea técnica clave es la integración de servicios de geolocalización avanzados para personal desplazado fuera de cobertura convencional. Soluciones específicas combinan GNSS, mensajería satelital y algoritmos de tracking en la nube para mantener localizados a respondedores y operadores logísticos en áreas sin cobertura LMR o celular, enviando datos periódicos de posición y estado a centros de mando. Estos sistemas se complementan con wearables y sensores IoT portátiles capaces de transmitir datos básicos de entorno y de seguridad personal.</p>
+<p>En redes, se observa un uso creciente de bandas sub-GHz (como 450 MHz) para redes privadas de misión crítica en industrias como energía y transporte pesado. La certificación de terminales y dispositivos híbridos (radio profesional + banda ancha) para operar en estas bandas permite desplegar celdas de gran alcance con buena penetración en interiores industriales, manteniendo QoS y priorización de tráfico para voz crítica, mensajería de datos y telemetría. Estas redes suelen coexistir con infraestructuras Wi-Fi industriales y pequeños despliegues LTE/5G privado en bandas licenciadas o compartidas.</p>
+<p>En el ámbito de la automatización logística, la digitalización de la cadena de suministro se apoya en plataformas de orquestación que fusionan datos de sistemas de gestión de almacenes, sistemas de gestión de transporte, sensores IoT (etiquetas RFID, beacons, sensores de temperatura/vibración), y telemetría de flotas. Estas plataformas requieren interfaces estandarizadas, APIs abiertas y buses de mensajería industrial para integrar desde terminales de radio profesionales hasta drones de inspección y robots móviles autónomos, manteniendo la trazabilidad de activos y eventos a lo largo de toda la red logística.</p>
+<p>Finalmente, proyectos de drones como primer respondedor, desplegados a escala ciudad, representan una capa adicional de sensorización y actuación para seguridad pública y logística de emergencia. Estos sistemas combinan enlaces de vídeo de alta resolución sobre redes 5G o LTE avanzado, control remoto desde centros de operaciones con enlaces redundantes, y analítica de vídeo en tiempo real en el edge. En misiones de rescate y búsqueda, se complementan con radiocomunicaciones robustas para equipos en terreno y dispositivos táctiles resistentes que unifican voz, datos, geolocalización y acceso a aplicaciones operativas, incluyendo coordinación con unidades caninas y personal en zonas remotas.</p>
+<p><h2>Impacto en Operaciones / Optimización de Procesos</h2></p>
+<p>La consolidación de certificaciones de seguridad en plataformas MCPTT para gobierno incrementa la confianza en el uso de servicios de voz y datos de misión crítica sobre banda ancha en operaciones logísticas sensibles, como distribución de mercancías peligrosas, soporte a infraestructuras críticas o coordinación de contingencias en puertos y aeropuertos. Los centros de control pueden operar en arquitecturas convergentes, manteniendo interoperabilidad entre redes LMR legadas y servicios MCX mientras migran gradualmente a entornos totalmente IP y cloud-edge.</p>
+<p>Los acuerdos estratégicos alrededor de 6G y la participación en proyectos de soberanía digital permitirán, en el medio plazo, que las redes de nueva generación integren de forma nativa requisitos de baja latencia determinista para aplicaciones como control remoto de grúas, operación de vehículos guiados automáticamente y gestión dinámica de slots de carga/descarga. La segmentación lógica de red (network slicing) orientada a misión crítica posibilitará islas virtuales dedicadas a logística de emergencias, manteniendo prioridad de tráfico incluso en situaciones de congestión de la red pública.</p>
+<p>Para operadores de transporte y logística, la disponibilidad de terminales DMR compactos, interoperables con plataformas de despacho IP y redes móviles, permite modernizar la coordinación en terreno sin renunciar a la robustez de la banda estrecha. La gestión remota de configuración y firmware reduce tiempos de mantenimiento y la necesidad de retirar equipos del servicio, lo que se traduce en mayor disponibilidad operativa y menores interrupciones en la cadena de suministro.</p>
+<p>Las soluciones de geolocalización para personal en áreas remotas introducen una capa adicional de seguridad operacional: los centros de control pueden visualizar en tiempo casi real la posición de unidades fuera de cobertura tradicional y planificar rutas de acceso, evacuación o abastecimiento con información fidedigna. Para logística rural, minera o forestal, esto se traduce en reducción de tiempos de respuesta ante incidentes y en una mejor planificación de recursos, al disponer de un repositorio histórico de movimientos y condiciones de misión.</p>
+<p>La certificación de dispositivos en bandas como 450 MHz y su integración en redes privadas de misión crítica permite a empresas de energía, transporte y logística disponer de cobertura amplia y profunda en áreas de difícil acceso, sustituyendo infraestructuras dispersas y heterogéneas por una red unificada con control de calidad de servicio. Al combinar estos despliegues con sensores IoT industriales (por ejemplo, en válvulas, compuertas, depósitos y vagones), se obtiene telemetría continua que alimenta algoritmos de mantenimiento predictivo y optimización de rutas y cargas.</p>
+<p>En la cadena de suministro, la creciente digitalización descrita por analistas de supply chain está trasladando el campo de batalla competitivo hacia la calidad de los datos y la capacidad de orquestación. Sistemas que integran telemetría de vehículos, comportamiento del conductor, comunicaciones de misión crítica y datos de demanda permiten optimizar planificación de rutas, tiempos de carga y ventanas de entrega. El factor humano sigue siendo determinante: el análisis del estilo de conducción, cumplimiento de protocolos de comunicación y respuesta a alertas se convierte en un indicador más dentro del cuadro de mando de la flota, reforzando la seguridad y la eficiencia de combustible.</p>
+<p>El uso de drones como primer respondedor y plataformas de vídeo en tiempo real en seguridad pública se está extrapolando progresivamente a casos logísticos: reconocimiento de rutas, inspección de infraestructuras, verificación de colas en accesos y evaluación rápida de incidentes en patios y terminales. Al integrarse con centros de mando que ya operan sistemas MCX y LMR, estos drones pueden desencadenar flujos automáticos de notificación y despacho, reduciendo tiempos de decisión y aumentando la calidad situacional de la información disponible.</p>
+<p>En operaciones de rescate vinculadas a la cadena logística (por ejemplo, accidentes en rutas, incidentes en almacenes o entornos remotos), la combinación de radios robustas, dispositivos táctiles resistentes y sensores portátiles aumenta la probabilidad de misión exitosa. Equipos de búsqueda pueden mantener comunicaciones de voz y datos incluso en áreas con cobertura limitada, compartir ubicaciones y estados de equipo y recibir instrucciones actualizadas desde el centro de operaciones, que a su vez integra información de cámaras, sensores fijos y plataformas de gestión de flota.</p>
+<p>En conjunto, estas tendencias técnicas apuntalan una transición desde infraestructuras de comunicación aisladas hacia ecosistemas convergentes, basados en estándares abiertos y arquitecturas mixtas LMR/MCX/5G/6G, con fuerte énfasis en ciberseguridad, soberanía de datos y capacidad de operación continua. La logística 4.0 se beneficia directamente al disponer de comunicaciones más fiables, baja latencia para control de activos, mejor cobertura en entornos remotos y urbanos complejos, y una capa digital capaz de integrar tanto el desempeño técnico de la red como el comportamiento humano en la operación diaria.</p>
+
+                </div>
+            </div>
+
+            <!-- SIDEBAR -->
+            <aside class="article-sidebar">
+                <div class="sidebar-title">Noticias Relacionadas</div>
+                <div class="related-item">
+                    <div class="related-category">Contexto</div>
+                    <h4><a href="../index.html">Volver a la portada</a></h4>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-left">
+                    <div class="footer-logo">
+                        <img src="../IMG/footer.png" alt="RED" class="logo-img-footer">
+                    </div>
+                    <p class="footer-description">
+                        Conectando negocios con inteligencia operativa. Más de 20 años liderando la comunicación crítica en Centroamérica.
+                    </p>
+                    <p class="footer-copy">
+                        © 2026 RED INTELFON.
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">EL SALVADOR</h4>
+                    <p class="footer-item">
+                        Urbanización Industrial Santa Elena, Calle Siemens #67 Antiguo Cuscatlán.
+                    </p>
+                    <p class="footer-item">
+                        Tel: +503 2515 0000
+                    </p>
+                    <p class="footer-item">
+                        Email: negocios@red.com.sv
+                    </p>
+                    <p class="footer-item">
+                        WhatsApp: +503 7984-0006
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">GUATEMALA</h4>
+                    <p class="footer-item">
+                        TEC III, Campus Tecnológico TEC III, nivel 7, Oficina 702, Vía 3 1-01, Ciudad de Guatemala.
+                    </p>
+                    <p class="footer-item">
+                        Tel: +502 2375 1414
+                    </p>
+                    <p class="footer-item">
+                        Email: negocios@red.com.gt
+                    </p>
+                    <p class="footer-item">
+                        WhatsApp: +502 3603-1010
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    </body>
+    </html>

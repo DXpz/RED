@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../IMG/footer.png">
+    <title>Redes ad-hoc y MCX integran DMR y banda ancha en escenarios críticos - RED</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --brand-negro: #000000;
+            --brand-rojo: #cc1a1a;
+            --brand-rojo-oscuro: #8b0000;
+            --brand-gris: #999999;
+            --brand-dark: #000000;
+            --text-grey: #333333;
+            --light-grey: #f4f4f4;
+            --border-color: #e5e5e5;
+            --bg-color: #ffffff;
+            --serif-font: 'Playfair Display', Georgia, serif;
+            --sans-font: 'Roboto', Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--sans-font);
+            background-color: var(--bg-color);
+            color: var(--text-grey);
+            line-height: 1.5;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--brand-rojo);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* HEADER */
+        .header-main {
+            padding: 25px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .header-main::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to right, var(--brand-rojo) 0%, var(--brand-rojo-oscuro) 50%, var(--brand-gris) 100%);
+        }
+
+        /* LOGO SVG - Adaptado y ampliado */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 30px; margin-bottom: 50px;
+            
+            height: 45px;
+        }
+
+        .logo-img {
+            width: 120px;
+            height: auto;
+            object-fit: contain;
+            object-position: center center;
+            display: block;
+            
+        }
+
+        .logo-text {
+            font-size: 72px;
+            font-weight: 900;
+            letter-spacing: -2px;
+            line-height: 1;
+            font-family: var(--sans-font);
+        }
+
+        .logo-red {
+            color: var(--brand-rojo);
+        }
+
+        .logo-noticias {
+            color: var(--brand-negro);
+        }
+
+        .collaboration-line {
+            font-size: 12px;
+            color: #555;
+            text-align: center;
+            margin-top: 8px;
+            margin-bottom: 5px;
+            font-style: italic;
+        }
+
+        .date-line {
+            font-size: 13px;
+            color: #666;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid var(--border-color);
+            display: inline-block;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+
+        /* ARTÍCULO */
+        .article-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .full-article-header {
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+
+        .breadcrumbs {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: var(--brand-rojo);
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .full-headline {
+            font-family: var(--sans-font);
+            font-size: 46px;
+            line-height: 1.1;
+            color: var(--brand-dark);
+            margin-bottom: 20px;
+        }
+
+        .full-lead {
+            font-family: var(--sans-font);
+            font-size: 20px;
+            line-height: 1.5;
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        .full-meta {
+            font-size: 13px;
+            color: #666;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .full-image-container {
+            margin-bottom: 30px;
+        }
+
+        .full-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .full-image-caption {
+            font-size: 13px;
+            color: #777;
+            background: #f9f9f9;
+            padding: 8px 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .article-body {
+            font-family: var(--sans-font);
+            font-size: 19px;
+            line-height: 1.8;
+            color: #222;
+        }
+
+        .article-body p {
+            margin-bottom: 25px;
+        }
+        
+        .article-body h2 {
+            font-family: var(--sans-font);
+            font-size: 24px;
+            font-weight: 700;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: var(--brand-dark);
+        }
+
+        .article-body ul {
+            margin-left: 30px;
+            margin-bottom: 25px;
+        }
+
+        .article-body li {
+            margin-top: 30px; margin-bottom: 50px;
+        }
+
+        .article-quote {
+            border-left: 4px solid var(--brand-rojo);
+            padding-left: 25px;
+            font-style: italic;
+            font-size: 24px;
+            color: #444;
+            margin: 40px 0;
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            color: #666;
+            cursor: pointer;
+        }
+        .btn-back:hover {
+            color: var(--brand-rojo);
+            text-decoration: underline;
+        }
+
+        .sidebar-title {
+            font-size: 14px;
+            font-weight: 900;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--brand-dark);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+
+        .related-item {
+            margin-bottom: 20px;
+            border-bottom: 1px dotted #ccc;
+            padding-bottom: 15px;
+        }
+
+        .related-category {
+            font-size: 11px;
+            text-transform: uppercase;
+            color: var(--brand-rojo);
+            font-weight: bold;
+        }
+
+        .related-item h4 {
+            font-family: var(--sans-font);
+            font-size: 16px;
+            margin-top: 5px;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 20px 0;
+            margin-top: 50px;
+            text-align: center;
+            border-top: 1px solid var(--brand-rojo-oscuro);
+        }
+
+        .footer-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 40px;
+        }
+
+        .footer-left {
+            flex: 1 1 260px;
+            max-width: 360px;
+            text-align: left;
+        }
+
+        .footer-logo {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 10px 0;
+            margin-bottom: 10px;
+        }
+
+        .logo-img-footer {
+            width: auto;
+            height: 56px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .footer-description {
+            font-size: 14px;
+            color: #b0b0b0;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .footer-copy {
+            font-size: 12px;
+            color: #777777;
+        }
+
+        .footer-col {
+            flex: 1 1 220px;
+            text-align: left;
+        }
+
+        .footer-heading {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--brand-rojo);
+            margin-bottom: 10px;
+        }
+
+        .footer-item {
+            font-size: 13px;
+            color: #d0d0d0;
+            margin-bottom: 6px;
+        }
+
+        @media (max-width: 1024px) {
+            .article-layout {
+                grid-template-columns: 1fr;
+            }
+            .article-sidebar {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .full-headline {
+                font-size: 32px;
+            }
+            .article-sidebar {
+                display: block;
+                margin-top: 40px;
+            }
+
+            /* Logo más pequeño en móvil */
+            .logo-container {
+                height: 40px;
+            }
+
+            .logo-img {
+                width: 90px;
+                transform: scale(1.0);
+            }
+
+            .footer-logo {
+                padding: 8px 0;
+            }
+
+            .logo-img-footer {
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER LOGO -->
+    <header class="header-main">
+        <div class="container">
+            <a href="../index.html" class="logo-container">
+                <img src="../IMG/footer.png" alt="RED" class="logo-img">
+            </a>
+            <div class="collaboration-line">
+                En colaboración con <strong>Diario El Mundo</strong>
+            </div>
+            <div class="date-line">
+                miércoles, 18 de marzo de 2026
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENIDO ARTÍCULO -->
+    <main class="container">
+        <a href="../index.html" class="btn-back">&larr; VOLVER A PORTADA</a>
+        
+        <div class="article-layout">
+            <!-- CONTENIDO PRINCIPAL -->
+            <div class="article-content">
+                <header class="full-article-header">
+                    <span class="breadcrumbs">DMR</span>
+                    <h1 class="full-headline">Redes ad-hoc y MCX integran DMR y banda ancha en escenarios críticos</h1>
+                    <p class="full-lead">Implementaciones recientes combinan redes ad-hoc, MCX en 450 MHz, LTE/5G privado y videovigilancia aérea para reforzar continuidad operativa y respuesta ante emergencias. La convergencia entre narrowband y broadband mejora cobertura, redundancia y gestión de flotas en cuerpos de seguridad y entornos remotos.</p>
+                    <div class="full-meta">
+                        <span>Por <strong>Redacción RED</strong> | San Salvador</span>
+                        <span>miércoles, 18 de marzo de 2026</span>
+                    </div>
+                </header>
+
+                <div class="full-image-container">
+                    <img src="https://res.cloudinary.com/dnleji9rj/image/upload/v1773835827/IMAGENES/nlm6pzol9yne34thxz7j.png" alt="Redes ad-hoc y MCX integran DMR y banda ancha en escenarios críticos">
+                    <div class="full-image-caption">Ilustración IA</div>
+                </div>
+
+                <div class="article-body">
+                    <p><h2>Implementación Técnica / Arquitectura del Sistema</h2></p>
+<p>En zonas remotas de alto valor ambiental se está desplegando una arquitectura de comunicaciones de misión crítica basada en redes ad-hoc IP que complementan infraestructuras LMR existentes (incluyendo DMR Tier II/III y otros estándares narrowband). Estas redes ad-hoc forman mallas autoorganizadas de nodos que funcionan como repetidores y routers inalámbricos, proporcionando rutas alternativas cuando la infraestructura fija presenta degradación, saturación o ausencia de cobertura. La topología multipunto-multipunto permite conmutación dinámica de rutas (routing adaptativo) y establecimiento de backhaul inalámbrico redundante para tráfico de voz, datos y vídeo de baja latencia.</p>
+<p>En paralelo, en redes privadas de banda ancha se está certificando y habilitando equipamiento de usuario final para operar sobre bandas sub-1 GHz, especialmente en el entorno de 450 MHz, aprovechando su mejor propagación en interiores, entornos rurales y zonas boscosas. Estos terminales de misión crítica soportan servicios MCX (MCPTT, MCVideo, MCData) sobre LTE privado o 5G no público, integrándose con sistemas de despacho y con las redes LMR/DMR mediante pasarelas IP, transcodificación de códecs de voz y alineamiento de esquemas de prioridad y preempción. La seguridad se refuerza mediante autenticación fuerte, cifrado extremo a extremo y administración de identidades unificada entre dominios narrowband y broadband.</p>
+<p>En el ámbito de conectividad de flotas móviles y operaciones distribuidas, se introducen plataformas unificadas de comunicaciones satelitales y terrestres que agregan enlaces de backhaul heterogéneos (satélite geoestacionario o de órbita baja, LTE público/privado y enlaces de microondas). Estos sistemas funcionan como hubs de movilidad para flotas terrestres, marítimas o aéreas, aplicando políticas de selección de ruta en función de latencia, disponibilidad de ancho de banda y criticidad del servicio. La capa de gestión centralizada permite orquestar la conectividad de terminales LMR, dispositivos IoT industriales, cámaras de vídeo y aplicaciones de despacho, reduciendo los puntos únicos de fallo.</p>
+<p>En cuerpos de seguridad urbana se está impulsando la digitalización del flujo operativo mediante aplicaciones móviles seguras, integradas con plataformas de despacho asistido por ordenador (CAD), sistemas de gestión de incidentes y bases de datos de registros. Estas aplicaciones corren sobre smartphones o terminales robustos conectados a redes de banda ancha, pero coordinan su operación con redes LMR/DMR tradicionales mediante pasarelas de interoperabilidad y clientes soft-PTT que emulan funcionalidades de radio en el entorno IP. Adicionalmente, se incorporan programas de "drone as first responder" conectados a redes de misión crítica, donde aeronaves no tripuladas envían vídeo en tiempo real y telemetría a centros de mando, integrando sus flujos con consolas de radio, sistemas MCVideo y plataformas de análisis situacional.</p>
+<p><h2>Impacto en Operaciones / Optimización de Procesos</h2></p>
+<p>La introducción de redes ad-hoc en entornos remotos incrementa la resiliencia de la cobertura al permitir continuidad de servicio aun cuando parte de la infraestructura fija esté dañada o inaccesible. Para operaciones de emergencia, esto se traduce en mayor probabilidad de establecer enlaces de voz y datos en primera intervención, mejora en la localización de unidades desplegadas y posibilidad de transmisión de imágenes o vídeo desde zonas sin infraestructura previa. La arquitectura mallada reduce dependencias de un único emplazamiento de repetición y mejora la capacidad de escalado temporal durante eventos de alta afluencia de visitantes o incidentes de gran escala.</p>
+<p>La certificación y despliegue de terminales MCX en bandas alrededor de 450 MHz sobre redes privadas permite a utilities, operadores de transporte y gestores de infraestructuras críticas disponer de comunicaciones de banda ancha con cobertura similar a sistemas narrowband, pero con capacidad de transportar flujos de vídeo, datos de sensores y aplicaciones de campo avanzadas. La interoperabilidad con DMR y otros sistemas LMR garantiza continuidad de operación durante la migración tecnológica, evitando fragmentación de flotas y manteniendo esquemas de llamada de grupo, prioridad y emergencias ya establecidos. A nivel operativo, esto facilita la gestión unificada de plantillas, asignación dinámica de recursos y reducción de tiempos muertos por falta de cobertura o congestión.</p>
+<p>Las plataformas de conectividad unificada para flotas introducen mejoras en la gestión logística al combinar telemetría en tiempo real, comunicaciones de voz de misión crítica y canales de datos para mantenimiento predictivo y monitorización de activos. Al poder alternar entre enlaces satelitales y terrestres, se incrementa el tiempo efectivo de conexión de vehículos y unidades móviles, lo que reduce ventanas de incertidumbre en rutas críticas y permite replanificación dinámica basada en condiciones reales (tráfico, meteorología, incidentes). La agregación de canales de comunicación también soporta la integración de drones, sensores IoT y cámaras embarcadas en una misma plataforma de supervisión.</p>
+<p>En entornos urbanos de seguridad pública, la combinación de aplicaciones móviles integradas, radiocomunicaciones LMR/DMR y servicios MCX sobre banda ancha habilita una cadena de valor digital completa: desde la recepción y clasificación del incidente, asignación de patrullas, acceso seguro a bases de datos en terreno, hasta el cierre administrativo del caso. Esto reduce tiempos de respuesta, disminuye la duplicación de entrada de datos y disminuye el riesgo de errores manuales. La incorporación de drones como primeros respondedores añade una capa adicional de conciencia situacional previa a la llegada de unidades en tierra, mejorando la evaluación de riesgos y la asignación de recursos adecuados.</p>
+<p>En conjunto, la convergencia de DMR y otros estándares narrowband con redes LTE/5G privadas, soluciones satelitales y redes ad-hoc malladas está configurando una arquitectura híbrida donde la prioridad se orienta a resiliencia, interoperabilidad y gestión centralizada de activos móviles. Esta aproximación multiportadora y multiprotocolo permite a operadores de infraestructuras críticas y cuerpos de seguridad evolucionar sus redes sin interrumpir el servicio, optimizar la utilización del espectro radioeléctrico disponible y soportar nuevos casos de uso de alta demanda de datos sin comprometer los niveles de disponibilidad exigidos a las comunicaciones de misión crítica.</p>
+
+                </div>
+            </div>
+
+            <!-- SIDEBAR -->
+            <aside class="article-sidebar">
+                <div class="sidebar-title">Noticias Relacionadas</div>
+                <div class="related-item">
+                    <div class="related-category">Contexto</div>
+                    <h4><a href="../index.html">Volver a la portada</a></h4>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-left">
+                    <div class="footer-logo">
+                        <img src="../IMG/footer.png" alt="RED" class="logo-img-footer">
+                    </div>
+                    <p class="footer-description">
+                        Conectando negocios con inteligencia operativa. Más de 20 años liderando la comunicación crítica en Centroamérica.
+                    </p>
+                    <p class="footer-copy">
+                        © 2026 RED INTELFON.
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">EL SALVADOR</h4>
+                    <p class="footer-item">
+                        Urbanización Industrial Santa Elena, Calle Siemens #67 Antiguo Cuscatlán.
+                    </p>
+                    <p class="footer-item">
+                        Tel: +503 2515 0000
+                    </p>
+                    <p class="footer-item">
+                        Email: negocios@red.com.sv
+                    </p>
+                    <p class="footer-item">
+                        WhatsApp: +503 7984-0006
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">GUATEMALA</h4>
+                    <p class="footer-item">
+                        TEC III, Campus Tecnológico TEC III, nivel 7, Oficina 702, Vía 3 1-01, Ciudad de Guatemala.
+                    </p>
+                    <p class="footer-item">
+                        Tel: +502 2375 1414
+                    </p>
+                    <p class="footer-item">
+                        Email: negocios@red.com.gt
+                    </p>
+                    <p class="footer-item">
+                        WhatsApp: +502 3603-1010
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    </body>
+    </html>

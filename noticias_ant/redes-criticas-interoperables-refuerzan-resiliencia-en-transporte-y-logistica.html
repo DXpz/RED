@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../IMG/footer.png">
+    <title>Redes críticas interoperables refuerzan resiliencia en transporte y logística - RED</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --brand-negro: #000000;
+            --brand-rojo: #cc1a1a;
+            --brand-rojo-oscuro: #8b0000;
+            --brand-gris: #999999;
+            --brand-dark: #000000;
+            --text-grey: #333333;
+            --light-grey: #f4f4f4;
+            --border-color: #e5e5e5;
+            --bg-color: #ffffff;
+            --serif-font: 'Playfair Display', Georgia, serif;
+            --sans-font: 'Roboto', Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--sans-font);
+            background-color: var(--bg-color);
+            color: var(--text-grey);
+            line-height: 1.5;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--brand-rojo);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* HEADER */
+        .header-main {
+            padding: 25px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .header-main::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to right, var(--brand-rojo) 0%, var(--brand-rojo-oscuro) 50%, var(--brand-gris) 100%);
+        }
+
+        /* LOGO SVG - Adaptado y ampliado */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 30px; margin-bottom: 50px;
+            
+            height: 45px;
+        }
+
+        .logo-img {
+            width: 120px;
+            height: auto;
+            object-fit: contain;
+            object-position: center center;
+            display: block;
+            
+        }
+
+        .logo-text {
+            font-size: 72px;
+            font-weight: 900;
+            letter-spacing: -2px;
+            line-height: 1;
+            font-family: var(--sans-font);
+        }
+
+        .logo-red {
+            color: var(--brand-rojo);
+        }
+
+        .logo-noticias {
+            color: var(--brand-negro);
+        }
+
+        .collaboration-line {
+            font-size: 12px;
+            color: #555;
+            text-align: center;
+            margin-top: 8px;
+            margin-bottom: 5px;
+            font-style: italic;
+        }
+
+        .date-line {
+            font-size: 13px;
+            color: #666;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid var(--border-color);
+            display: inline-block;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+
+        /* ARTÍCULO */
+        .article-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .full-article-header {
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+
+        .breadcrumbs {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: var(--brand-rojo);
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .full-headline {
+            font-family: var(--sans-font);
+            font-size: 46px;
+            line-height: 1.1;
+            color: var(--brand-dark);
+            margin-bottom: 20px;
+        }
+
+        .full-lead {
+            font-family: var(--sans-font);
+            font-size: 20px;
+            line-height: 1.5;
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        .full-meta {
+            font-size: 13px;
+            color: #666;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .full-image-container {
+            margin-bottom: 30px;
+        }
+
+        .full-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .full-image-caption {
+            font-size: 13px;
+            color: #777;
+            background: #f9f9f9;
+            padding: 8px 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .article-body {
+            font-family: var(--sans-font);
+            font-size: 19px;
+            line-height: 1.8;
+            color: #222;
+        }
+
+        .article-body p {
+            margin-bottom: 25px;
+        }
+        
+        .article-body h2 {
+            font-family: var(--sans-font);
+            font-size: 24px;
+            font-weight: 700;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: var(--brand-dark);
+        }
+
+        .article-body ul {
+            margin-left: 30px;
+            margin-bottom: 25px;
+        }
+
+        .article-body li {
+            margin-top: 30px; margin-bottom: 50px;
+        }
+
+        .article-quote {
+            border-left: 4px solid var(--brand-rojo);
+            padding-left: 25px;
+            font-style: italic;
+            font-size: 24px;
+            color: #444;
+            margin: 40px 0;
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            color: #666;
+            cursor: pointer;
+        }
+        .btn-back:hover {
+            color: var(--brand-rojo);
+            text-decoration: underline;
+        }
+
+        .sidebar-title {
+            font-size: 14px;
+            font-weight: 900;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--brand-dark);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+
+        .related-item {
+            margin-bottom: 20px;
+            border-bottom: 1px dotted #ccc;
+            padding-bottom: 15px;
+        }
+
+        .related-category {
+            font-size: 11px;
+            text-transform: uppercase;
+            color: var(--brand-rojo);
+            font-weight: bold;
+        }
+
+        .related-item h4 {
+            font-family: var(--sans-font);
+            font-size: 16px;
+            margin-top: 5px;
+        }
+
+        .newsletter-cta {
+            display: inline-block;
+            margin-top: 16px;
+            font-weight: 900;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+            font-size: 12px;
+            color: var(--brand-rojo);
+            text-decoration: none;
+            border-bottom: 2px solid rgba(204, 26, 26, 0.35);
+            padding-bottom: 2px;
+            transition: all 0.2s ease;
+        }
+
+        .newsletter-cta:hover {
+            border-bottom-color: var(--brand-rojo);
+            filter: brightness(0.95);
+        }
+
+        .newsletter-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.55);
+            -webkit-backdrop-filter: blur(4px);
+            backdrop-filter: blur(4px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            z-index: 9999;
+        }
+
+        body.newsletter-open #newsletter-modal,
+        body.desuscribir-open #desuscribir-modal {
+            display: flex;
+            animation: newsletterFadeIn 220ms ease-out;
+        }
+
+        .newsletter-modal {
+            width: 100%;
+            max-width: 520px;
+            background: #fff;
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 18px 55px rgba(0, 0, 0, 0.25);
+            transform: translateY(-8px);
+            opacity: 0;
+            position: relative;
+        }
+
+        .newsletter-icon {
+            width: 90px;
+            height: 90px;
+            border-radius: 999px;
+            background: #f3f3f3;
+            display: grid;
+            place-items: center;
+            margin: 18px auto 0 auto;
+        }
+
+        .newsletter-icon svg {
+            width: 34px;
+            height: 34px;
+            color: #111;
+        }
+
+        body.newsletter-open .newsletter-modal,
+        body.desuscribir-open .newsletter-modal {
+            animation: newsletterSlideDown 260ms cubic-bezier(0.2, 0.9, 0.2, 1) forwards;
+        }
+
+        @keyframes newsletterFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes newsletterSlideDown {
+            from { transform: translateY(-14px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .newsletter-modal-header {
+            padding: 14px 18px 10px 18px;
+            border-bottom: 0;
+            text-align: center;
+            color: var(--text-grey);
+        }
+
+        .newsletter-modal-title {
+            font-family: var(--sans-font);
+            font-size: 26px;
+            font-weight: 900;
+            letter-spacing: -0.6px;
+            color: var(--brand-dark);
+        }
+
+        .newsletter-modal-subtitle {
+            margin-top: 4px;
+            font-size: 15px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .newsletter-close {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 34px;
+            height: 34px;
+            border: none;
+            background: transparent;
+            font-weight: 900;
+            color: #222;
+            cursor: pointer;
+        }
+
+        .newsletter-close:hover {
+            color: var(--brand-rojo);
+        }
+
+        .newsletter-modal-body {
+            padding: 6px 18px 18px 18px;
+            color: var(--text-grey);
+        }
+
+        .newsletter-field {
+            display: grid;
+            gap: 10px;
+            margin-top: 8px;
+            margin-bottom: 14px;
+        }
+
+        .newsletter-input {
+            width: 100%;
+            border: 2px solid #d8d8d8;
+            border-radius: 12px;
+            padding: 13px 14px;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .newsletter-input:focus {
+            border-color: var(--brand-rojo);
+            box-shadow: 0 0 0 4px rgba(204, 26, 26, 0.12);
+        }
+
+        .newsletter-submit {
+            width: 100%;
+            border: none;
+            border-radius: 12px;
+            padding: 13px 14px;
+            background: var(--brand-rojo);
+            color: #fff;
+            font-weight: 900;
+            letter-spacing: 0.2px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .newsletter-submit:hover {
+            filter: brightness(0.95);
+        }
+
+        .newsletter-submit:disabled {
+            opacity: 0.75;
+            cursor: not-allowed;
+        }
+
+        .newsletter-spinner {
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(255,255,255,0.4);
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: spin 0.7s linear infinite;
+            display: none;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .newsletter-note {
+            margin-top: 10px;
+            font-size: 12px;
+            color: #666;
+            line-height: 1.45;
+            text-align: center;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 20px 0;
+            margin-top: 50px;
+            text-align: center;
+            border-top: 1px solid var(--brand-rojo-oscuro);
+        }
+
+        .footer-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 40px;
+        }
+
+        .footer-left {
+            flex: 1 1 260px;
+            max-width: 360px;
+            text-align: left;
+        }
+
+        .footer-logo {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 10px 0;
+            margin-bottom: 10px;
+        }
+
+        .logo-img-footer {
+            width: auto;
+            height: 56px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .footer-description {
+            font-size: 14px;
+            color: #b0b0b0;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .footer-copy {
+            font-size: 12px;
+            color: #777777;
+        }
+
+        .footer-col {
+            flex: 1 1 220px;
+            text-align: left;
+        }
+
+        .footer-heading {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--brand-rojo);
+            margin-bottom: 10px;
+        }
+
+        .footer-item {
+            font-size: 13px;
+            color: #d0d0d0;
+            margin-bottom: 6px;
+        }
+
+        @media (max-width: 1024px) {
+            .article-layout {
+                grid-template-columns: 1fr;
+            }
+            .article-sidebar {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .full-headline {
+                font-size: 32px;
+            }
+            .article-sidebar {
+                display: block;
+                margin-top: 40px;
+            }
+
+            /* Logo más pequeño en móvil */
+            .logo-container {
+                height: 40px;
+            }
+
+            .logo-img {
+                width: 90px;
+                transform: scale(1.0);
+            }
+
+            .footer-logo {
+                padding: 8px 0;
+            }
+
+            .logo-img-footer {
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER LOGO -->
+    <header class="header-main">
+        <div class="container">
+            <a href="../index.html" class="logo-container">
+                <img src="../IMG/footer.png" alt="RED" class="logo-img">
+            </a>
+            <div class="collaboration-line">
+                En colaboración con <strong>Diario El Mundo</strong>
+            </div>
+            <div class="date-line">
+                Martes, 05 de Mayo de 2026
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENIDO ARTÍCULO -->
+    <main class="container">
+        <a href="../index.html" class="btn-back">&larr; VOLVER A PORTADA</a>
+        
+        <div class="article-layout">
+            <!-- CONTENIDO PRINCIPAL -->
+            <div class="article-content">
+                <header class="full-article-header">
+                    <span class="breadcrumbs">Interoperabilidad</span>
+                    <h1 class="full-headline">Redes críticas interoperables refuerzan resiliencia en transporte y logística</h1>
+                    <p class="full-lead">La convergencia entre LMR, banda ancha, satélite y multi‑operador móvil redefine la continuidad operativa en entornos masivos de transporte y cadenas de suministro. La interoperabilidad se consolida como eje de resiliencia frente a fallos de infraestructura, congestión y transición energética.</p>
+                    <div class="full-meta">
+                        <span>Por <strong>Redacción RED</strong> | San Salvador</span>
+                        <span>Martes, 05 de Mayo de 2026</span>
+                    </div>
+                </header>
+
+                <div class="full-image-container">
+                    <img src="https://res.cloudinary.com/dnleji9rj/image/upload/v1777896179/IMAGENES/kn7hknfxmbw024vg5pyf.png" alt="">
+                    <div class="full-image-caption">Ilustración IA</div>
+                </div>
+
+                <div class="article-body">
+                    <p><h2>Implementación Técnica / Arquitectura del Sistema</h2></p>
+<p><p>Los desarrollos recientes en comunicaciones de misión crítica muestran una convergencia acelerada entre redes de radio móvil profesional (LMR), servicios de banda ancha terrestre, conectividad satelital directa al dispositivo y plataformas de orquestación multi‑operador. En sistemas de transporte subterráneo de alta densidad, se están desplegando infraestructuras de red dedicadas para servicios de emergencia que combinan celdas de radio de cobertura distribuida en túneles y estaciones, alimentación redundante, backhaul de alta disponibilidad y soporte para estándares de comunicaciones críticas sobre banda ancha. Esta arquitectura permite continuidad de servicio para usuarios de seguridad pública y operadores ferroviarios, incluso en entornos confinados con fuerte atenuación de señal.</p></p>
+<p><p>En paralelo, soluciones de resiliencia multi‑red para usuarios de misión crítica incorporan módulos de conmutación inteligente que monitorizan parámetros de calidad de servicio (RSRP/RSRQ, SINR, pérdida de paquetes, latencia) en múltiples redes móviles públicas y privadas. Mediante algoritmos de selección dinámica, los terminales cambian de red de forma automática cuando se detecta degradación por congestión, fallo o ausencia de cobertura, sin intervención del usuario. Esto se suma a la interoperabilidad entre sistemas LMR (por ejemplo, DMR Tier II/III, P25 o TETRA) y plataformas de pulsar‑para‑hablar (PTT) sobre banda ancha, mediante gateways IP que realizan transcoding, gestión de IDs, mapeo de grupos de conversación y priorización de tráfico entre dominios de radio distintos.</p></p>
+<p><p>Adicionalmente, las comunicaciones de misión crítica basadas en servicios MCX (voz, datos y vídeo de misión crítica sobre LTE/5G) se están presentando como capas de servicio interoperables, capaces de integrarse con centros de despacho, sistemas de videovigilancia, sensores IoT y aplicaciones de gestión logística. Estas suites MCX emplean APIs estandarizadas, mecanismos de calidad de servicio extremo a extremo (QoS/QoE), y soporte para funciones de prioridad y preempción, facilitando su coexistencia con redes LMR heredadas y aplicaciones empresariales. Complementando el ecosistema, la conectividad satelital directa al dispositivo (D2D satelital) ofrece un dominio adicional de resiliencia, al permitir conectividad básica de mensajería y señalización sin necesidad de infraestructura terrestre local, integrándose mediante interfaces estandarizadas con plataformas de gestión de usuarios y políticas.</p></p>
+<p><p>En el ámbito logístico y energético, la transición hacia cadenas de suministro basadas en hidrógeno verde está impulsando la necesidad de interoperabilidad entre infraestructuras de generación, almacenamiento y distribución de energía, plataformas de gestión de flotas y sistemas de trazabilidad. Esto exige arquitecturas de datos interoperables (API abiertas, modelos de datos comunes, esquemas de mensajería tipo MQTT/AMQP) que puedan integrarse con redes de comunicaciones críticas, tanto para monitorizar activos energéticos como para coordinar flujos de transporte, recarga y seguridad operacional en tiempo real.</p></p>
+<p><h2>Impacto en Operaciones / Optimización de Procesos</h2></p>
+<p><p>La combinación de cobertura subterránea dedicada para servicios de emergencia, interoperabilidad LMR‑banda ancha y resiliencia multi‑operador móvil incrementa significativamente la capacidad de respuesta ante incidentes en entornos de transporte masivo. Los primeros intervinientes y operadores de infraestructuras ferroviarias acceden a comunicaciones de voz prioritaria, datos de localización, vídeo en vivo y telemetría de sistemas ferroviarios dentro de túneles y estaciones, manteniendo continuidad incluso ante la caída de un dominio de red. Esto reduce tiempos de intervención, mejora la coordinación interagencia y disminuye el riesgo operacional asociado a evacuaciones, fallos de material rodante o eventos de seguridad.</p></p>
+<p><p>En operaciones empresariales y logísticas, la interoperabilidad entre sistemas LMR y PTT sobre banda ancha permite integrar en un mismo flujo de trabajo a usuarios con terminales de radio dedicados y a personal que opera mediante smartphones robustecidos, tablets industriales o clientes de escritorio. Esta convergencia de voz, mensajería y datos operativos en un único entorno de colaboración reduce silos de comunicación, mejora la trazabilidad de incidentes y facilita la integración con sistemas de gestión de almacenes, planificación de recursos y plataformas de analítica. La integración de capacidades de voz asistida por inteligencia artificial y automatización de flujos de trabajo permite, por ejemplo, asignar tareas, registrar incidencias y consultar inventarios mediante comandos de voz, liberando manos del personal de campo y acelerando la ejecución de procesos repetitivos.</p></p>
+<p><p>La incorporación de conectividad satelital directa al dispositivo añade una capa de continuidad en zonas rurales, marítimas o de infraestructura crítica remota, donde la cobertura terrestre es limitada o inexistente. Para entornos de seguridad y logística 4.0, esto se traduce en capacidad de enviar posiciones, alertas y mensajes de prioridad incluso durante desastres naturales que afecten la infraestructura terrestre, reforzando planes de continuidad operacional y recuperación ante desastres. La posibilidad de que plataformas de gestión de comunicaciones puedan seleccionar dinámicamente entre redes móviles múltiples, redes privadas LTE/5G, LMR y enlaces satelitales, en función de políticas de servicio y criticidad, genera una malla de comunicaciones más resistente a fallos puntuales.</p></p>
+<p><p>En la supply chain verde basada en hidrógeno, la interoperabilidad entre infraestructuras logísticas, energéticas y de datos permite orquestar rutas de abastecimiento, ventanas de recarga de vehículos y monitorización de activos energéticos de forma coordinada. La integración de sensores IoT en tanques, tuberías y vehículos, comunicando mediante redes móviles privadas o públicas con respaldo satelital, habilita una trazabilidad detallada del flujo de energía y una gestión de riesgos más precisa (detección temprana de fugas, sobrepresiones o incidentes de seguridad). Esto facilita el cumplimiento regulatorio y la adopción de nuevos vectores energéticos sin comprometer los niveles de seguridad operativa exigidos en infraestructuras críticas.</p></p>
+<p><p>En conjunto, estos avances apuntan a una arquitectura de comunicaciones críticas basada en dominios de red heterogéneos, coordinados mediante capas de orquestación e interoperabilidad normalizadas. La prioridad ya no recae en una sola tecnología, sino en la capacidad de combinar LMR, MCX sobre LTE/5G, multi‑operador móvil, satélite D2D e infraestructuras de datos interoperables para sostener la continuidad y eficiencia de operaciones de transporte y logística en escenarios cada vez más complejos.</p></p>
+
+                </div>
+            </div>
+
+            <!-- SIDEBAR -->
+            <aside class="article-sidebar">
+                <div class="sidebar-title">Noticias Relacionadas</div>
+                <div class="related-item">
+                    <div class="related-category">Contexto</div>
+                    <h4><a href="../index.html">Volver a la portada</a></h4>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-left">
+                    <div class="footer-logo">
+                        <img src="../IMG/footer.png" alt="RED" class="logo-img-footer">
+                    </div>
+                    <p class="footer-description">
+                        Conectando negocios con inteligencia operativa. Más de 20 años liderando la comunicación crítica en Centroamérica.
+                    </p>
+                    <p class="footer-copy">
+                        © 2026 RED INTELFON.
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">EL SALVADOR</h4>
+                    <p class="footer-item">
+                        Urbanización Industrial Santa Elena, Calle Siemens #67 Antiguo Cuscatlán.
+                    </p>
+                    <p class="footer-item">
+                        Tel: +503 2515 0000
+                    </p>
+                    <p class="footer-item">
+                        Email: negocios@red.com.sv
+                    </p>
+                    <p class="footer-item">
+                        WhatsApp: +503 7984-0006
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">GUATEMALA</h4>
+                    <p class="footer-item">
+                        TEC III, Campus Tecnológico TEC III, nivel 7, Oficina 702, Vía 3 1-01, Ciudad de Guatemala.
+                    </p>
+                    <p class="footer-item">
+                        Tel: +502 2375 1414
+                    </p>
+                    <p class="footer-item">
+                        Email: negocios@red.com.gt
+                    </p>
+                    <p class="footer-item">
+                        WhatsApp: +502 3603-1010
+                    </p>
+                </div>
+            </div>
+            <div style="display:flex; gap:32px; flex-wrap:wrap; align-items:center;">
+                <a class="newsletter-cta" href="#" data-newsletter-open="1">Suscribirse al newsletter</a>
+                <a class="newsletter-cta" href="#" data-desuscribir-open="1" style="color:#666; border-bottom-color:rgba(100,100,100,0.35);">Desuscribirse</a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="desuscribir-modal" class="newsletter-overlay" aria-hidden="true">
+        <div class="newsletter-modal" role="dialog" aria-modal="true" aria-label="Desuscripción del newsletter">
+            <div class="newsletter-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 7.5C4 6.67157 4.67157 6 5.5 6H18.5C19.3284 6 20 6.67157 20 7.5V16.5C20 17.3284 19.3284 18 18.5 18H5.5C4.67157 18 4 17.3284 4 16.5V7.5Z" stroke="currentColor" stroke-width="1.8"/>
+                    <path d="M6 8.5L12 12.5L18 8.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <div class="newsletter-modal-header">
+                <div>
+                    <div class="newsletter-modal-title">Cancelar suscripción</div>
+                    <div class="newsletter-modal-subtitle">Ingresa tu correo para desuscribirte.</div>
+                </div>
+                <button class="newsletter-close" id="desuscribir-close" type="button" aria-label="Cerrar">✕</button>
+            </div>
+            <div class="newsletter-modal-body">
+                <form id="desuscribir-form">
+                    <div class="newsletter-field">
+                        <input class="newsletter-input" id="desuscribir-correo" name="correo" type="email" placeholder="tu@correo.com" required>
+                    </div>
+                    <button class="newsletter-submit" type="submit">
+                        <span class="newsletter-spinner" id="desuscribir-spinner"></span>
+                        <span id="desuscribir-btn-text">Desuscribirme →</span>
+                    </button>
+                    <div class="newsletter-note">
+                        Lamentamos verte ir. Puedes volver cuando quieras.
+                    </div>
+                </form>
+                <div id="desuscribir-ok" style="display:none; text-align:center; padding: 20px 0; font-size:15px; color:#333;">
+                    ¡Te has desuscrito correctamente!
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="newsletter-modal" class="newsletter-overlay" aria-hidden="true">
+        <div class="newsletter-modal" role="dialog" aria-modal="true" aria-label="Suscripción al newsletter">
+            <div class="newsletter-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 7.5C4 6.67157 4.67157 6 5.5 6H18.5C19.3284 6 20 6.67157 20 7.5V16.5C20 17.3284 19.3284 18 18.5 18H5.5C4.67157 18 4 17.3284 4 16.5V7.5Z" stroke="currentColor" stroke-width="1.8"/>
+                    <path d="M6 8.5L12 12.5L18 8.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <div class="newsletter-modal-header">
+                <div>
+                    <div class="newsletter-modal-title">Mantente informado</div>
+                    <div class="newsletter-modal-subtitle">Recibe un resumen diario en tu correo.</div>
+                </div>
+                <button class="newsletter-close" type="button" aria-label="Cerrar">✕</button>
+            </div>
+            <div class="newsletter-modal-body">
+                <form id="newsletter-form">
+                    <div class="newsletter-field">
+                        <input class="newsletter-input" id="newsletter-correo" name="correo" type="email" placeholder="tu@correo.com" required>
+                    </div>
+                    <button class="newsletter-submit" type="submit">
+                        <span class="newsletter-spinner" id="newsletter-spinner"></span>
+                        <span id="newsletter-btn-text">Suscribirme →</span>
+                    </button>
+                    <div class="newsletter-note">
+                        Sin spam. Cancela cuando quieras.
+                    </div>
+                </form>
+                <div id="newsletter-ok" style="display:none; text-align:center; padding: 20px 0; font-size:15px; color:#333;">
+                    ¡Te has suscrito correctamente!
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            const body = document.body;
+            const overlay = document.getElementById('newsletter-modal');
+            const closeBtn = document.querySelector('.newsletter-close');
+            const input = document.getElementById('newsletter-correo');
+            const openLinks = document.querySelectorAll('[data-newsletter-open="1"]');
+
+            function openNewsletter() {
+                body.classList.add('newsletter-open');
+                if (overlay) overlay.setAttribute('aria-hidden', 'false');
+                if (input) setTimeout(() => input.focus(), 50);
+            }
+
+            function closeNewsletter() {
+                body.classList.remove('newsletter-open');
+                if (overlay) overlay.setAttribute('aria-hidden', 'true');
+            }
+
+            openLinks.forEach((a) => {
+                a.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    openNewsletter();
+                });
+            });
+
+            if (closeBtn) closeBtn.addEventListener('click', closeNewsletter);
+            if (overlay) {
+                overlay.addEventListener('click', (e) => {
+                    if (e.target === overlay) closeNewsletter();
+                });
+            }
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') closeNewsletter();
+            });
+
+            const form = document.getElementById('newsletter-form');
+            const okMsg = document.getElementById('newsletter-ok');
+            if (form) {
+                let enviando = false;
+                form.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    if (enviando) return;
+                    enviando = true;
+                    const btn = form.querySelector('.newsletter-submit');
+                    if (btn) {
+                        btn.disabled = true;
+                        const txt = document.getElementById('newsletter-btn-text');
+                        const spinner = document.getElementById('newsletter-spinner');
+                        if (txt) txt.textContent = 'Enviando...';
+                        if (spinner) spinner.style.display = 'inline-block';
+                    }
+                    const correo = document.getElementById('newsletter-correo').value.trim();
+                    if (!correo || !correo.includes('@')) {
+                        enviando = false;
+                        if (btn) btn.disabled = false;
+                        const txt = document.getElementById('newsletter-btn-text');
+                        const spinner = document.getElementById('newsletter-spinner');
+                        if (txt) txt.textContent = 'Suscribirme →';
+                        if (spinner) spinner.style.display = 'none';
+                        return;
+                    }
+                    let resp = null;
+                    try {
+                        resp = await fetch('https://hook.eu2.make.com/l7urtkvoaebrukf3jeimpaoulln2ds81', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                accion: 'suscripcion',
+                                correo: correo,
+                                email: correo,
+                                input: correo,
+                                origen: 'web'
+                            })
+                        });
+                        if (!resp.ok) throw new Error('Error enviando suscripción');
+                    } catch (_) {}
+                    if (resp && resp.ok) {
+                        form.style.display = 'none';
+                        if (okMsg) okMsg.style.display = 'block';
+                    } else {
+                        enviando = false;
+                        if (btn) btn.disabled = false;
+                        const txt = document.getElementById('newsletter-btn-text');
+                        const spinner = document.getElementById('newsletter-spinner');
+                        if (txt) txt.textContent = 'Suscribirme →';
+                        if (spinner) spinner.style.display = 'none';
+                        alert('No se pudo completar la suscripción. Intenta de nuevo.');
+                    }
+                });
+            }
+        })();
+
+        (function () {
+            const body = document.body;
+            const overlay = document.getElementById('desuscribir-modal');
+            const closeBtn = document.getElementById('desuscribir-close');
+            const input = document.getElementById('desuscribir-correo');
+            const openLinks = document.querySelectorAll('[data-desuscribir-open="1"]');
+
+            function openModal() {
+                body.classList.add('desuscribir-open');
+                if (overlay) overlay.setAttribute('aria-hidden', 'false');
+                if (input) setTimeout(() => input.focus(), 50);
+            }
+
+            function closeModal() {
+                body.classList.remove('desuscribir-open');
+                if (overlay) overlay.setAttribute('aria-hidden', 'true');
+            }
+
+            openLinks.forEach((a) => {
+                a.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    openModal();
+                });
+            });
+
+            if (closeBtn) closeBtn.addEventListener('click', closeModal);
+            if (overlay) {
+                overlay.addEventListener('click', (e) => {
+                    if (e.target === overlay) closeModal();
+                });
+            }
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') closeModal();
+            });
+
+            const form = document.getElementById('desuscribir-form');
+            const okMsg = document.getElementById('desuscribir-ok');
+            if (form) {
+                let enviando = false;
+                form.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    if (enviando) return;
+                    enviando = true;
+                    const btn = form.querySelector('.newsletter-submit');
+                    if (btn) {
+                        btn.disabled = true;
+                        const txt = document.getElementById('desuscribir-btn-text');
+                        const spinner = document.getElementById('desuscribir-spinner');
+                        if (txt) txt.textContent = 'Enviando...';
+                        if (spinner) spinner.style.display = 'inline-block';
+                    }
+                    const correo = document.getElementById('desuscribir-correo').value.trim();
+                    if (!correo || !correo.includes('@')) {
+                        enviando = false;
+                        if (btn) btn.disabled = false;
+                        const txt = document.getElementById('desuscribir-btn-text');
+                        const spinner = document.getElementById('desuscribir-spinner');
+                        if (txt) txt.textContent = 'Desuscribirme →';
+                        if (spinner) spinner.style.display = 'none';
+                        return;
+                    }
+                    let resp = null;
+                    try {
+                        resp = await fetch('https://hook.eu2.make.com/l7urtkvoaebrukf3jeimpaoulln2ds81', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                accion: 'desuscripcion',
+                                correo: correo,
+                                email: correo,
+                                input: correo,
+                                origen: 'web'
+                            })
+                        });
+                        if (!resp.ok) throw new Error('Error enviando desuscripción');
+                    } catch (_) {}
+                    if (resp && resp.ok) {
+                        form.style.display = 'none';
+                        if (okMsg) okMsg.style.display = 'block';
+                    } else {
+                        enviando = false;
+                        if (btn) btn.disabled = false;
+                        const txt = document.getElementById('desuscribir-btn-text');
+                        const spinner = document.getElementById('desuscribir-spinner');
+                        if (txt) txt.textContent = 'Desuscribirme →';
+                        if (spinner) spinner.style.display = 'none';
+                        alert('No se pudo completar la desuscripción. Intenta de nuevo.');
+                    }
+                });
+            }
+        })();
+    </script>
+
+    </body>
+    </html>

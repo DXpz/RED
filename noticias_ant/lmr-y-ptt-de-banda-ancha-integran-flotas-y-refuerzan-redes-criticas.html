@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../IMG/footer.png">
+    <title>LMR y PTT de banda ancha integran flotas y refuerzan redes críticas - RED</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --brand-negro: #000000;
+            --brand-rojo: #cc1a1a;
+            --brand-rojo-oscuro: #8b0000;
+            --brand-gris: #999999;
+            --brand-dark: #000000;
+            --text-grey: #333333;
+            --light-grey: #f4f4f4;
+            --border-color: #e5e5e5;
+            --bg-color: #ffffff;
+            --serif-font: 'Playfair Display', Georgia, serif;
+            --sans-font: 'Roboto', Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--sans-font);
+            background-color: var(--bg-color);
+            color: var(--text-grey);
+            line-height: 1.5;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--brand-rojo);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* HEADER */
+        .header-main {
+            padding: 25px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .header-main::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to right, var(--brand-rojo) 0%, var(--brand-rojo-oscuro) 50%, var(--brand-gris) 100%);
+        }
+
+        /* LOGO SVG - Adaptado y ampliado */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 30px; margin-bottom: 50px;
+            
+            height: 45px;
+        }
+
+        .logo-img {
+            width: 120px;
+            height: auto;
+            object-fit: contain;
+            object-position: center center;
+            display: block;
+            
+        }
+
+        .logo-text {
+            font-size: 72px;
+            font-weight: 900;
+            letter-spacing: -2px;
+            line-height: 1;
+            font-family: var(--sans-font);
+        }
+
+        .logo-red {
+            color: var(--brand-rojo);
+        }
+
+        .logo-noticias {
+            color: var(--brand-negro);
+        }
+
+        .collaboration-line {
+            font-size: 12px;
+            color: #555;
+            text-align: center;
+            margin-top: 8px;
+            margin-bottom: 5px;
+            font-style: italic;
+        }
+
+        .date-line {
+            font-size: 13px;
+            color: #666;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid var(--border-color);
+            display: inline-block;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+
+        /* ARTÍCULO */
+        .article-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .full-article-header {
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+
+        .breadcrumbs {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: var(--brand-rojo);
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .full-headline {
+            font-family: var(--sans-font);
+            font-size: 46px;
+            line-height: 1.1;
+            color: var(--brand-dark);
+            margin-bottom: 20px;
+        }
+
+        .full-lead {
+            font-family: var(--sans-font);
+            font-size: 20px;
+            line-height: 1.5;
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        .full-meta {
+            font-size: 13px;
+            color: #666;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .full-image-container {
+            margin-bottom: 30px;
+        }
+
+        .full-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .full-image-caption {
+            font-size: 13px;
+            color: #777;
+            background: #f9f9f9;
+            padding: 8px 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .article-body {
+            font-family: var(--sans-font);
+            font-size: 19px;
+            line-height: 1.8;
+            color: #222;
+        }
+
+        .article-body p {
+            margin-bottom: 25px;
+        }
+        
+        .article-body h2 {
+            font-family: var(--sans-font);
+            font-size: 24px;
+            font-weight: 700;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: var(--brand-dark);
+        }
+
+        .article-body ul {
+            margin-left: 30px;
+            margin-bottom: 25px;
+        }
+
+        .article-body li {
+            margin-top: 30px; margin-bottom: 50px;
+        }
+
+        .article-quote {
+            border-left: 4px solid var(--brand-rojo);
+            padding-left: 25px;
+            font-style: italic;
+            font-size: 24px;
+            color: #444;
+            margin: 40px 0;
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            color: #666;
+            cursor: pointer;
+        }
+        .btn-back:hover {
+            color: var(--brand-rojo);
+            text-decoration: underline;
+        }
+
+        .sidebar-title {
+            font-size: 14px;
+            font-weight: 900;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--brand-dark);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+
+        .related-item {
+            margin-bottom: 20px;
+            border-bottom: 1px dotted #ccc;
+            padding-bottom: 15px;
+        }
+
+        .related-category {
+            font-size: 11px;
+            text-transform: uppercase;
+            color: var(--brand-rojo);
+            font-weight: bold;
+        }
+
+        .related-item h4 {
+            font-family: var(--sans-font);
+            font-size: 16px;
+            margin-top: 5px;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 20px 0;
+            margin-top: 50px;
+            text-align: center;
+            border-top: 1px solid var(--brand-rojo-oscuro);
+        }
+
+        .footer-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 40px;
+        }
+
+        .footer-left {
+            flex: 1 1 260px;
+            max-width: 360px;
+            text-align: left;
+        }
+
+        .footer-logo {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 10px 0;
+            margin-bottom: 10px;
+        }
+
+        .logo-img-footer {
+            width: auto;
+            height: 56px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .footer-description {
+            font-size: 14px;
+            color: #b0b0b0;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .footer-copy {
+            font-size: 12px;
+            color: #777777;
+        }
+
+        .footer-col {
+            flex: 1 1 220px;
+            text-align: left;
+        }
+
+        .footer-heading {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--brand-rojo);
+            margin-bottom: 10px;
+        }
+
+        .footer-item {
+            font-size: 13px;
+            color: #d0d0d0;
+            margin-bottom: 6px;
+        }
+
+        @media (max-width: 1024px) {
+            .article-layout {
+                grid-template-columns: 1fr;
+            }
+            .article-sidebar {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .full-headline {
+                font-size: 32px;
+            }
+            .article-sidebar {
+                display: block;
+                margin-top: 40px;
+            }
+
+            /* Logo más pequeño en móvil */
+            .logo-container {
+                height: 40px;
+            }
+
+            .logo-img {
+                width: 90px;
+                transform: scale(1.0);
+            }
+
+            .footer-logo {
+                padding: 8px 0;
+            }
+
+            .logo-img-footer {
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER LOGO -->
+    <header class="header-main">
+        <div class="container">
+            <a href="../index.html" class="logo-container">
+                <img src="../IMG/footer.png" alt="RED" class="logo-img">
+            </a>
+            <div class="collaboration-line">
+                En colaboración con <strong>Diario El Mundo</strong>
+            </div>
+            <div class="date-line">
+                miércoles, 11 de marzo de 2026
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENIDO ARTÍCULO -->
+    <main class="container">
+        <a href="../index.html" class="btn-back">&larr; VOLVER A PORTADA</a>
+        
+        <div class="article-layout">
+            <!-- CONTENIDO PRINCIPAL -->
+            <div class="article-content">
+                <header class="full-article-header">
+                    <span class="breadcrumbs">Gestión de Flotas</span>
+                    <h1 class="full-headline">LMR y PTT de banda ancha integran flotas y refuerzan redes críticas</h1>
+                    <p class="full-lead">Infraestructuras LMR troncalizadas, LTE privado 450 MHz y NG9-1-1 convergen para mejorar coordinación operativa, cobertura y resiliencia en transporte, seguridad pública y servicios críticos. La interoperabilidad P25/PTT y la digitalización táctica en hospitales y policía optimizan tiempos de respuesta y gestión de activos.</p>
+                    <div class="full-meta">
+                        <span>Por <strong>Redacción RED</strong> | San Salvador</span>
+                        <span>miércoles, 11 de marzo de 2026</span>
+                    </div>
+                </header>
+
+                <div class="full-image-container">
+                    <img src="https://res.cloudinary.com/dnleji9rj/image/upload/v1773244693/IMAGENES/xxbjgjakumpnyb3tpzxf.png" alt="">
+                    <div class="full-image-caption">Ilustración IA</div>
+                </div>
+
+                <div class="article-body">
+                    <p><h2>Implementación Técnica / Arquitectura del Sistema</h2></p>
+<p><p>Los últimos despliegues en comunicaciones críticas muestran una convergencia clara entre redes de radio móvil terrestre (LMR) de nueva generación, plataformas PTT sobre banda ancha y entornos IP de misión crítica. En una nueva línea de metro urbano, se ha implementado una red de trunking digital basada en SDR bajo estándar DMR/TETRA con arquitectura multisite redundante, cobertura en túneles mediante sistemas distribuidos de antenas (DAS) y pasarelas IP hacia el centro de control. La infraestructura se integra con sistemas de señalización ferroviaria y plataformas de supervisión SCADA, permitiendo despacho unificado y grupos de conversación dinámicos para operación, seguridad y mantenimiento.</p></p>
+<p><p>En paralelo, la homologación de terminales híbridos de misión crítica en banda 450 MHz para redes privadas LTE/5G dedicadas a infraestructuras críticas introduce un modelo de arquitectura dual: acceso radio en 450 MHz con núcleo EPC/5GC privado, prioridad y preempción, más fallback a servicios LMR existentes mediante pasarelas MCX–P25/TETRA. Esta combinación habilita voz crítica, datos de alta capacidad y telemetría IoT industrial sobre una misma plataforma, con SIMs gestionadas y autenticación fuerte orientada a entornos de energía, transporte y seguridad.</p></p>
+<p><p>En el ámbito de redes nacionales de seguridad pública, la ampliación del rol de una red TETRA/P25 de cobertura nacional en un ejercicio conjunto civil–militar ha demostrado la capacidad de los núcleos de conmutación redundantes y de la gestión centralizada de claves para soportar incidentes a gran escala en condiciones climáticas adversas. La red opera con estaciones base endurecidas ambientalmente, enlaces de transporte mixtos (microondas protegida y fibra) y planes de reconfiguración de celdas para mantener niveles mínimos de servicio durante picos de carga o fallos de infraestructura.</p></p>
+<p><p>La evolución hacia NG9-1-1 en un cuerpo policial regional incorpora un núcleo IP basado en SIP y protocolos de emergencia de nueva generación, con encaminamiento georreferenciado, soporte para voz, datos y video, y centros de despacho asistidos por sistemas CAD integrados con LMR y PTT broadband. Esta arquitectura reemplaza enlaces heredados de señalización analógica por interconexiones IP seguras, facilitando la recepción de información multimedia desde ciudadanos y unidades de campo, y su correlación con la ubicación de flotas en tiempo real.</p></p>
+<p><p>En el segmento empresarial y de gestión de flotas, la introducción de nuevos terminales DMR portátiles y móviles compatibles con trunking avanzado (Capacity Max/DMR Tier III) refuerza arquitecturas con controladores redundantes, repetidores IP en malla y canales de datos optimizados para telemetría ligera. Estos equipos soportan servicios como mensajería de datos, telemetría básica de vehículos, comprobación de presencia de los operarios y alarmas de emergencia, con priorización de tráfico y actualización de firmware remota.</p></p>
+<p><p>La integración entre plataformas PTT sobre banda ancha e infraestructuras LMR bajo P25 se refleja en soluciones que emplean pasarelas IP con transcodificación de códecs, mapeo de grupos de conversación y gestión federada de identidades. Esto permite que terminales LTE/5G (smartphones endurecidos, tablets y dispositivos híbridos) participen en grupos de radio P25, conservando funciones de prioridad, emergencia y registro para investigación forense. Complementariamente, la estandarización de accesorios PTT (auriculares, botones remotos, micrófonos resistentes) asegura compatibilidad entre terminales LMR y clientes PTT sobre redes celulares, simplificando la operación mixta en campo.</p></p>
+<p><p>Más allá de la seguridad pública, los llamados "hospitales inteligentes" en Latinoamérica están adoptando redes Wi-Fi de alta densidad, BLE para localización en interiores, sensores IoT médicos basados en protocolos ligeros (como MQTT) y paneles táctiles como interfaz de operación. La arquitectura se soporta en redes LAN segmentadas por VLAN, microsegmentación para dispositivos médicos y sistemas de gestión de activos en tiempo real (RTLS), que comparten principios con la telemetría de flota y la gestión de activos en plantas industriales y logística 4.0.</p></p>
+<p><h2>Impacto en Operaciones / Optimización de Procesos</h2></p>
+<p><p>En la línea de metro, la migración a trunking digital SDR con cobertura dedicada subterránea reduce significativamente los tiempos de coordinación entre maquinistas, personal de estación, mantenimiento y seguridad. La agrupación dinámica de llamadas y las listas de prioridad permiten establecer grupos temporales durante incidencias, minimizando el tiempo de reacción ante averías, evacuaciones parciales o eventos de seguridad. La integración directa con sistemas de control de trenes y CCTV mejora la visibilidad operacional, habilitando decisiones basadas en datos con menor dependencia de comunicaciones fragmentadas.</p></p>
+<p><p>Las redes privadas LTE en 450 MHz proporcionan mayor penetración en interiores y zonas rurales respecto a bandas más altas, mejorando la conectividad para flotas de servicios de campo (reparación de redes, emergencias médicas, patrullas de vigilancia). El uso de terminales homologados y el control extremo a extremo de la infraestructura permiten aplicar políticas estrictas de calidad de servicio, aislamiento de tráfico y continuidad de negocio, manteniendo servicios críticos incluso ante congestión de redes públicas. Esto se traduce en una mejor gestión de rutas, monitorización remota de activos y tiempos de reparación más cortos.</p></p>
+<p><p>La expansión de las redes nacionales de seguridad pública como plataformas de coordinación civil–militar incrementa la interoperabilidad durante emergencias a gran escala, evitando soluciones ad hoc poco confiables. La existencia de planes de contingencia basados en roaming entre distintas bandas, celdas móviles desplegables y estaciones transportables garantiza que los flujos logísticos de suministros, evacuaciones y apoyo sanitario mantengan comunicación estable pese a daños en la infraestructura. La estandarización de procedimientos de llamada y códigos de estado en toda la red reduce la probabilidad de errores humanos en situaciones de alta presión.</p></p>
+<p><p>La adopción de NG9-1-1 impacta directamente en la eficiencia de los centros de despacho y en la gestión de flotas de primera respuesta. La posibilidad de recibir video en tiempo real, ubicaciones precisas y datos auxiliares (como información médica preexistente o características del incidente) permite asignar recursos de manera más precisa, reduciendo desplazamientos innecesarios y mejorando el tiempo de llegada a la escena. La integración con sistemas de seguimiento automático de vehículos (AVL) optimiza el balance de carga entre unidades y mejora la planificación de turnos y mantenimiento preventivo de los vehículos.</p></p>
+<p><p>En la gestión de flotas industriales y empresariales, los nuevos terminales DMR con trunking avanzado contribuyen a una mayor densidad de usuarios por sitio, mejor administración del espectro y menor latencia en el establecimiento de llamadas de grupo. Esto beneficia operaciones con alta movilidad, como logística de almacenes, distribución urbana y mantenimiento de infraestructuras lineales (oleoductos, redes eléctricas). La capacidad de combinar voz crítica con datos ligeros (estado del vehículo, alarmas, confirmaciones de entrega) simplifica la operación y reduce la necesidad de múltiples subsistemas paralelos.</p></p>
+<p><p>Las soluciones que habilitan interoperabilidad P25–PTT broadband facilitan el trabajo conjunto entre agencias de diferentes niveles y operadores privados que colaboran en seguridad, eventos masivos o emergencias. Al permitir que usuarios en redes celulares seguras se comuniquen directamente con grupos de radio dedicados, se amplía la cobertura funcional sin requerir que todos los actores dispongan de terminales LMR especializados. Esto reduce costes, acelera despliegues temporales y mejora la coordinación entre centros de control, unidades móviles y personal de apoyo.</p></p>
+<p><p>En el entorno hospitalario, la adopción de redes táctiles e IoT se traduce en una gestión de activos similares a una flota distribuida: camas, bombas de infusión, carros de emergencia y dispositivos de diagnóstico se rastrean en tiempo real, disminuyendo pérdidas, reduciendo tiempos de búsqueda y mejorando la rotación de equipos. Los mismos principios pueden extrapolarse a depósitos, centros de distribución y plataformas logísticas, donde la combinación de RTLS, sensores IoT y comunicaciones críticas permite un control granular de inventario y la trazabilidad completa de bienes sensibles.</p></p>
+<p><p>De forma transversal, todas estas evoluciones apuntan hacia arquitecturas híbridas donde LMR, LTE privado y servicios de misión crítica sobre banda ancha coexisten, con énfasis en interoperabilidad, resiliencia y ciberseguridad. Para los operadores de redes críticas y gestores de flotas, el reto principal es orquestar estos dominios radio y IP, garantizando que la complejidad tecnológica se traduzca en menor tiempo de respuesta, mayor fiabilidad y una utilización más eficiente de los recursos humanos y materiales.</p></p>
+
+                </div>
+            </div>
+
+            <!-- SIDEBAR -->
+            <aside class="article-sidebar">
+                <div class="sidebar-title">Noticias Relacionadas</div>
+                <div class="related-item">
+                    <div class="related-category">Contexto</div>
+                    <h4><a href="../index.html">Volver a la portada</a></h4>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-left">
+                    <div class="footer-logo">
+                        <img src="../IMG/footer.png" alt="RED" class="logo-img-footer">
+                    </div>
+                    <p class="footer-description">
+                        Conectando negocios con inteligencia operativa. Más de 20 años liderando la comunicación crítica en Centroamérica.
+                    </p>
+                    <p class="footer-copy">
+                        © 2026 RED INTELFON.
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">EL SALVADOR</h4>
+                    <p class="footer-item">
+                        Urbanización Industrial Santa Elena, Calle Siemens #67 Antiguo Cuscatlán.
+                    </p>
+                    <p class="footer-item">
+                        Tel: +503 2515 0000
+                    </p>
+                    <p class="footer-item">
+                        Email: negocios@red.com.sv
+                    </p>
+                    <p class="footer-item">
+                        WhatsApp: +503 7984-0006
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">GUATEMALA</h4>
+                    <p class="footer-item">
+                        TEC III, Campus Tecnológico TEC III, nivel 7, Oficina 702, Vía 3 1-01, Ciudad de Guatemala.
+                    </p>
+                    <p class="footer-item">
+                        Tel: +502 2375 1414
+                    </p>
+                    <p class="footer-item">
+                        Email: negocios@red.com.gt
+                    </p>
+                    <p class="footer-item">
+                        WhatsApp: +502 3603-1010
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    </body>
+    </html>
