@@ -1,24 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-    <meta name="version" content="2.0-IA-NOTICIAS">
-    <link rel="icon" type="image/png" href="IMG/footer.png">
-    <title>RED - Tu fuente confiable de información</title>
-    <!-- Importamos fuentes elegantes de Google Fonts -->
+    <link rel="icon" type="image/png" href="../IMG/footer.png">
+    <title>3GPP MCX y LTE crítico refuerzan interoperabilidad en emergencias - RED</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Roboto:wght@300;400;500;700&display=swap"
-        rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
     <style>
-        /* VARIABLES Y CONFIGURACIÓN BASE */
         :root {
             --brand-negro: #000000;
             --brand-rojo: #cc1a1a;
@@ -50,14 +41,12 @@
             text-decoration: none;
             color: inherit;
             transition: color 0.2s;
-            cursor: pointer;
         }
 
         a:hover {
             color: var(--brand-rojo);
         }
 
-        /* LAYOUT GENERAL */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -68,9 +57,7 @@
         .header-main {
             padding: 25px 0;
             text-align: center;
-            cursor: pointer;
             position: relative;
-            /* Para volver al home */
         }
 
         .header-main::after {
@@ -81,27 +68,6 @@
             right: 0;
             height: 4px;
             background: linear-gradient(to right, var(--brand-rojo) 0%, var(--brand-rojo-oscuro) 50%, var(--brand-gris) 100%);
-        }
-
-
-        .collaboration-line {
-            font-size: 12px;
-            color: #555;
-            text-align: center;
-            margin-top: 8px;
-            margin-bottom: 5px;
-            font-style: italic;
-        }
-
-        .date-line {
-            font-size: 13px;
-            color: #666;
-            margin-top: 10px;
-            padding-top: 10px;
-            border-top: 1px solid var(--border-color);
-            display: inline-block;
-            padding-left: 20px;
-            padding-right: 20px;
         }
 
         /* LOGO SVG - Adaptado y ampliado */
@@ -131,116 +97,151 @@
             font-family: var(--sans-font);
         }
 
+        .logo-red {
+            color: var(--brand-rojo);
+        }
+
+        .logo-noticias {
+            color: var(--brand-negro);
+        }
+
+        .collaboration-line {
+            font-size: 12px;
+            color: #555;
+            text-align: center;
+            margin-top: 8px;
+            margin-bottom: 5px;
+            font-style: italic;
+        }
+
+        .date-line {
+            font-size: 13px;
+            color: #666;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid var(--border-color);
+            display: inline-block;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
 
 
-        /* GRID PRINCIPAL DE NOTICIAS (HOME) */
-        .news-grid {
+        /* ARTÍCULO */
+        .article-layout {
             display: grid;
-            grid-template-columns: 1.5fr 1fr;
+            grid-template-columns: 2fr 1fr;
             gap: 40px;
             margin-top: 30px;
-            margin-bottom: 50px;
-            max-width: 1400px;
-            margin-left: auto;
-            margin-right: auto;
         }
 
-        /* ESTILOS DE ARTÍCULOS (PREVIEW) */
-        .article {
+        .full-article-header {
             margin-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
             padding-bottom: 20px;
-            position: relative;
         }
 
-        .article::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: linear-gradient(to right, var(--brand-rojo) 0%, var(--brand-rojo-oscuro) 50%, var(--brand-gris) 100%);
-        }
-
-        .article:last-child::after {
-            display: none;
-        }
-
-        .article-kicker {
-            background: linear-gradient(to right, var(--brand-rojo) 0%, var(--brand-rojo) 25%, var(--brand-rojo-oscuro) 50%, var(--brand-rojo-oscuro) 75%, var(--brand-rojo-oscuro) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-size: 11px;
-            font-weight: 700;
+        .breadcrumbs {
+            font-size: 12px;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 8px;
+            color: var(--brand-rojo);
+            font-weight: bold;
+            margin-bottom: 15px;
             display: block;
         }
 
-        .article-title {
+        .full-headline {
             font-family: var(--sans-font);
-            font-weight: 700;
+            font-size: 46px;
             line-height: 1.1;
             color: var(--brand-dark);
-            margin-top: 30px; margin-bottom: 50px;
+            margin-bottom: 20px;
         }
 
-        .article-title:hover {
-            color: var(--brand-rojo);
-            cursor: pointer;
+        .full-lead {
+            font-family: var(--sans-font);
+            font-size: 20px;
+            line-height: 1.5;
+            color: #444;
+            margin-bottom: 20px;
         }
 
-        .article-summary {
-            font-size: 15px;
-            color: #555;
-            margin-bottom: 15px;
+        .full-meta {
+            font-size: 13px;
+            color: #666;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .article-author {
-            font-size: 12px;
-            color: #888;
-            text-transform: uppercase;
+        .full-image-container {
+            margin-bottom: 30px;
         }
 
-        .article-author strong {
-            color: var(--brand-dark);
-        }
-
-        .article-img {
+        .full-image-container img {
             width: 100%;
             height: auto;
             display: block;
-            margin-bottom: 15px;
-            filter: brightness(0.95);
-            transition: filter 0.3s;
+        }
+
+        .full-image-caption {
+            font-size: 13px;
+            color: #777;
+            background: #f9f9f9;
+            padding: 8px 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .article-body {
+            font-family: var(--sans-font);
+            font-size: 19px;
+            line-height: 1.8;
+            color: #222;
+        }
+
+        .article-body p {
+            margin-bottom: 25px;
+        }
+        
+        .article-body h2 {
+            font-family: var(--sans-font);
+            font-size: 24px;
+            font-weight: 700;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: var(--brand-dark);
+        }
+
+        .article-body ul {
+            margin-left: 30px;
+            margin-bottom: 25px;
+        }
+
+        .article-body li {
+            margin-top: 30px; margin-bottom: 50px;
+        }
+
+        .article-quote {
+            border-left: 4px solid var(--brand-rojo);
+            padding-left: 25px;
+            font-style: italic;
+            font-size: 24px;
+            color: #444;
+            margin: 40px 0;
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            color: #666;
             cursor: pointer;
         }
-
-        .article-img:hover {
-            filter: brightness(1);
+        .btn-back:hover {
+            color: var(--brand-rojo);
+            text-decoration: underline;
         }
 
-        .hero-article .article-title {
-            font-size: 42px;
-        }
-
-        .hero-article .article-summary {
-            font-size: 18px;
-            line-height: 1.6;
-        }
-
-        .list-article .article-title {
-            font-size: 20px;
-        }
-
-        .list-article .article-img {
-            aspect-ratio: 16/9;
-            object-fit: contain;
-        }
-
-        /* SIDEBAR Y ANUNCIO */
         .sidebar-title {
             font-size: 14px;
             font-weight: 900;
@@ -251,40 +252,25 @@
         }
 
 
-        .opinion-item {
-            display: flex;
-            align-items: center;
+        .related-item {
             margin-bottom: 20px;
             border-bottom: 1px dotted #ccc;
             padding-bottom: 15px;
         }
 
-        .opinion-img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            margin-right: 15px;
-            object-fit: contain;
-        }
-
-        .opinion-content h4 {
-            font-family: var(--sans-font);
-            font-size: 16px;
-            margin-bottom: 4px;
-        }
-
-        .opinion-author {
+        .related-category {
             font-size: 11px;
             text-transform: uppercase;
-            background: linear-gradient(to right, var(--brand-rojo) 0%, var(--brand-rojo-oscuro) 50%, var(--brand-rojo-oscuro) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--brand-rojo);
             font-weight: bold;
-            display: inline-block;
         }
 
-        /* NEWSLETTER CTA + MODAL */
+        .related-item h4 {
+            font-family: var(--sans-font);
+            font-size: 16px;
+            margin-top: 5px;
+        }
+
         .newsletter-cta {
             display: inline-block;
             margin-top: 16px;
@@ -554,19 +540,19 @@
         }
 
         @media (max-width: 1024px) {
-            .news-grid {
+            .article-layout {
                 grid-template-columns: 1fr;
             }
-
-            .sidebar-col {
+            .article-sidebar {
                 display: none;
             }
-
-            /* Simplificado para tablet */
         }
 
         @media (max-width: 768px) {
-            .sidebar-col {
+            .full-headline {
+                font-size: 32px;
+            }
+            .article-sidebar {
                 display: block;
                 margin-top: 40px;
             }
@@ -588,19 +574,16 @@
             .logo-img-footer {
                 height: 40px;
             }
-
-            /* Sidebar vuelve abajo en móvil */
         }
     </style>
 </head>
-
 <body>
 
     <!-- HEADER LOGO -->
     <header class="header-main">
         <div class="container">
-            <a href="index.html" class="logo-container">
-                <img src="IMG/footer.png" alt="RED" class="logo-img">
+            <a href="../index.html" class="logo-container">
+                <img src="../IMG/footer.png" alt="RED" class="logo-img">
             </a>
             <div class="collaboration-line">
                 En colaboración con <strong>Diario El Mundo</strong>
@@ -611,93 +594,54 @@
         </div>
     </header>
 
-
-    <!-- CONTENIDO PRINCIPAL -->
+    <!-- CONTENIDO ARTÍCULO -->
     <main class="container">
+        <a href="../index.html" class="btn-back">&larr; VOLVER A PORTADA</a>
+        
+        <div class="article-layout">
+            <!-- CONTENIDO PRINCIPAL -->
+            <div class="article-content">
+                <header class="full-article-header">
+                    <span class="breadcrumbs">Interoperabilidad</span>
+                    <h1 class="full-headline">3GPP MCX y LTE crítico refuerzan interoperabilidad en emergencias</h1>
+                    <p class="full-lead">Nuevos despliegues de MCX sobre LTE de banda crítica, programas de dron-como-primer-respondedor e incorporación de experiencia 911 en órganos de gobernanza consolidan la interoperabilidad entre redes de misión crítica, centros de despacho e IoT táctico. La expansión de plataformas basadas en IA introduce capas de análisis unificado sobre sistemas heterogéneos de voz, vídeo, datos y telemetría.</p>
+                    <div class="full-meta">
+                        <span>Por <strong>Redacción RED</strong> | San Salvador</span>
+                        <span>Martes, 07 de Julio de 2026</span>
+                    </div>
+                </header>
 
-        <!-- ======================= NUEVAS NOTICIAS DE IA ======================= -->
-        <div id="home-view">
-            <div class="news-grid">
+                <div class="full-image-container">
+                    <img src="https://res.cloudinary.com/dnleji9rj/image/upload/v1783425900/IMAGENES/gazamulgw8hquzgjlcin.png" alt="">
+                    <div class="full-image-caption">Ilustración IA</div>
+                </div>
 
-                <!-- COLUMNA 1: PRINCIPAL -->
-                <section class="main-col">
-                    <article class="article hero-article">
-                        <span class="article-kicker">Radiocomunicación Digital</span>
-                        <a href="noticias/interworking-mcx-tetra-acelera-convergencia-de-redes-de-mision-critica.html">
-                            <img src="https://res.cloudinary.com/dnleji9rj/image/upload/v1783425761/IMAGENES/ss18mypxai5x553len1d.png"
-                                alt="Interworking MCX–TETRA acelera convergencia de redes de misión crítica" class="article-img">
-                        </a>
-                        <h1 class="article-title"><a href="noticias/interworking-mcx-tetra-acelera-convergencia-de-redes-de-mision-critica.html">Interworking MCX–TETRA acelera convergencia de redes de misión crítica</a></h1>
-                        <p class="article-summary">
-                            La demostración reciente de un puente extremo a extremo entre TETRA, MCX y LTE privado ilustra cómo los entornos de seguridad pública y logística crítica avanzan hacia arquitecturas híbridas. La interworking IP basada en estándares reduce silos tecnológicos, aumenta la resiliencia y prepara la migración progresiva desde PMR hacia servicios de banda ancha.
-                        </p>
-                        <div class="article-author">
-                            Por <strong>Redacción RED</strong> | San Salvador
-                        </div>
-                    </article>
+                <div class="article-body">
+                    <p><h2>Implementación Técnica / Arquitectura del Sistema</h2></p>
+<p>Los desarrollos recientes en comunicaciones de misión crítica apuntan a una convergencia clara entre redes celulares de banda ancha estandarizadas por 3GPP (MCX sobre LTE/5G), sistemas de radiocomunicación profesional (LMR/PMR como P25, TETRA o DMR Tier III), y plataformas de gestión de emergencias con alta densidad de datos. En el plano de infraestructura, los anuncios sobre soluciones MCX basadas en las especificaciones 3GPP para servicios de misión crítica (MCPTT, MCData, MCVideo) subrayan la importancia de la interoperabilidad multi-fabricante, validada mediante pruebas formales de compatibilidad en entornos de ensayo alineados con ETSI Plugtests.</p>
+<p>En paralelo, la certificación de terminales de misión crítica en bandas alrededor de 450 MHz para redes LTE privadas orientadas a utilities y operadores de infraestructuras críticas demuestra un enfoque en la integración entre dispositivos de campo, núcleos de red EPC/5GC dedicados y políticas de priorización de tráfico (QoS/QoS Flow, preemption) para garantizar continuidad de servicio en escenarios de alta carga. Estos terminales MCX se diseñan para operar tanto con núcleos de red privados como con despliegues híbridos que combinan cobertura pública y privada, facilitando roaming controlado y segmentación estricta de slices críticos.</p>
+<p>Por otra parte, las iniciativas de gobernanza que incorporan experiencia específica en gestión de llamadas de emergencia (por ejemplo, centros 911/112) a los órganos que definen la evolución de redes de banda ancha para seguridad pública impactan directamente en la arquitectura de interoperabilidad. Esto se traduce en un mayor alineamiento entre la capa de servicio (PSAPs, CAD, NG-911/NG-112) y las capas de transporte y acceso (LTE crítico, LMR, enlaces de microondas de respaldo), reforzando interfaces IP estandarizadas, protocolos de señalización y esquemas de redundancia geográfica.</p>
+<p>En el nivel aplicativo, las plataformas de inteligencia artificial para respuesta a emergencias se implementan como capas de orquestación y análisis sobre datos procedentes de múltiples dominios: flujos de vídeo de cámaras urbanas y portátiles, registros de llamadas de emergencia, telemetría de sensores IoT industriales, trazas de localización de terminales LMR y MCX, y canales de mensajería entre agencias. Esto requiere buses de mensajería interoperables (por ejemplo, MQTT/AMQP, APIs RESTful seguras, WebRTC para vídeo en tiempo real) que actúen como tejido de integración entre sistemas legados de despacho, bases de datos operativas y motores de correlación basados en IA.</p>
+<p>Un ejemplo significativo de integración operacional es la adopción de programas de "dron como primer respondedor" donde aeronaves no tripuladas, equipadas con cámaras de alta resolución y enlaces de datos de baja latencia, se conectan mediante redes LTE críticas o enlaces dedicados de banda ancha hacia centros de mando. La arquitectura típica enlaza el control de vuelo, el streaming de vídeo y la telemetría con plataformas CAD, mapas geoespaciales y sistemas de gestión de incidentes, utilizando APIs y protocolos cifrados de extremo a extremo. Esta capa aérea se integra con activos tradicionales de red como estaciones base LTE privadas, repetidores LMR, gateways de interoperabilidad IP y routers robustos en vehículos.</p>
+<p><h2>Impacto en Operaciones / Optimización de Procesos</h2></p>
+<p>El efecto combinado de estas iniciativas en la interoperabilidad se traduce en una reducción de fricción entre organismos de seguridad pública, operadores de infraestructuras críticas y servicios de emergencia. La validación multicapa de interoperabilidad MCX —desde terminales hasta núcleo de red y aplicaciones— permite que distintas entidades adopten soluciones de diferentes proveedores manteniendo compatibilidad funcional en llamadas de grupo, comunicaciones directas, mensajería de datos y transmisión de vídeo. Esto reduce el riesgo de islas tecnológicas y simplifica la extensión de cobertura a zonas rurales y corredores industriales mediante redes LTE privadas en bandas sub-GHz.</p>
+<p>La incorporación de experiencia operativa de centros de llamadas de emergencia a la gobernanza de redes de misión crítica mejora el alineamiento entre requisitos reales de campo (tiempos de respuesta, continuidad de llamada, transferencia entre jurisdicciones, prioridad de recursos) y decisiones sobre espectro, arquitectura de red y políticas de calidad de servicio. Al integrar la perspectiva de los PSAPs en el diseño de interfaces y protocolos, se incrementa la fiabilidad en la entrega de información crítica (ubicación, vídeo contextual, historial de incidentes) entre diferentes dominios de red y agencias.</p>
+<p>Las plataformas de IA para emergencias aportan una capa adicional de optimización en la gestión de recursos y en la priorización de incidentes. Al correlacionar datos de múltiples redes —LMR, LTE privado, sensores IoT, drones, CCTV—, estas soluciones pueden proponer rutas óptimas para unidades móviles, detectar anomalías en la infraestructura, priorizar llamadas según patrones históricos o comportamientos atípicos, y anticipar la necesidad de refuerzos interjurisdiccionales. Desde el punto de vista logístico, esto se refleja en un uso más eficiente de flotas, menor tiempo de activación de recursos especializados y mejor coordinación entre servicios médicos de emergencia, policía, bomberos y operadores de red.</p>
+<p>La integración de drones como primer respondedor se convierte, además, en un vector de resiliencia operativa. Al operar sobre redes de misión crítica con path diversity (enlaces principales LTE/5G y respaldo mediante enlaces microondas o satelitales), los drones pueden aportar reconocimiento visual temprano incluso cuando la infraestructura terrestre se ve afectada por incidentes climáticos o fallos de energía. Esta capacidad de proyección aérea de sensores mejora la calidad de la información en la fase inicial de un incidente, permitiendo a los centros de mando ajustar la asignación de unidades, reducir desplazamientos innecesarios y mejorar la seguridad del personal desplazado.</p>
+<p>Finalmente, el uso de bandas alrededor de 450 MHz para LTE crítico y la compatibilidad MCX asociada favorecen una cobertura más profunda en interiores y zonas extensas de baja densidad, aspectos claves para utilities, redes de transporte y energía. La interoperabilidad entre estos despliegues y las redes nacionales de seguridad pública —mediante gateways, roaming controlado y políticas de seguridad comunes— crea un ecosistema en el que los activos de campo (vehículos, terminales portátiles, sensores, drones) pueden moverse entre dominios de red sin pérdida de servicios esenciales, reforzando la continuidad de negocio y la capacidad de respuesta ante incidentes de gran escala.</p>
 
-                    <article class="article" style="margin-top: 30px;">
-                        <a href="noticias/3gpp-mcx-y-lte-critico-refuerzan-interoperabilidad-en-emergencias.html">
-                            <img src="https://res.cloudinary.com/dnleji9rj/image/upload/v1783425900/IMAGENES/gazamulgw8hquzgjlcin.png" alt="3GPP MCX y LTE crítico refuerzan interoperabilidad en emergencias"
-                                class="article-img">
-                        </a>
-                        <span class="article-kicker">Interoperabilidad</span>
-                        <h2 class="article-title" style="font-size: 28px;"><a
-                                href="noticias/3gpp-mcx-y-lte-critico-refuerzan-interoperabilidad-en-emergencias.html">3GPP MCX y LTE crítico refuerzan interoperabilidad en emergencias</a></h2>
-                        <p class="article-summary" style="font-size: 16px;">
-                            Nuevos despliegues de MCX sobre LTE de banda crítica, programas de dron-como-primer-respondedor e incorporación de experiencia 911 en órganos de gobernanza consolidan la interoperabilidad entre redes de misión crítica, centros de despacho e IoT táctico. La expansión de plataformas basadas en IA introduce capas de análisis unificado sobre sistemas heterogéneos de voz, vídeo, datos y telemetría.
-                        </p>
-                        <div class="article-author">
-                            Por <strong>Redacción RED</strong> | San Salvador
-                        </div>
-                    </article>
-                </section>
-
-                <!-- COLUMNA 2: SECUNDARIAS -->
-                <section class="center-col">
-                    <div class="sidebar-title">Más Noticias de RED</div>
-
-                    <article class="article list-article">
-                        <a href="noticias/lmr-y-lte-convergen-para-robustecer-gestion-de-flotas-criticas.html">
-                            <img src="https://res.cloudinary.com/dnleji9rj/image/upload/v1783426081/IMAGENES/nbvb7lcas0zruuy0aw2s.png"
-                                alt="LMR y LTE convergen para robustecer gestión de flotas críticas" class="article-img">
-                        </a>
-                        <span class="article-kicker">Gestión de Flotas</span>
-                        <h3 class="article-title"><a href="noticias/lmr-y-lte-convergen-para-robustecer-gestion-de-flotas-criticas.html">LMR y LTE convergen para robustecer gestión de flotas críticas</a></h3>
-                        <p class="article-summary" style="font-size: 14px; margin-top: 8px;">
-                            Infraestructuras LMR (TETRA, PTT sobre banda ancha) y LTE privado se integran con IA, drones y telemetría para mejorar coordinación, seguridad de carga y tiempos de respuesta. La regulación y la gestión de personas emergen como ejes para escalar estas arquitecturas en transporte y eventos masivos.
-                        </p>
-                    </article>
-
-
-                    <article class="article list-article">
-                        <a href="noticias/lmr-y-mcptt-habilitan-interoperabilidad-tactica-multiagencia.html">
-                            <img src="https://res.cloudinary.com/dnleji9rj/image/upload/v1783426237/IMAGENES/hrhzjh2lqkhaev3nn3df.png"
-                                alt="LMR y MCPTT habilitan interoperabilidad táctica multiagencia" class="article-img">
-                        </a>
-                        <span class="article-kicker">Radiocomunicación Digital</span>
-                        <h3 class="article-title"><a href="noticias/lmr-y-mcptt-habilitan-interoperabilidad-tactica-multiagencia.html">LMR y MCPTT habilitan interoperabilidad táctica multiagencia</a></h3>
-                        <p class="article-summary" style="font-size: 14px; margin-top: 8px;">
-                            La combinación de radio móvil terrestre digital, servicios de banda ancha misión crítica y hardware vehicular modular reduce fricción en migraciones tecnológicas y mejora la coordinación entre flotas, centros de mando y recursos IoT. La gobernanza especializada en 911 refuerza la alineación entre diseño de red, operación de campo y gestión de incidentes complejos.
-                        </p>
-                    </article>
-                    <article class="article list-article">
-                        <a href="noticias/redes-criticas-convergentes-expanden-capacidades-digitales-en-mineria-remota.html">
-                            <img src="https://res.cloudinary.com/dnleji9rj/image/upload/v1783426388/IMAGENES/dl8mmyacruuhexgqcluc.png"
-                                alt="Redes críticas convergentes expanden capacidades digitales en minería remota" class="article-img">
-                        </a>
-                        <span class="article-kicker">Radiocomunicación Digital</span>
-                        <h3 class="article-title"><a href="noticias/redes-criticas-convergentes-expanden-capacidades-digitales-en-mineria-remota.html">Redes críticas convergentes expanden capacidades digitales en minería remota</a></h3>
-                        <p class="article-summary" style="font-size: 14px; margin-top: 8px;">
-                            Despliegues combinados de LTE privado, radiocomunicación digital y cómputo en el borde llevan analítica, IoT industrial y ciberseguridad OT directamente a faenas mineras aisladas. La convergencia fija-móvil y la virtualización de funciones de red busca elevar continuidad operacional y control de activos en tiempo real.
-                        </p>
-                    </article>
-
-                </section>
-
+                </div>
             </div>
-        </div>
 
+            <!-- SIDEBAR -->
+            <aside class="article-sidebar">
+                <div class="sidebar-title">Noticias Relacionadas</div>
+                <div class="related-item">
+                    <div class="related-category">Contexto</div>
+                    <h4><a href="../index.html">Volver a la portada</a></h4>
+                </div>
+            </aside>
+        </div>
     </main>
 
     <!-- FOOTER -->
@@ -706,7 +650,7 @@
             <div class="footer-grid">
                 <div class="footer-left">
                     <div class="footer-logo">
-                        <img src="IMG/footer.png" alt="RED" class="logo-img-footer">
+                        <img src="../IMG/footer.png" alt="RED" class="logo-img-footer">
                     </div>
                     <p class="footer-description">
                         Conectando negocios con inteligencia operativa. Más de 20 años liderando la comunicación crítica en Centroamérica.
@@ -755,41 +699,6 @@
         </div>
     </footer>
 
-    <div id="newsletter-modal" class="newsletter-overlay" aria-hidden="true">
-        <div class="newsletter-modal" role="dialog" aria-modal="true" aria-label="Suscripción al newsletter">
-            <div class="newsletter-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M4 7.5C4 6.67157 4.67157 6 5.5 6H18.5C19.3284 6 20 6.67157 20 7.5V16.5C20 17.3284 19.3284 18 18.5 18H5.5C4.67157 18 4 17.3284 4 16.5V7.5Z" stroke="currentColor" stroke-width="1.8"/>
-                    <path d="M6 8.5L12 12.5L18 8.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </div>
-            <div class="newsletter-modal-header">
-                <div>
-                    <div class="newsletter-modal-title">Mantente informado</div>
-                    <div class="newsletter-modal-subtitle">Recibe un resumen diario en tu correo.</div>
-                </div>
-                <button class="newsletter-close" type="button" aria-label="Cerrar">✕</button>
-            </div>
-            <div class="newsletter-modal-body">
-                <form id="newsletter-form">
-                    <div class="newsletter-field">
-                        <input class="newsletter-input" id="newsletter-correo" name="correo" type="email" placeholder="tu@correo.com" required>
-                    </div>
-                    <button class="newsletter-submit" type="submit">
-                        <span class="newsletter-spinner" id="newsletter-spinner"></span>
-                        <span id="newsletter-btn-text">Suscribirme →</span>
-                    </button>
-                    <div class="newsletter-note">
-                        Sin spam. Cancela cuando quieras.
-                    </div>
-                </form>
-                <div id="newsletter-ok" style="display:none; text-align:center; padding: 20px 0; font-size:15px; color:#333;">
-                    ¡Te has suscrito correctamente!
-                </div>
-            </div>
-        </div>
-    </div>
-
     <div id="desuscribir-modal" class="newsletter-overlay" aria-hidden="true">
         <div class="newsletter-modal" role="dialog" aria-modal="true" aria-label="Desuscripción del newsletter">
             <div class="newsletter-icon" aria-hidden="true">
@@ -820,6 +729,41 @@
                 </form>
                 <div id="desuscribir-ok" style="display:none; text-align:center; padding: 20px 0; font-size:15px; color:#333;">
                     ¡Te has desuscrito correctamente!
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="newsletter-modal" class="newsletter-overlay" aria-hidden="true">
+        <div class="newsletter-modal" role="dialog" aria-modal="true" aria-label="Suscripción al newsletter">
+            <div class="newsletter-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 7.5C4 6.67157 4.67157 6 5.5 6H18.5C19.3284 6 20 6.67157 20 7.5V16.5C20 17.3284 19.3284 18 18.5 18H5.5C4.67157 18 4 17.3284 4 16.5V7.5Z" stroke="currentColor" stroke-width="1.8"/>
+                    <path d="M6 8.5L12 12.5L18 8.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <div class="newsletter-modal-header">
+                <div>
+                    <div class="newsletter-modal-title">Mantente informado</div>
+                    <div class="newsletter-modal-subtitle">Recibe un resumen diario en tu correo.</div>
+                </div>
+                <button class="newsletter-close" type="button" aria-label="Cerrar">✕</button>
+            </div>
+            <div class="newsletter-modal-body">
+                <form id="newsletter-form">
+                    <div class="newsletter-field">
+                        <input class="newsletter-input" id="newsletter-correo" name="correo" type="email" placeholder="tu@correo.com" required>
+                    </div>
+                    <button class="newsletter-submit" type="submit">
+                        <span class="newsletter-spinner" id="newsletter-spinner"></span>
+                        <span id="newsletter-btn-text">Suscribirme →</span>
+                    </button>
+                    <div class="newsletter-note">
+                        Sin spam. Cancela cuando quieras.
+                    </div>
+                </form>
+                <div id="newsletter-ok" style="display:none; text-align:center; padding: 20px 0; font-size:15px; color:#333;">
+                    ¡Te has suscrito correctamente!
                 </div>
             </div>
         </div>
@@ -1013,7 +957,5 @@
         })();
     </script>
 
-
-</body>
-
-</html>
+    </body>
+    </html>
